@@ -127,7 +127,7 @@ $is_tu_admin = in_array($user_role, ['tu', 'administrator', 'admin']);
                     <div  class=" animated fadeIn page-content">
                         <div id="spk-list-records">
                             <div id="page-report-body" class="table-responsive">
-                                <table class="table  table-striped table-sm text-left">
+                                <table class="table table-striped table-sm text-left">
                                     <thead class="table-header bg-light">
                                         <tr>
                                             <?php if($can_delete){ ?>
@@ -139,190 +139,156 @@ $is_tu_admin = in_array($user_role, ['tu', 'administrator', 'admin']);
                                             </th>
                                             <?php } ?>
                                             <th class="td-sno">#</th>
-                                            <th  class="td-nomor_spk"> Nomor SPK</th>
-                                            <th  class="td-tgl_spk"> Tgl SPK</th>
-                                            <th  class="td-tgl_selesai_spk"> Tgl Selesai SPK</th>
-                                            <th  class="td-bulan_spk"> Bulan SPK</th>
-                                            <th  class="td-master_ppk_nama_ppk"> Nama PPK</th>
-                                            <th  class="td-master_petugas_nama_petugas"> Nama Petugas</th>
-                                            <th  class="td-master_petugas_alamat"> Alamat</th>
-                                            <th  class="td-master_petugas_kecamatan"> Kecamatan</th>
-                                            <th  class="td-honor_pelatihan"> Denda (Jika ada)</th>
-                                            <th  class="td-Print_Lampiran"> </th>
-                                            <th class="td-approve_mitra">Aksi</th>
+                                            <th class="td-nomor_spk"> Nomor SPK</th>
+                                            <th class="td-tgl_spk"> Tgl SPK</th>
+                                            <th class="td-tgl_selesai_spk"> Tgl Selesai SPK</th>
+                                            <th class="td-bulan_spk"> Bulan SPK</th>
+                                            <th class="td-master_ppk_nama_ppk"> Nama PPK</th>
+                                            <th class="td-master_petugas_nama_petugas"> Nama Petugas</th>
+                                            <th class="td-master_petugas_alamat"> Alamat</th>
+                                            <th class="td-master_petugas_kecamatan"> Kecamatan</th>
+                                            <th class="td-honor_pelatihan"> Denda (Jika ada)</th>
+                                            <th class="td-Print_Lampiran"> </th>
+                                            
+                                            <th class="td-approve_mitra text-center">Aksi</th>
+
                                             <?php if(!$is_tu_admin){ ?>
-                                                <th class="text-center">Upload PDF</th>
+                                                <th class="td-upload-pdf text-center">Upload PDF</th>
                                             <?php } ?>
+
                                             <th class="text-right">Menu</th>
-                                            <th class="td-btn"></th>
                                         </tr>
                                     </thead>
-                                    <?php
-                                    if(!empty($records)){
-                                    ?>
+                                    
+                                    <?php if(!empty($records)){ ?>
                                     <tbody class="page-data" id="page-data-<?php echo $page_element_id; ?>">
-                                        <!--record-->
                                         <?php
                                         $counter = 0;
                                         foreach($records as $data){
-                                        $rec_id = (!empty($data['id']) ? urlencode($data['id']) : null);
-                                        $counter++;
+                                            $rec_id = (!empty($data['id']) ? urlencode($data['id']) : null);
+                                            $counter++;
+                                            $status_pdf = isset($data['status_pegawai']) ? strtolower($data['status_pegawai']) : '';
                                         ?>
                                         <tr>
                                             <?php if($can_delete){ ?>
                                             <th class=" td-checkbox">
                                                 <label class="custom-control custom-checkbox custom-control-inline">
                                                     <input class="optioncheck custom-control-input" name="optioncheck[]" value="<?php echo $data['id'] ?>" type="checkbox" />
-                                                        <span class="custom-control-label"></span>
-                                                    </label>
-                                                </th>
-                                                <?php } ?>
-                                                <th class="td-sno"><?php echo $counter; ?></th>
-                                                <td class="td-nomor_spk"> <?php echo $data['nomor_spk']; ?></td>
-                                                <td class="td-tgl_spk"> <?php echo $data['tgl_spk']; ?></td>
-                                                <td class="td-tgl_selesai_spk"> <?php echo $data['tgl_selesai_spk']; ?></td>
-                                                <td class="td-bulan_spk"> <?php echo $data['bulan_spk']; ?></td>
-                                                <td class="td-master_ppk_nama_ppk"> <?php echo $data['master_ppk_nama_ppk']; ?></td>
-                                                <td class="td-master_petugas_nama_petugas" style="padding:2px 6px;font-size:13px;white-space:nowrap;"> <?php echo $data['master_petugas_nama_petugas']; ?></td>
-                                                <td class="td-master_petugas_alamat" style="padding:2px 6px;font-size:13px;white-space:nowrap;"> <?php echo $data['master_petugas_alamat']; ?></td>
-                                                <td class="td-master_petugas_kecamatan" style="padding:2px 6px;font-size:13px;white-space:nowrap;"> <?php echo $data['master_petugas_kecamatan']; ?></td>
-                                                <td class="td-honor_pelatihan">
-                                                    <span <?php if($can_edit){ ?> data-value="<?php echo $data['honor_pelatihan']; ?>" 
-                                                        data-pk="<?php echo $data['id'] ?>" 
-                                                        data-url="<?php print_link("spk/editfield/" . urlencode($data['id'])); ?>" 
-                                                        data-name="honor_pelatihan" 
-                                                        data-title="Denda" 
-                                                        data-placement="left" 
-                                                        data-toggle="click" 
-                                                        data-type="number" 
-                                                        data-mode="popover" 
-                                                        data-showbuttons="left" 
-                                                        class="is-editable" <?php } ?>>
-                                                        <?php echo $data['honor_pelatihan']; ?> 
-                                                    </span>
-                                                </td>
-                                                <td class="td-Print_Lampiran">
-                                                    <a href="<?php print_link("spk/view2/$rec_id") ?>">
-                                                        📑 Print Lampiran
-                                                    </a>
-                                                </td>
-                                                <td class="td-approve_mitra" style="text-align:center;vertical-align:middle;">
-                                                    <?php 
-                                                    $user_role = strtolower(USER_ROLE);
-                                                    $status_pdf = isset($data['status_pegawai']) ? strtolower($data['status_pegawai']) : '';
-                                                    if(in_array($user_role, ['tu','administrator','admin'])) {
-                                                        if($status_pdf == '' || $status_pdf == 'pending') { ?>
-                                                            <form method="post" action="<?php print_link('spk/approve_pdf/' . $data['id']); ?>" style="display:inline;">
-                                                                <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
-                                                                <button type="submit" name="aksi" value="setujui" class="btn btn-sm btn-success mx-1"><i class="fa fa-check"></i> Setujui</button>
-                                                                <button type="submit" name="aksi" value="tolak" class="btn btn-sm btn-danger mx-1"><i class="fa fa-times"></i> Tolak</button>
-                                                            </form>
-                                                        <?php } elseif($status_pdf == 'disetujui') { ?>
-                                                            <span class="badge badge-success"><i class="fa fa-check"></i> Disetujui</span>
-                                                        <?php } elseif($status_pdf == 'ditolak') { ?>
-                                                            <span class="badge badge-danger"><i class="fa fa-times"></i> Ditolak</span>
-                                                        <?php }
-                                                    } else if(strtolower(USER_ROLE) == 'mitra') {
-                                                        $status = (isset($data['status_mitra']) ? $data['status_mitra'] : 'pending');
-                                                        if($status == 'pending' || empty($status)) { ?>
-                                                            <form method="post" action="<?php print_link('spk/approve_mitra/' . $data['id']); ?>">
-                                                                <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
-                                                                <button type="button" class="btn btn-sm btn-primary btn-approve-mitra"><i class="fa fa-check"></i> Setujui</button>
-                                                            </form>
-                                                        <?php } else { ?>
-                                                            <span class="badge badge-success"><i class="fa fa-check-circle"></i> Disetujui</span>
-                                                        <?php }
-                                                    }
-                                                    ?>
-                                            
-                                                <td class="td-upload-pdf" style="text-align:center;vertical-align:middle;">
-                                                    <?php 
-                                                    $file_pdf = !empty($data['file_pdf_mitra']) ? $data['file_pdf_mitra'] : '';
-                                                    $status_pdf = isset($data['status_pegawai']) ? strtolower($data['status_pegawai']) : '';
-                                                    $user_role = strtolower(USER_ROLE);
-                                                    $is_tu_admin = in_array($user_role, ['tu', 'administrator', 'admin']);
+                                                    <span class="custom-control-label"></span>
+                                                </label>
+                                            </th>
+                                            <?php } ?>
+                                            <th class="td-sno"><?php echo $counter; ?></th>
+                                            <td class="td-nomor_spk"> <?php echo $data['nomor_spk']; ?></td>
+                                            <td class="td-tgl_spk"> <?php echo $data['tgl_spk']; ?></td>
+                                            <td class="td-tgl_selesai_spk"> <?php echo $data['tgl_selesai_spk']; ?></td>
+                                            <td class="td-bulan_spk"> <?php echo $data['bulan_spk']; ?></td>
+                                            <td class="td-master_ppk_nama_ppk"> <?php echo $data['master_ppk_nama_ppk']; ?></td>
+                                            <td class="td-master_petugas_nama_petugas" style="padding:2px 6px;font-size:13px;white-space:nowrap;"> <?php echo $data['master_petugas_nama_petugas']; ?></td>
+                                            <td class="td-master_petugas_alamat" style="padding:2px 6px;font-size:13px;white-space:nowrap;"> <?php echo $data['master_petugas_alamat']; ?></td>
+                                            <td class="td-master_petugas_kecamatan" style="padding:2px 6px;font-size:13px;white-space:nowrap;"> <?php echo $data['master_petugas_kecamatan']; ?></td>
+                                            <td class="td-honor_pelatihan">
+                                                <span <?php if($can_edit){ ?> data-value="<?php echo $data['honor_pelatihan']; ?>" 
+                                                    data-pk="<?php echo $data['id'] ?>" 
+                                                    data-url="<?php print_link("spk/editfield/" . urlencode($data['id'])); ?>" 
+                                                    data-name="honor_pelatihan" 
+                                                    data-title="Denda" 
+                                                    class="is-editable" <?php } ?>>
+                                                    <?php echo $data['honor_pelatihan']; ?> 
+                                                </span>
+                                            </td>
+                                            <td class="td-Print_Lampiran">
+                                                <a href="<?php print_link("spk/view2/$rec_id") ?>" title="Print Lampiran">
+                                                    📑 Lampiran
+                                                </a>
+                                            </td>
 
-                                                    // HANYA TAMPILKAN KONTEN JIKA USER BUKAN TU/ADMIN
-                                                    // (TU/Admin hanya akan melihat kolom kosong agar tampilan rapi)
-                                                    if (!$is_tu_admin) {
-                                                        if ($user_role == 'mitra') {
-                                                            if (empty($file_pdf)) { ?>
-                                                                <form method="post" action="<?php print_link('spk/upload_pdf/' . $data['id']); ?>" enctype="multipart/form-data" style="display:inline;">
-                                                                    <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
-                                                                    <label style="margin:0;cursor:pointer;">
-                                                                        <input type="file" name="pdf_file" accept="application/pdf" required style="display:none;" onchange="this.form.submit()">
-                                                                        <span class="btn btn-link p-0 m-0" title="Upload PDF"><i class="fa fa-upload" style="font-size:18px;"></i></span>
-                                                                    </label>
-                                                                </form>
-                                                            <?php } else { ?>
-                                                                <a href="<?php print_link($file_pdf); ?>" target="_blank" class="btn btn-link p-0 m-0" title="Lihat PDF">
-                                                                    <i class="fa fa-file-pdf-o text-danger" style="font-size:18px;"></i>
-                                                                </a>
-                                                                <?php if ($status_pdf == 'disetujui') { ?>
-                                                                    <span class="badge badge-success ml-1">ttd</span>
-                                                                <?php } ?>
-                                                            <?php }
-                                                        } else if (!empty($file_pdf)) { ?>
-                                                            <a href="<?php print_link($file_pdf); ?>" target="_blank" class="btn btn-link p-0 m-0" title="Lihat PDF">
-                                                                <i class="fa fa-file-pdf-o text-danger" style="font-size:18px;"></i>
+                                            <td class="td-approve_mitra" style="text-align:center;vertical-align:middle;">
+                                                <?php 
+                                                if(in_array($user_role, ['tu', 'administrator', 'admin'])) {
+                                                    if($status_pdf == '' || $status_pdf == 'pending') { ?>
+                                                        <form method="post" action="<?php print_link('spk/approve_pdf/' . $data['id']); ?>" style="display:inline;">
+                                                            <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
+                                                            <button type="submit" name="aksi" value="setujui" class="btn btn-xs btn-success py-0 px-1" style="font-size: 10px;">
+                                                                <i class="fa fa-check"></i>
+                                                            </button>   
+                                                            <button type="submit" name="aksi" value="tolak" class="btn btn-xs btn-danger py-0 px-1" style="font-size: 10px;">
+                                                                <i class="fa fa-times"></i>
+                                                            </button>                                                         
+                                                        </form>
+                                                    <?php } elseif($status_pdf == 'disetujui') { ?>
+                                                        <span class="badge badge-success">Selesai</span>
+                                                    <?php } elseif($status_pdf == 'ditolak') { ?>
+                                                        <span class="badge badge-danger">Ditolak</span>
+                                                    <?php }
+                                                } else if($user_role == 'mitra') {
+                                                    $status_mitra = (isset($data['status_mitra']) ? $data['status_mitra'] : 'pending');
+                                                    if($status_mitra == 'pending' || empty($status_mitra)) { ?>
+                                                        <form method="post" action="<?php print_link('spk/approve_mitra/' . $data['id']); ?>" style="display:inline;">
+                                                            <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
+                                                            <button type="submit" class="btn btn-xs btn-primary">
+                                                                <i class="fa fa-check"></i> Setujui
+                                                            </button>
+                                                        </form>
+                                                    <?php } else { ?>
+                                                        <span class="badge badge-success"><i class="fa fa-check"></i></span>
+                                                    <?php }
+                                                } ?>
+                                            </td>
+
+                                            <?php if(!$is_tu_admin) { ?>
+                                            <td class="td-upload-pdf" style="text-align:center;vertical-align:middle;">
+                                                <?php 
+                                                $file_pdf = !empty($data['file_pdf_mitra']) ? $data['file_pdf_mitra'] : '';
+                                                if ($user_role == 'mitra') { ?>
+                                                    <form method="post" action="<?php print_link('spk/upload_pdf/' . $data['id']); ?>" enctype="multipart/form-data" style="display:inline;">
+                                                        <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
+                                                        <input type="file" id="pdf_file_<?php echo $data['id']; ?>" name="pdf_file" accept="application/pdf" required style="display:none;" onchange="this.form.submit()">
+                                                        <?php if(!empty($file_pdf)) { ?>
+                                                            <label for="pdf_file_<?php echo $data['id']; ?>" style="margin:0;cursor:pointer;display:inline-block;" title="Hold/Klik untuk mengganti file">
+                                                                <span class="badge badge-success" style="padding:8px 12px;font-size:12px;">
+                                                                    <i class="fa fa-check"></i> Sudah Diunggah
+                                                                </span>
+                                                            </label>
+                                                        <?php } else { ?>
+                                                            <label for="pdf_file_<?php echo $data['id']; ?>" style="margin:0;cursor:pointer;">
+                                                                <button type="button" class="btn btn-xs btn-primary" style="cursor:pointer;" onclick="document.getElementById('pdf_file_<?php echo $data['id']; ?>').click(); return false;">
+                                                                    <i class="fa fa-upload"></i> Upload PDF
+                                                                </button>
+                                                            </label>
+                                                        <?php } ?>
+                                                    </form>
+                                                <?php } ?>
+                                            </td>
+                                            <?php } ?>
+
+                                            <td class="text-right">
+                                            <?php if(strtolower(USER_ROLE) == 'mitra') { ?>
+                                                <a class="btn btn-sm btn-primary-outline" href="<?php print_link("spk/view/$rec_id"); ?>" title="Lihat / Print SPK">
+                                                    <i class="fa fa-eye"></i> Lihat
+                                                </a>
+                                            <?php } else { ?>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-xs btn-light border dropdown-toggle" data-toggle="dropdown">
+                                                    </button>
+                                                    <div class="dropdown-menu dropdown-menu-right">
+                                                        <a class="dropdown-item small" href="<?php print_link("spk/view/$rec_id"); ?>">
+                                                            <i class="fa fa-eye"></i> Lihat / Print SPK
+                                                        </a>
+                                                        <?php if($can_delete){ ?>
+                                                            <a class="dropdown-item small text-danger record-delete-btn" href="<?php print_link("spk/delete/$rec_id/?csrf_token=$csrf_token"); ?>">
+                                                                <i class="fa fa-times"></i> Hapus
                                                             </a>
-                                                            <?php if ($status_pdf == 'disetujui') { ?>
-                                                                <span class="badge badge-success ml-1">ttd</span>
-                                                            <?php } ?>
-                                                        <?php }
-                                                    } else {
-                                                        // Jika user adalah Admin/TU, tampilkan strip atau biarkan kosong agar bersih
-                                                        echo '<span class="text-muted small">-</span>';
-                                                    } ?>
-                                                </td>
-                                                <td class="text-right">
-                                                    <div class="dropdown">
-                                                        <button class="btn btn-xs btn-light border dropdown-toggle" data-toggle="dropdown">
-                                                            <i class="fa fa-cog"></i>
-                                                        </button>
-                                                        <div class="dropdown-menu dropdown-menu-right">
-                                                            <a class="dropdown-item small" href="<?php print_link("spk/view/$rec_id"); ?>">
-                                                                <i class="fa fa-eye"></i> Lihat
-                                                            </a>
-                                                            <?php 
-                                                            $user_role = strtolower(USER_ROLE);
-                                                            // Tampilkan tombol approve/reject hanya untuk admin/TU
-                                                            if(in_array($user_role, ['tu','administrator','admin'])) {
-                                                                $status_pdf = isset($data['status_pegawai']) ? strtolower($data['status_pegawai']) : '';
-                                                                if($status_pdf == '' || $status_pdf == 'pending') { ?>
-                                                                    <form method="post" action="<?php print_link('spk/approve_pdf/' . $data['id']); ?>" style="display:inline;">
-                                                                        <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
-                                                                        <button type="submit" name="aksi" value="setujui" class="dropdown-item text-success"><i class="fa fa-check"></i> Setujui</button>
-                                                                        <button type="submit" name="aksi" value="tolak" class="dropdown-item text-danger"><i class="fa fa-times"></i> Tolak</button>
-                                                                    </form>
-                                                                <?php } elseif($status_pdf == 'disetujui') { ?>
-                                                                    <span class="dropdown-item text-success"><i class="fa fa-check"></i> Disetujui</span>
-                                                                <?php } elseif($status_pdf == 'ditolak') { ?>
-                                                                    <span class="dropdown-item text-danger"><i class="fa fa-times"></i> Ditolak</span>
-                                                                <?php }
-                                                            }
-                                                            ?>
-                                                                <i class="fa fa-print"></i> Print SPK
-                                                            </a>
-                                                            <?php if($can_delete){ ?>
-                                                                <a class="dropdown-item small text-danger record-delete-btn" href="<?php print_link("spk/delete/$rec_id/?csrf_token=$csrf_token"); ?>">
-                                                                    <i class="fa fa-times"></i> Hapus
-                                                                </a>
-                                                            <?php } ?>
-                                                        </div>
+                                                        <?php } ?>
                                                     </div>
-                                                </td>
-                                            </tr>
-                                            <?php 
-                                            }
-                                            ?>
-                                            <!--endrecord-->
-                                        </tbody>
-                                        <tbody class="search-data" id="search-data-<?php echo $page_element_id; ?>"></tbody>
-                                        <?php
-                                        }
-                                        ?>
-                                    </table>
+                                                </div>
+                                            <?php } ?>
+                                        </td>
+                                        </tr>
+                                        <?php } ?>
+                                    </tbody>
+                                    <?php } ?>
+                                </table>
                                     <?php 
                                     if(empty($records)){
                                     ?>

@@ -73,7 +73,12 @@ class Html
 				<?php
 				foreach ($arrMenu as $menuobj) {
 					$path = $menuobj['path'];
-					if (ACL::is_allowed($path)) {
+					// Check if menu item requires specific role
+					$role_allowed = true;
+					if (!empty($menuobj['role_required']) && strtolower($menuobj['role_required']) != strtolower(ACL::$user_role)) {
+						$role_allowed = false;
+					}
+					if (ACL::is_allowed($path) && $role_allowed) {
 						$active_class = null;
 						$menu_url = parse_url($path, PHP_URL_PATH);
 						if ($page_name == $menu_url || urldecode($page_url) == $menu_url) {
@@ -146,7 +151,12 @@ class Html
 				<?php
 				foreach ($arrMenu as $key => $menuobj) {
 					$path = $menuobj['path'];
-					if (ACL::is_allowed($path)) {
+					// Check if menu item requires specific role
+					$role_allowed = true;
+					if (!empty($menuobj['role_required']) && strtolower($menuobj['role_required']) != strtolower(ACL::$user_role)) {
+						$role_allowed = false;
+					}
+					if (ACL::is_allowed($path) && $role_allowed) {
 						$active_class = null;
 						$menu_url = parse_url($path, PHP_URL_PATH);
 						if ($page_url == $menu_url) {

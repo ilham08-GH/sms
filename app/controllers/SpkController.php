@@ -62,6 +62,7 @@ class SpkController extends SecureController{
 			"spk.tgl_selesai_spk", 
 			"spk.bulan_spk", 
 			"spk.status_mitra", 
+			"spk.status_pegawai",
 			"spk.file_pdf_mitra",
 			"master_ppk.nama_ppk AS master_ppk_nama_ppk", 
 			"master_petugas.nama_petugas AS master_petugas_nama_petugas", 
@@ -163,6 +164,7 @@ class SpkController extends SecureController{
 			"spk.id_ppk", 
 			"spk.id_petugas_spk", 
 			"spk.status_mitra",
+			"spk.status_pegawai",
 			"master_ppk.id AS master_ppk_id", 
 			"master_ppk.nama_ppk AS master_ppk_nama_ppk", 
 			"master_ppk.nip_ppk AS master_ppk_nip_ppk", 
@@ -679,10 +681,20 @@ $record['tgl_selesai_spk'] = format_date($record['tgl_selesai_spk'],'d M Y');
 			mkdir($upload_dir, 0777, true);
 		}
 
+		// Ambil file lama dari database untuk dihapus
+		$db->where('id', $rec_id);
+		$old_record = $db->getOne($tablename);
+		$old_file = !empty($old_record['file_pdf_mitra']) ? $old_record['file_pdf_mitra'] : '';
+
 		$filename = 'spk_mitra_' . $rec_id . '_' . time() . '.pdf';
 		$target_path = $upload_dir . $filename;
 
 		if (move_uploaded_file($file['tmp_name'], $target_path)) {
+			// Hapus file lama jika ada
+			if (!empty($old_file) && file_exists($old_file)) {
+				unlink($old_file);
+			}
+
 			// Simpan path file ke kolom 'file_pdf_mitra' di database
 			$db->where('id', $rec_id);
 			$db->update($tablename, ['file_pdf_mitra' => $target_path]);

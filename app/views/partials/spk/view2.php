@@ -155,9 +155,21 @@ $show_export_btn = $this->show_export_btn;
                             @page {
                                 size: A4 landscape;
                                 margin-top: 8mm;
-                                margin-bottom: 8mm;
+                                margin-bottom: 20mm;
                                 margin-left: 8mm;
                                 margin-right: 8mm;
+                            }
+                            
+                            /* Footer di setiap halaman */
+                            @page {
+                                @bottom-center {
+                                    content: "Dokumen ini telah ditandatangani secara elektronik melalui Sistem Manajemen Honor BPS Kabupaten Gresik (SIMASNOR)";
+                                    font-size: 10pt;
+                                    color: #666;
+                                    border-top: 1px solid #ccc;
+                                    padding-top: 10px;
+                                    text-align: center;
+                                }
                             }
 
                             
@@ -234,6 +246,36 @@ $show_export_btn = $this->show_export_btn;
                             }
                             .letter-list li {
                                 margin-bottom: 3px;
+                            }
+                            
+                            /* Fallback: Footer dengan position fixed untuk print setiap halaman */
+                            @media print {
+                                .spk-document-footer {
+                                    position: fixed;
+                                    bottom: 10mm;
+                                    left: 8mm;
+                                    right: 8mm;
+                                    text-align: center;
+                                    font-size: 10pt;
+                                    color: #333;
+                                    border-top: 1px solid #999;
+                                    padding-top: 10px;
+                                    background: white;
+                                    page-break-inside: avoid;
+                                }
+                            }
+                            
+                            /* Footer untuk DOMPDF PDF Export */
+                            .spk-document-footer {
+                                margin-top: 40px;
+                                text-align: center;
+                                font-size: 10pt;
+                                color: #333;
+                                border-top: 1px solid #999;
+                                padding-top: 10px;
+                                page-break-inside: avoid;
+                                display: block !important;
+                                opacity: 1 !important;
                             }
 
                     
@@ -442,7 +484,6 @@ ob_start(function($buffer){
 
 <?php ob_end_flush(); ?>
 
-
                             
                             
                             
@@ -450,6 +491,12 @@ ob_start(function($buffer){
                             
                         </div>    
                         </div>
+                        
+                        <!-- Footer untuk Print Dokumen -->
+                        <div class="spk-document-footer" style="margin-top: 40px; text-align: center; font-size: 10pt; color: #333; border-top: 1px solid #999; padding-top: 10px; page-break-inside: avoid; display: block !important; opacity: 1 !important;">
+                            Dokumen ini telah ditandatangani secara elektronik melalui Sistem Manajemen Honor BPS Kabupaten Gresik (SIMASNOR)
+                        </div>
+                        
                         <div class="p-3 d-flex">
                             <div class="dropup export-btn-holder mx-1">
                                 <button class="btn btn-sm btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

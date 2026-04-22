@@ -197,6 +197,7 @@ class Menu{
 			'path'    => 'spk',
 			'label'   => 'Menu Mitra',
 			'icon'    => '<i class="fa fa-handshake-o"></i>',
+			'role_required' => 'mitra',
 			'submenu' => array(
 				array('path' => 'spk',  'label' => 'SPK',  'icon' => '<i class="fa fa-newspaper-o"></i>'),
 				array('path' => 'bast', 'label' => 'BAST', 'icon' => '<i class="fa fa-tags"></i>'),

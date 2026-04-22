@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Apr 20, 2026 at 01:13 AM
+-- Generation Time: Apr 22, 2026 at 04:30 AM
 -- Server version: 8.4.3
 -- PHP Version: 7.3.33
 
@@ -39,486 +39,487 @@ CREATE TABLE `bast` (
   `rincian_output_bast` int NOT NULL,
   `status_ttd_mitra` enum('pending','disetujui') COLLATE utf8mb4_general_ci DEFAULT 'pending',
   `status_ttd_pegawai` enum('pending','disetujui','ditolak') COLLATE utf8mb4_general_ci DEFAULT 'pending',
-  `waktu_ttd_selesai` datetime DEFAULT NULL
+  `waktu_ttd_selesai` datetime DEFAULT NULL,
+  `file_pdf_bast` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `bast`
 --
 
-INSERT INTO `bast` (`id`, `nomor_bast`, `id_petugas_bast`, `tgl_bast`, `create_by`, `create_at`, `bulan_bast`, `id_ppk_bast`, `rincian_output_bast`, `status_ttd_mitra`, `status_ttd_pegawai`, `waktu_ttd_selesai`) VALUES
-(46, 'B-001/BAST/PL.714/01/2026', 30, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:19:56', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(47, 'B-002/BAST/PL.714/01/2026', 13, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:20:48', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(48, 'B-003/BAST/PL.714/01/2026', 93, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:21:38', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(49, 'B-004/BAST/PL.714/01/2026', 44, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:22:47', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(50, 'B-005/BAST/PL.714/01/2026', 86, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:23:36', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(51, 'B-006/BAST/PL.714/01/2026', 70, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:24:13', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(52, 'B-007/BAST/PL.714/01/2026', 56, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:24:43', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(53, 'B-008/BAST/PL.714/01/2026', 43, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:26:38', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(54, 'B-009/BAST/PL.714/01/2026', 47, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:27:07', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(55, 'B-010/BAST/PL.714/01/2026', 103, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:28:58', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(56, 'B-011/BAST/PL.714/01/2026', 206, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:29:47', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(57, 'B-012/BAST/PL.714/01/2026', 177, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:30:19', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(58, 'B-013/BAST/PL.714/01/2026', 193, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:30:56', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(59, 'B-014/BAST/PL.714/01/2026', 178, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:18:14', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(60, 'B-015/BAST/PL.714/01/2026', 145, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:19:05', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(61, 'B-016/BAST/PL.714/01/2026', 153, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:19:36', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(62, 'B-017/BAST/PL.714/01/2026', 167, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:20:10', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(63, 'B-018/BAST/PL.714/01/2026', 212, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:21:25', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(64, 'B-019/BAST/PL.714/01/2026', 232, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:21:57', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(65, 'B-020/BAST/PL.714/01/2026', 254, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:22:26', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(66, 'B-021/BAST/PL.714/01/2026', 252, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:23:08', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(67, 'B-022/BAST/PL.714/01/2026', 266, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:28:30', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(68, 'B-023/BAST/PL.714/01/2026', 300, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:29:04', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(69, 'B-024/BAST/PL.714/01/2026', 303, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:29:39', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(70, 'B-025/BAST/PL.714/01/2026', 311, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:30:14', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(71, 'B-026/BAST/PL.714/01/2026', 313, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:30:44', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(72, 'B-027/BAST/PL.714/01/2026', 330, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:31:13', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(73, 'B-028/BAST/PL.714/01/2026', 315, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:31:44', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(74, 'B-029/BAST/PL.714/01/2026', 390, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:33:22', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(75, 'B-030/BAST/PL.714/01/2026', 388, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:33:48', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(76, 'B-031/BAST/PL.714/01/2026', 372, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:34:12', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(77, 'B-032/BAST/PL.714/01/2026', 376, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:34:46', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(78, 'B-033/BAST/PL.714/01/2026', 358, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:36:31', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(79, 'B-034/BAST/PL.714/01/2026', 344, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:37:32', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(80, 'B-035/BAST/PL.714/01/2026', 426, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:38:15', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(81, 'B-036/BAST/PL.714/01/2026', 427, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:38:48', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(82, 'B-037/BAST/PL.714/01/2026', 443, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:39:13', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(83, 'B-038/BAST/PL.714/01/2026', 486, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:39:44', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(84, 'B-039/BAST/PL.714/01/2026', 436, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:40:13', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(85, 'B-040/BAST/PL.714/01/2026', 476, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:40:41', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(86, 'B-041/BAST/PL.714/01/2026', 469, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:41:23', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(87, 'B-042/BAST/PL.714/01/2026', 507, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:43:14', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(88, 'B-043/BAST/PL.714/01/2026', 508, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:43:41', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(89, 'B-044/BAST/PL.714/01/2026', 539, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:44:15', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(90, 'B-045/BAST/PL.714/01/2026', 534, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:44:43', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(91, 'B-046/BAST/PL.714/01/2026', 575, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:45:11', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(92, 'B-047/BAST/PL.714/01/2026', 566, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:45:39', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(93, 'B-048/BAST/PL.714/01/2026', 629, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:46:09', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(94, 'B-049/BAST/PL.714/01/2026', 633, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:46:36', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(95, 'B-050/BAST/PL.714/01/2026', 651, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:47:03', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(96, 'B-051/BAST/PL.714/01/2026', 688, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:47:41', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(97, 'B-052/BAST/PL.714/01/2026', 689, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:48:10', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(98, 'B-053/BAST/PL.714/01/2026', 723, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:48:38', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(99, 'B-054/BAST/PL.714/01/2026', 733, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:49:06', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(100, 'B-055/BAST/PL.714/01/2026', 721, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:49:33', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(101, 'B-056/BAST/PL.714/01/2026', 51, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 07:30:25', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(102, 'B-057/BAST/PL.714/01/2026', 144, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 07:31:30', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(103, 'B-058/BAST/PL.714/01/2026', 375, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 07:31:52', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(104, 'B-059/BAST/PL.714/01/2026', 66, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 04:57:23', 'JANUARI 2026', 1, 4, 'pending', 'pending', NULL),
-(105, 'B-060/BAST/PL.714/01/2026', 166, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 04:58:12', 'JANUARI 2026', 1, 4, 'pending', 'pending', NULL),
-(106, 'B-061/BAST/PL.714/01/2026', 570, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 04:58:53', 'JANUARI 2026', 1, 4, 'pending', 'pending', NULL),
-(107, 'B-062/BAST/PL.714/01/2026', 390, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:00:59', 'JANUARI 2026', 1, 4, 'pending', 'pending', NULL),
-(108, 'B-063/BAST/PL.714/01/2026', 376, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:01:57', 'JANUARI 2026', 1, 4, 'pending', 'pending', NULL),
-(109, 'B-064/BAST/PL.714/01/2026', 445, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:02:52', 'JANUARI 2026', 1, 4, 'pending', 'pending', NULL),
-(110, 'B-065/BAST/PL.714/01/2026', 22, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:07:34', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(111, 'B-066/BAST/PL.714/01/2026', 86, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:08:16', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(112, 'B-067/BAST/PL.714/01/2026', 101, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:08:59', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(113, 'B-068/BAST/PL.714/01/2026', 218, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:09:39', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(114, 'B-069/BAST/PL.714/01/2026', 299, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:10:58', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(115, 'B-070/BAST/PL.714/01/2026', 339, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:12:15', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(116, 'B-071/BAST/PL.714/01/2026', 394, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:12:45', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(117, 'B-072/BAST/PL.714/01/2026', 434, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:13:39', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(118, 'B-073/BAST/PL.714/01/2026', 466, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:14:16', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(119, 'B-074/BAST/PL.714/01/2026', 633, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:14:49', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(120, 'B-075/BAST/PL.714/01/2026', 733, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:15:25', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(122, 'B-077/BAST/PL.714/01/2026', 22, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:27:40', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(123, 'B-078/BAST/PL.714/01/2026', 20, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:28:07', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(124, 'B-079/BAST/PL.714/01/2026', 20, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:28:39', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(125, 'B-076/BAST/PL.714/01/2026', 20, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:29:53', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(126, 'B-080/BAST/PL.714/01/2026', 20, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:32:37', 'JANUARI 2026', 1, 18, 'pending', 'pending', NULL),
-(127, 'B-081/BAST/PL.714/01/2026', 20, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:33:35', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(128, 'B-082/BAST/PL.714/01/2026', 24, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:35:18', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(129, 'B-083/BAST/PL.714/01/2026', 15, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:35:39', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(130, 'B-084/BAST/PL.714/01/2026', 38, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:35:59', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(131, 'B-085/BAST/PL.714/01/2026', 69, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:36:31', 'JANUARI 2026', 1, 18, 'pending', 'pending', NULL),
-(132, 'B-086/BAST/PL.714/01/2026', 69, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:36:56', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(133, 'B-087/BAST/PL.714/01/2026', 34, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:37:28', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(134, 'B-088/BAST/PL.714/01/2026', 95, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:37:48', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(135, 'B-089/BAST/PL.714/01/2026', 66, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:38:09', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(136, 'B-090/BAST/PL.714/01/2026', 66, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:39:31', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(137, 'B-091/BAST/PL.714/01/2026', 95, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:39:52', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(138, 'B-092/BAST/PL.714/01/2026', 95, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:40:17', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(139, 'B-093/BAST/PL.714/01/2026', 120, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:41:09', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(140, 'B-094/BAST/PL.714/01/2026', 116, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:42:19', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(141, 'B-095/BAST/PL.714/01/2026', 116, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:42:39', 'JANUARI 2026', 1, 18, 'pending', 'pending', NULL),
-(142, 'B-096/BAST/PL.714/01/2026', 116, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:43:37', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(143, 'B-097/BAST/PL.714/01/2026', 165, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:44:30', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(144, 'B-098/BAST/PL.714/01/2026', 176, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 04:42:19', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(145, 'B-099/BAST/PL.714/01/2026', 144, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 04:44:35', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(146, 'B-100/BAST/PL.714/01/2026', 178, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 04:46:02', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(147, 'B-101/BAST/PL.714/01/2026', 206, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 04:47:13', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(148, 'B-102/BAST/PL.714/01/2026', 167, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 04:49:06', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(149, 'B-103/BAST/PL.714/01/2026', 196, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 04:50:36', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(150, 'B-104/BAST/PL.714/01/2026', 122, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 04:51:38', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(151, 'B-105/BAST/PL.714/01/2026', 179, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 04:52:38', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(152, 'B-106/BAST/PL.714/01/2026', 218, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:01:48', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(153, 'B-107/BAST/PL.714/01/2026', 218, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:03:29', 'JANUARI 2026', 1, 15, 'pending', 'pending', NULL),
-(154, 'B-108/BAST/PL.714/01/2026', 218, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:04:55', 'JANUARI 2026', 1, 18, 'pending', 'pending', NULL),
-(155, 'B-109/BAST/PL.714/01/2026', 218, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:08:00', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(156, 'B-110/BAST/PL.714/01/2026', 218, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:09:21', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(157, 'B-111/BAST/PL.714/01/2026', 235, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:11:54', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(158, 'B-112/BAST/PL.714/01/2026', 237, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:12:51', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(159, 'B-113/BAST/PL.714/01/2026', 231, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:13:54', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(160, 'B-114/BAST/PL.714/01/2026', 225, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:14:52', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(161, 'B-115/BAST/PL.714/01/2026', 258, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:22:30', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(162, 'B-116/BAST/PL.714/01/2026', 257, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:24:07', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(163, 'B-117/BAST/PL.714/01/2026', 257, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:24:53', 'JANUARI 2026', 1, 18, 'pending', 'pending', NULL),
-(164, 'B-118/BAST/PL.714/01/2026', 262, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:26:00', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(165, 'B-119/BAST/PL.714/01/2026', 256, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:26:57', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(166, 'B-120/BAST/PL.714/01/2026', 264, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:27:47', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(167, 'B-121/BAST/PL.714/01/2026', 299, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:32:25', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(168, 'B-122/BAST/PL.714/01/2026', 311, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:33:38', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(169, 'B-123/BAST/PL.714/01/2026', 297, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:34:47', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(170, 'B-124/BAST/PL.714/01/2026', 297, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:35:22', 'JANUARI 2026', 1, 18, 'pending', 'pending', NULL),
-(171, 'B-125/BAST/PL.714/01/2026', 310, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:36:03', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(172, 'B-126/BAST/PL.714/01/2026', 331, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:41:08', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(173, 'B-127/BAST/PL.714/01/2026', 331, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:42:04', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(174, 'B-128/BAST/PL.714/01/2026', 323, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:43:06', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(175, 'B-129/BAST/PL.714/01/2026', 390, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:51:28', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(176, 'B-130/BAST/PL.714/01/2026', 390, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:52:05', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(177, 'B-131/BAST/PL.714/01/2026', 376, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:53:21', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(178, 'B-132/BAST/PL.714/01/2026', 376, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:54:01', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(179, 'B-133/BAST/PL.714/01/2026', 363, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:55:20', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(180, 'B-134/BAST/PL.714/01/2026', 350, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:56:26', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(181, 'B-135/BAST/PL.714/01/2026', 350, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:57:06', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(182, 'B-136/BAST/PL.714/01/2026', 345, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:58:04', 'JANUARI 2026', 1, 14, 'pending', 'pending', NULL),
-(183, 'B-137/BAST/PL.714/01/2026', 345, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:58:40', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(184, 'B-138/BAST/PL.714/01/2026', 345, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:59:11', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(185, 'B-139/BAST/PL.714/01/2026', 375, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:00:18', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(186, 'B-140/BAST/PL.714/01/2026', 375, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:00:46', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(187, 'B-141/BAST/PL.714/01/2026', 358, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:01:40', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(188, 'B-142/BAST/PL.714/01/2026', 343, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:03:16', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(189, 'B-143/BAST/PL.714/01/2026', 429, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:09:28', 'JANUARI 2026', 1, 15, 'pending', 'pending', NULL),
-(190, 'B-144/BAST/PL.714/01/2026', 407, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:10:16', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(191, 'B-145/BAST/PL.714/01/2026', 407, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:10:45', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(192, 'B-146/BAST/PL.714/01/2026', 402, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:11:35', 'JANUARI 2026', 1, 14, 'pending', 'pending', NULL),
-(193, 'B-147/BAST/PL.714/01/2026', 402, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:12:04', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(194, 'B-148/BAST/PL.714/01/2026', 445, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:20:15', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(195, 'B-149/BAST/PL.714/01/2026', 434, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:21:07', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(196, 'B-150/BAST/PL.714/01/2026', 441, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:21:59', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(197, 'B-151/BAST/PL.714/01/2026', 486, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:22:55', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(198, 'B-152/BAST/PL.714/01/2026', 463, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:23:51', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(199, 'B-153/BAST/PL.714/01/2026', 463, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:24:49', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(200, 'B-154/BAST/PL.714/01/2026', 461, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:25:46', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(201, 'B-155/BAST/PL.714/01/2026', 467, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:26:52', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(202, 'B-156/BAST/PL.714/01/2026', 508, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:35:40', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(203, 'B-157/BAST/PL.714/01/2026', 521, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:36:40', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(204, 'B-158/BAST/PL.714/01/2026', 521, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:37:33', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(205, 'B-159/BAST/PL.714/01/2026', 543, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:37:32', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(206, 'B-160/BAST/PL.714/01/2026', 543, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:38:15', 'JANUARI 2026', 1, 18, 'pending', 'pending', NULL),
-(207, 'B-161/BAST/PL.714/01/2026', 533, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:39:38', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(208, 'B-162/BAST/PL.714/01/2026', 541, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:40:40', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(209, 'B-163/BAST/PL.714/01/2026', 570, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:45:34', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(210, 'B-164/BAST/PL.714/01/2026', 570, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:46:26', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(211, 'B-165/BAST/PL.714/01/2026', 570, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:47:02', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(212, 'B-166/BAST/PL.714/01/2026', 562, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:48:42', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(213, 'B-167/BAST/PL.714/01/2026', 618, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:53:29', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(214, 'B-168/BAST/PL.714/01/2026', 622, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:54:57', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(215, 'B-169/BAST/PL.714/01/2026', 610, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:56:20', 'JANUARI 2026', 1, 14, 'pending', 'pending', NULL),
-(216, 'B-170/BAST/PL.714/01/2026', 620, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:57:27', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(217, 'B-171/BAST/PL.714/01/2026', 620, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:58:07', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(218, 'B-172/BAST/PL.714/01/2026', 656, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:01:36', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(219, 'B-173/BAST/PL.714/01/2026', 656, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:02:16', 'JANUARI 2026', 1, 15, 'pending', 'pending', NULL),
-(220, 'B-174/BAST/PL.714/01/2026', 656, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:02:59', 'JANUARI 2026', 1, 18, 'pending', 'pending', NULL),
-(221, 'B-175/BAST/PL.714/01/2026', 656, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:04:33', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(222, 'B-176/BAST/PL.714/01/2026', 656, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:06:12', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(223, 'B-177/BAST/PL.714/01/2026', 694, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:12:46', 'JANUARI 2026', 1, 15, 'pending', 'pending', NULL),
-(224, 'B-178/BAST/PL.714/01/2026', 694, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:13:13', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(225, 'B-179/BAST/PL.714/01/2026', 684, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:14:15', 'JANUARI 2026', 1, 14, 'pending', 'pending', NULL),
-(226, 'B-180/BAST/PL.714/01/2026', 723, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:17:02', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(227, 'B-181/BAST/PL.714/01/2026', 723, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:18:08', 'JANUARI 2026', 1, 15, 'pending', 'pending', NULL),
-(228, 'B-182/BAST/PL.714/01/2026', 723, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:19:05', 'JANUARI 2026', 1, 18, 'pending', 'pending', NULL),
-(229, 'B-183/BAST/PL.714/01/2026', 733, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:27:40', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(230, 'B-184/BAST/PL.714/01/2026', 317, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:53:44', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(231, 'B-185/BAST/PL.714/01/2026', 385, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:54:47', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(232, 'B-186/BAST/PL.714/01/2026', 389, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:55:19', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(233, 'B-187/BAST/PL.714/01/2026', 413, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:56:38', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(234, 'B-188/BAST/PL.714/01/2026', 408, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:57:14', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(235, 'B-189/BAST/PL.714/01/2026', 475, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:58:40', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(236, 'B-190/BAST/PL.714/01/2026', 439, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:59:15', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(237, 'B-191/BAST/PL.714/01/2026', 477, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 06:00:25', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(238, 'B-192/BAST/PL.714/01/2026', 218, '2026-02-02', 'Nailiatul Maghfirowati', '2026-02-12 08:18:22', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(239, 'B-193/BAST/PL.714/02/2026', 22, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-24 07:25:01', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(240, 'B-194/BAST/PL.714/02/2026', 86, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-24 07:29:11', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(241, 'B-195/BAST/PL.714/02/2026', 101, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 01:50:40', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(242, 'B-196/BAST/PL.714/02/2026', 299, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 01:51:31', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(243, 'B-197/BAST/PL.714/02/2026', 339, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 01:52:04', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(244, 'B-198/BAST/PL.714/02/2026', 394, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 01:52:26', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(245, 'B-199/BAST/PL.714/02/2026', 466, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 01:53:49', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(246, 'B-200/BAST/PL.714/02/2026', 434, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 01:54:41', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(247, 'B-201/BAST/PL.714/02/2026', 633, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 01:56:16', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(248, 'B-202/BAST/PL.714/02/2026', 733, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 01:59:30', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL),
-(249, 'B-203/BAST/PL.714/02/2026', 13, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:09:43', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(250, 'B-204/BAST/PL.714/02/2026', 30, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:10:08', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(251, 'B-205/BAST/PL.714/02/2026', 44, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:10:47', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(252, 'B-206/BAST/PL.714/02/2026', 43, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:11:13', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(253, 'B-207/BAST/PL.714/02/2026', 70, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:11:43', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(254, 'B-208/BAST/PL.714/02/2026', 47, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:12:18', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(255, 'B-209/BAST/PL.714/02/2026', 93, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:12:43', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(256, 'B-210/BAST/PL.714/02/2026', 56, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:13:03', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(257, 'B-211/BAST/PL.714/02/2026', 86, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:13:20', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(258, 'B-212/BAST/PL.714/02/2026', 51, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:13:43', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(259, 'B-213/BAST/PL.714/02/2026', 103, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:15:01', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(260, 'B-214/BAST/PL.714/02/2026', 153, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:15:33', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(261, 'B-215/BAST/PL.714/02/2026', 193, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:16:02', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(262, 'B-216/BAST/PL.714/02/2026', 206, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:22:40', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(263, 'B-217/BAST/PL.714/02/2026', 178, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:23:03', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(264, 'B-218/BAST/PL.714/02/2026', 167, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:23:24', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(265, 'B-219/BAST/PL.714/02/2026', 145, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:23:46', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(266, 'B-220/BAST/PL.714/02/2026', 177, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:24:12', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(267, 'B-221/BAST/PL.714/02/2026', 144, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:24:40', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(268, 'B-222/BAST/PL.714/02/2026', 212, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:25:35', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(269, 'B-223/BAST/PL.714/02/2026', 232, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:32:39', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(270, 'B-224/BAST/PL.714/02/2026', 254, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:36:24', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(271, 'B-225/BAST/PL.714/02/2026', 266, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:39:33', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(272, 'B-226/BAST/PL.714/02/2026', 252, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:40:40', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(273, 'B-227/BAST/PL.714/02/2026', 311, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:41:44', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(274, 'B-228/BAST/PL.714/02/2026', 300, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:42:27', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(275, 'B-229/BAST/PL.714/02/2026', 303, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:43:07', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(276, 'B-230/BAST/PL.714/02/2026', 313, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:43:38', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(277, 'B-231/BAST/PL.714/02/2026', 330, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:44:24', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(278, 'B-232/BAST/PL.714/02/2026', 315, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:45:21', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(279, 'B-233/BAST/PL.714/02/2026', 389, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:46:07', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(280, 'B-234/BAST/PL.714/02/2026', 376, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:46:42', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(281, 'B-235/BAST/PL.714/02/2026', 390, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:47:16', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(282, 'B-236/BAST/PL.714/02/2026', 358, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:48:04', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(283, 'B-237/BAST/PL.714/02/2026', 344, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:48:26', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(284, 'B-238/BAST/PL.714/02/2026', 372, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:48:58', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(285, 'B-239/BAST/PL.714/02/2026', 375, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:49:27', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(286, 'B-240/BAST/PL.714/02/2026', 426, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:50:15', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(287, 'B-241/BAST/PL.714/02/2026', 427, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:50:57', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(288, 'B-242/BAST/PL.714/02/2026', 486, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:51:55', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(289, 'B-243/BAST/PL.714/02/2026', 477, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:52:36', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(290, 'B-244/BAST/PL.714/02/2026', 443, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:53:09', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(291, 'B-245/BAST/PL.714/02/2026', 476, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:53:37', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(292, 'B-246/BAST/PL.714/02/2026', 469, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:54:28', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(293, 'B-247/BAST/PL.714/02/2026', 436, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:54:59', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(294, 'B-248/BAST/PL.714/02/2026', 508, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:55:38', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(295, 'B-249/BAST/PL.714/02/2026', 507, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:56:06', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(296, 'B-250/BAST/PL.714/02/2026', 539, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:56:39', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(297, 'B-251/BAST/PL.714/02/2026', 534, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:57:02', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(298, 'B-252/BAST/PL.714/02/2026', 566, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:57:51', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(299, 'B-253/BAST/PL.714/02/2026', 575, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:58:22', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(300, 'B-254/BAST/PL.714/02/2026', 629, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:59:01', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(301, 'B-255/BAST/PL.714/02/2026', 633, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:59:32', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(302, 'B-256/BAST/PL.714/02/2026', 651, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 03:00:15', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(303, 'B-257/BAST/PL.714/02/2026', 689, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 03:00:42', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(304, 'B-258/BAST/PL.714/02/2026', 688, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 03:01:10', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(305, 'B-259/BAST/PL.714/02/2026', 723, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 03:01:31', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(306, 'B-260/BAST/PL.714/02/2026', 733, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 03:02:38', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(307, 'B-261/BAST/PL.714/02/2026', 721, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 03:03:03', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(308, 'B-262/BAST/PL.714/02/2026', 20, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:14:42', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(310, 'B-264/BAST/PL.714/02/2026', 330, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:20:10', 'FEBRUARI 2026', 1, 15, 'pending', 'pending', NULL),
-(311, 'B-265/BAST/PL.714/02/2026', 323, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:22:05', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(312, 'B-266/BAST/PL.714/02/2026', 331, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:23:03', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(313, 'B-267/BAST/PL.714/02/2026', 299, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:25:11', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(314, 'B-268/BAST/PL.714/02/2026', 311, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:26:22', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(315, 'B-269/BAST/PL.714/02/2026', 297, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:27:21', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(316, 'B-270/BAST/PL.714/02/2026', 165, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:31:56', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(318, 'B-272/BAST/PL.714/02/2026', 363, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:38:22', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(319, 'B-273/BAST/PL.714/02/2026', 257, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:45:05', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(320, 'B-274/BAST/PL.714/02/2026', 258, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:45:51', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(321, 'B-275/BAST/PL.714/02/2026', 262, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:57:55', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(322, 'B-276/BAST/PL.714/02/2026', 543, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:00:53', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(323, 'B-277/BAST/PL.714/02/2026', 543, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:01:24', 'FEBRUARI 2026', 1, 15, 'pending', 'pending', NULL),
-(324, 'B-278/BAST/PL.714/02/2026', 562, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:31:31', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(325, 'B-279/BAST/PL.714/02/2026', 570, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:32:53', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(326, 'B-280/BAST/PL.714/02/2026', 620, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:35:54', 'FEBRUARI 2026', 1, 15, 'pending', 'pending', NULL),
-(327, 'B-281/BAST/PL.714/02/2026', 622, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:37:21', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(328, 'B-282/BAST/PL.714/02/2026', 618, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:39:16', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(329, 'B-283/BAST/PL.714/02/2026', 429, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:40:34', 'FEBRUARI 2026', 1, 15, 'pending', 'pending', NULL),
-(330, 'B-284/BAST/PL.714/02/2026', 521, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:43:02', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(331, 'B-285/BAST/PL.714/02/2026', 656, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:44:27', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(332, 'B-286/BAST/PL.714/02/2026', 656, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:44:57', 'FEBRUARI 2026', 1, 15, 'pending', 'pending', NULL),
-(333, 'B-287/BAST/PL.714/02/2026', 38, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:55:46', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(334, 'B-288/BAST/PL.714/02/2026', 69, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:57:04', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(335, 'B-289/BAST/PL.714/02/2026', 34, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:57:55', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(336, 'B-290/BAST/PL.714/02/2026', 95, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:59:12', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(337, 'B-291/BAST/PL.714/02/2026', 120, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 03:01:21', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(338, 'B-292/BAST/PL.714/02/2026', 116, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 03:02:14', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(339, 'B-293/BAST/PL.714/02/2026', 388, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-02 01:29:38', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(340, 'B-294/BAST/PL.714/02/2026', 20, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-05 07:55:30', 'FEBRUARI 2026', 1, 18, 'pending', 'pending', NULL),
-(341, 'B-295/BAST/PL.714/02/2026', 22, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-05 07:56:17', 'FEBRUARI 2026', 1, 18, 'pending', 'pending', NULL),
-(342, 'B-296/BAST/PL.714/02/2026', 350, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-09 05:43:53', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(343, 'B-297/BAST/PL.714/02/2026', 541, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-10 07:09:08', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(344, 'B-298/BAST/PL.714/02/2026', 317, '2026-03-11', 'Nailiatul Maghfirowati', '2026-03-12 01:13:15', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(345, 'B-299/BAST/PL.714/02/2026', 385, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-12 01:15:47', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(346, 'B-300/BAST/PL.714/02/2026', 385, '2026-03-11', 'Nailiatul Maghfirowati', '2026-03-12 01:18:18', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(347, 'B-301/BAST/PL.714/03/2026', 413, '2026-03-11', 'Nailiatul Maghfirowati', '2026-03-12 01:27:03', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(348, 'B-302/BAST/PL.714/03/2026', 408, '2026-03-11', 'Nailiatul Maghfirowati', '2026-03-12 01:28:02', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(349, 'B-303/BAST/PL.714/03/2026', 475, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-12 01:30:21', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(350, 'B-304/BAST/PL.714/03/2026', 475, '2026-03-11', 'Nailiatul Maghfirowati', '2026-03-12 01:32:17', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(351, 'B-305/BAST/PL.714/03/2026', 439, '2026-03-11', 'Nailiatul Maghfirowati', '2026-03-12 01:33:41', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL),
-(381, 'B-306/BAST/PL.714/02/2026', 24, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-25 05:23:57', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(382, 'B-307/BAST/PL.714/02/2026', 38, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-25 05:25:16', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(383, 'B-308/BAST/PL.714/02/2026', 38, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-25 05:26:06', 'FEBRUARI 2026', 1, 18, 'pending', 'pending', NULL),
-(384, 'B-309/BAST/PL.714/02/2026', 69, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-25 05:26:48', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(385, 'B-310/BAST/PL.714/02/2026', 69, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-25 05:27:05', 'FEBRUARI 2026', 1, 18, 'pending', 'pending', NULL),
-(386, 'B-311/BAST/PL.714/02/2026', 95, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-25 05:27:34', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(388, 'B-0271/BAST/PL.714/02/2026', 179, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 02:47:46', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(389, 'B-312/BAST/PL.714/02/2026', 179, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 02:49:53', 'FEBRUARI 2026', 1, 18, 'pending', 'pending', NULL),
-(390, 'B-313/BAST/PL.714/02/2026', 375, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 03:09:20', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(391, 'B-314/BAST/PL.714/02/2026', 375, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 03:10:17', 'FEBRUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(392, 'B-0263/BAST/PL.714/02/2026', 22, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 03:20:23', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(393, 'B-315/BAST/PL.714/02/2026', 390, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 04:17:06', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(394, 'B-316/BAST/PL.714/02/2026', 390, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 04:17:43', 'FEBRUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(395, 'B-317/BAST/PL.714/02/2026', 264, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 04:21:09', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(396, 'B-318/BAST/PL.714/02/2026', 257, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 04:27:51', 'FEBRUARI 2026', 1, 18, 'pending', 'pending', NULL),
-(397, 'B-319/BAST/PL.714/02/2026', 256, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 04:30:52', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(398, 'B-320/BAST/PL.714/02/2026', 345, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 04:37:44', 'FEBRUARI 2026', 1, 14, 'pending', 'pending', NULL),
-(399, 'B-321/BAST/PL.714/02/2026', 345, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 04:38:21', 'FEBRUARI 2026', 1, 6, 'pending', 'pending', NULL),
-(400, 'B-322/BAST/PL.714/02/2026', 345, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 05:14:49', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(401, 'B-323/BAST/PL.714/02/2026', 235, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 05:19:54', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(402, 'B-324/BAST/PL.714/02/2026', 235, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 05:20:35', 'FEBRUARI 2026', 1, 18, 'pending', 'pending', NULL),
-(403, 'B-325/BAST/PL.714/02/2026', 237, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 05:25:19', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL);
-INSERT INTO `bast` (`id`, `nomor_bast`, `id_petugas_bast`, `tgl_bast`, `create_by`, `create_at`, `bulan_bast`, `id_ppk_bast`, `rincian_output_bast`, `status_ttd_mitra`, `status_ttd_pegawai`, `waktu_ttd_selesai`) VALUES
-(404, 'B-0326/BAST/PL.714/02/2026', 231, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 05:27:41', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(405, 'B-0327/BAST/PL.714/02/2026', 218, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 05:30:01', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL),
-(406, 'B-0328/BAST/PL.714/02/2026', 218, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 05:30:28', 'FEBRUARI 2026', 1, 15, 'pending', 'pending', NULL),
-(407, 'B-0329/BAST/PL.714/02/2026', 218, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 05:31:21', 'FEBRUARI 2026', 1, 18, 'pending', 'pending', NULL),
-(408, 'B-0330/BAST/PL.714/02/2026', 218, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 05:31:51', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(409, 'B-0331/BAST/PL.714/02/2026', 402, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 06:03:26', 'FEBRUARI 2026', 1, 14, 'pending', 'pending', NULL),
-(410, 'B-0332/BAST/PL.714/02/2026', 402, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 06:03:47', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(411, 'B-0333/BAST/PL.714/02/2026', 407, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 06:32:21', 'FEBRUARI 2026', 1, 6, 'pending', 'pending', NULL),
-(412, 'B-0334/BAST/PL.714/02/2026', 407, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 06:33:36', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(413, 'B-0335/BAST/PL.714/02/2026', 562, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 07:11:31', 'FEBRUARI 2026', 1, 18, 'pending', 'pending', NULL),
-(414, 'B-0336/BAST/PL.714/02/2026', 533, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 07:19:42', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(415, 'B-0337/BAST/PL.714/02/2026', 376, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 07:21:22', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL),
-(416, 'B-0338/BAST/PL.714/02/2026', 376, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 07:22:50', 'FEBRUARI 2026', 1, 8, 'pending', 'pending', NULL),
-(417, 'B-0339/BAST/PL.714/03/2026', 41, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:48:40', 'JANUARI 2026', 1, 6, 'pending', 'pending', NULL),
-(418, 'B-0340/BAST/PL.714/03/2026', 24, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:49:31', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(419, 'B-0341/BAST/PL.714/03/2026', 20, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:50:11', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(420, 'B-0342/BAST/PL.714/03/2026', 20, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:50:44', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(421, 'B-0343/BAST/PL.714/03/2026', 22, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:52:27', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(422, 'B-0344/BAST/PL.714/03/2026', 22, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:52:43', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(423, 'B-0345/BAST/PL.714/03/2026', 15, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:56:03', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(424, 'B-0346/BAST/PL.714/03/2026', 59, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:01:22', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(425, 'B-0347/BAST/PL.714/03/2026', 66, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:03:02', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(426, 'B-0348/BAST/PL.714/03/2026', 66, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:03:40', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(427, 'B-0349/BAST/PL.714/03/2026', 95, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:05:03', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(428, 'B-0350/BAST/PL.714/03/2026', 95, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:05:26', 'MARET 2026', 1, 6, 'pending', 'pending', NULL),
-(429, 'B-0351/BAST/PL.714/03/2026', 95, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:05:57', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(430, 'B-0352/BAST/PL.714/03/2026', 41, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:09:24', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(431, 'B-0353/BAST/PL.714/03/2026', 41, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:09:42', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(432, 'B-0354/BAST/PL.714/03/2026', 86, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:11:52', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(433, 'B-0355/BAST/PL.714/03/2026', 34, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:13:21', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(434, 'B-0356/BAST/PL.714/03/2026', 69, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:14:40', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(435, 'B-0357/BAST/PL.714/03/2026', 69, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:14:56', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(436, 'B-0358/BAST/PL.714/03/2026', 38, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:17:04', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(437, 'B-0359/BAST/PL.714/03/2026', 38, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:17:22', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(438, 'B-0360/BAST/PL.714/03/2026', 115, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:20:20', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(439, 'B-0361/BAST/PL.714/03/2026', 120, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:21:43', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(440, 'B-0362/BAST/PL.714/03/2026', 120, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:21:59', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(441, 'B-0363/BAST/PL.714/03/2026', 116, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:23:33', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(442, 'B-0364/BAST/PL.714/03/2026', 116, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:23:48', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(443, 'B-0365/BAST/PL.714/03/2026', 116, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:24:05', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(444, 'B-0366/BAST/PL.714/03/2026', 206, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:26:58', 'MARET 2026', 1, 14, 'pending', 'pending', NULL),
-(445, 'B-0367/BAST/PL.714/03/2026', 206, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:29:05', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(446, 'B-0368/BAST/PL.714/03/2026', 165, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:30:52', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(447, 'B-0369/BAST/PL.714/03/2026', 165, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:31:18', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(448, 'B-0370/BAST/PL.714/03/2026', 179, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:32:54', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(449, 'B-0371/BAST/PL.714/03/2026', 179, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:33:21', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(450, 'B-0372/BAST/PL.714/03/2026', 122, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:34:58', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(451, 'B-0373/BAST/PL.714/03/2026', 196, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:36:08', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(452, 'B-0374/BAST/PL.714/03/2026', 167, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:37:45', 'MARET 2026', 1, 6, 'pending', 'pending', NULL),
-(453, 'B-0375/BAST/PL.714/03/2026', 167, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:38:16', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(454, 'B-0376/BAST/PL.714/03/2026', 144, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:40:25', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(455, 'B-0377/BAST/PL.714/03/2026', 176, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:41:50', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(456, 'B-0378/BAST/PL.714/03/2026', 178, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:43:20', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(457, 'B-0379/BAST/PL.714/03/2026', 235, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:45:17', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(458, 'B-0380/BAST/PL.714/03/2026', 235, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:45:52', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(459, 'B-0381/BAST/PL.714/03/2026', 237, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:47:22', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(460, 'B-0382/BAST/PL.714/03/2026', 237, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:47:57', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(461, 'B-0383/BAST/PL.714/03/2026', 231, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:49:16', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(462, 'B-0384/BAST/PL.714/03/2026', 218, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:51:23', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(463, 'B-0385/BAST/PL.714/03/2026', 218, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:51:49', 'MARET 2026', 1, 15, 'pending', 'pending', NULL),
-(464, 'B-0386/BAST/PL.714/03/2026', 218, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:52:28', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(465, 'B-0387/BAST/PL.714/03/2026', 218, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:52:59', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(466, 'B-0388/BAST/PL.714/03/2026', 218, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:53:29', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(467, 'B-0389/BAST/PL.714/03/2026', 256, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:55:30', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(468, 'B-0390/BAST/PL.714/03/2026', 264, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:57:01', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(469, 'B-0391/BAST/PL.714/03/2026', 258, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:58:23', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(470, 'B-0392/BAST/PL.714/03/2026', 258, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:58:55', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(471, 'B-0393/BAST/PL.714/03/2026', 262, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:00:06', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(472, 'B-0394/BAST/PL.714/03/2026', 274, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:01:26', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(473, 'B-0395/BAST/PL.714/03/2026', 257, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:02:48', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(474, 'B-0396/BAST/PL.714/03/2026', 257, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:03:27', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(475, 'B-0397/BAST/PL.714/03/2026', 257, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:04:00', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(476, 'B-0398/BAST/PL.714/03/2026', 310, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:06:00', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(477, 'B-0399/BAST/PL.714/03/2026', 299, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:07:11', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(478, 'B-0400/BAST/PL.714/03/2026', 299, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:07:48', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(479, 'B-0401/BAST/PL.714/03/2026', 311, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:09:24', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(480, 'B-0402/BAST/PL.714/03/2026', 311, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:10:00', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(481, 'B-0403/BAST/PL.714/03/2026', 297, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:11:20', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(482, 'B-0404/BAST/PL.714/03/2026', 297, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:11:49', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(483, 'B-0405/BAST/PL.714/03/2026', 300, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:12:57', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(484, 'B-0406/BAST/PL.714/03/2026', 331, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:16:05', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(485, 'B-0407/BAST/PL.714/03/2026', 331, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:16:38', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(486, 'B-0408/BAST/PL.714/03/2026', 331, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:17:27', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(487, 'B-0409/BAST/PL.714/03/2026', 323, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:19:20', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(488, 'B-0410/BAST/PL.714/03/2026', 323, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:19:52', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(489, 'B-0411/BAST/PL.714/03/2026', 363, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:25:27', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(490, 'B-0412/BAST/PL.714/03/2026', 363, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:26:22', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(491, 'B-0413/BAST/PL.714/03/2026', 385, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:27:56', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(492, 'B-0414/BAST/PL.714/03/2026', 388, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:30:06', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(493, 'B-0415/BAST/PL.714/03/2026', 345, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:31:30', 'MARET 2026', 1, 14, 'pending', 'pending', NULL),
-(494, 'B-0416/BAST/PL.714/03/2026', 345, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:32:34', 'MARET 2026', 1, 6, 'pending', 'pending', NULL),
-(495, 'B-0417/BAST/PL.714/03/2026', 345, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:33:09', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(496, 'B-0418/BAST/PL.714/03/2026', 390, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:34:40', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(497, 'B-0419/BAST/PL.714/03/2026', 390, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:35:16', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(498, 'B-0420/BAST/PL.714/03/2026', 376, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:36:51', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(499, 'B-0421/BAST/PL.714/03/2026', 376, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:37:31', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(500, 'B-0422/BAST/PL.714/03/2026', 350, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:40:57', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(501, 'B-0423/BAST/PL.714/03/2026', 350, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:41:32', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(502, 'B-0425/BAST/PL.714/03/2026', 375, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:43:31', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(503, 'B-0424/BAST/PL.714/03/2026', 375, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:44:06', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(504, 'B-0426/BAST/PL.714/03/2026', 364, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:45:18', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(505, 'B-0427/BAST/PL.714/03/2026', 343, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:46:43', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(506, 'B-0428/BAST/PL.714/03/2026', 372, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:47:52', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(507, 'B-0429/BAST/PL.714/03/2026', 358, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:49:10', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(508, 'B-0430/BAST/PL.714/03/2026', 402, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:53:06', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(509, 'B-0431/BAST/PL.714/03/2026', 429, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:54:30', 'MARET 2026', 1, 15, 'pending', 'pending', NULL),
-(510, 'B-0432/BAST/PL.714/03/2026', 407, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:55:49', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(511, 'B-0433/BAST/PL.714/03/2026', 407, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:56:18', 'MARET 2026', 1, 6, 'pending', 'pending', NULL),
-(512, 'B-0434/BAST/PL.714/03/2026', 407, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:57:02', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(513, 'B-0435/BAST/PL.714/03/2026', 445, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:59:36', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(514, 'B-0436/BAST/PL.714/03/2026', 441, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:01:20', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(515, 'B-0437/BAST/PL.714/03/2026', 434, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:02:36', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(516, 'B-0438/BAST/PL.714/03/2026', 486, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:03:58', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(517, 'B-0439/BAST/PL.714/03/2026', 475, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:05:08', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(518, 'B-0440/BAST/PL.714/03/2026', 461, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:06:28', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(519, 'B-0441/BAST/PL.714/03/2026', 461, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:06:56', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(520, 'B-0442/BAST/PL.714/03/2026', 463, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:08:17', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(522, 'B-0443/BAST/PL.714/03/2026', 463, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:10:37', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(523, 'B-0444/BAST/PL.714/03/2026', 467, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:11:51', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(530, 'B-0445/BAST/PL.714/03/2026', 521, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:22:00', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(531, 'B-0446/BAST/PL.714/03/2026', 521, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:22:43', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(532, 'B-0447/BAST/PL.714/03/2026', 521, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:23:18', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(533, 'B-0448/BAST/PL.714/03/2026', 533, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:24:25', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(534, 'B-0449/BAST/PL.714/03/2026', 543, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:25:25', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(535, 'B-0450/BAST/PL.714/03/2026', 543, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:25:54', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(536, 'B-0451/BAST/PL.714/03/2026', 525, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:26:52', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(537, 'B-0452/BAST/PL.714/03/2026', 541, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:28:21', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(538, 'B-0453/BAST/PL.714/03/2026', 541, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:28:45', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(539, 'B-0454/BAST/PL.714/03/2026', 570, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:36:41', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(540, 'B-0455/BAST/PL.714/03/2026', 570, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:37:08', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(541, 'B-0456/BAST/PL.714/03/2026', 562, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:38:40', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(542, 'B-0457/BAST/PL.714/03/2026', 562, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:39:08', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(543, 'B-0458/BAST/PL.714/03/2026', 618, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:41:11', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(544, 'B-0459/BAST/PL.714/03/2026', 618, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:41:53', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(545, 'B-0460/BAST/PL.714/03/2026', 622, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:43:19', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(546, 'B-0461/BAST/PL.714/03/2026', 620, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:44:52', 'MARET 2026', 1, 6, 'pending', 'pending', NULL),
-(547, 'B-0462/BAST/PL.714/03/2026', 620, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:45:21', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(548, 'B-0463/BAST/PL.714/03/2026', 620, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:45:48', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(549, 'B-0464/BAST/PL.714/03/2026', 656, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:47:34', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(550, 'B-0465/BAST/PL.714/03/2026', 656, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:48:13', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(551, 'B-0466/BAST/PL.714/03/2026', 656, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:48:55', 'MARET 2026', 1, 7, 'pending', 'pending', NULL),
-(552, 'B-0467/BAST/PL.714/03/2026', 656, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:49:30', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(553, 'B-0468/BAST/PL.714/03/2026	', 694, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:54:05', 'MARET 2026', 1, 8, 'pending', 'pending', NULL),
-(554, 'B-0469/BAST/PL.714/03/2026', 723, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:56:12', 'MARET 2026', 1, 19, 'pending', 'pending', NULL),
-(555, 'B-0470/BAST/PL.714/03/2026', 723, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:56:32', 'MARET 2026', 1, 18, 'pending', 'pending', NULL),
-(556, 'B-0471/BAST/PL.714/03/2026', 733, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:58:33', 'MARET 2026', 1, 19, 'pending', 'pending', NULL);
+INSERT INTO `bast` (`id`, `nomor_bast`, `id_petugas_bast`, `tgl_bast`, `create_by`, `create_at`, `bulan_bast`, `id_ppk_bast`, `rincian_output_bast`, `status_ttd_mitra`, `status_ttd_pegawai`, `waktu_ttd_selesai`, `file_pdf_bast`) VALUES
+(46, 'B-001/BAST/PL.714/01/2026', 30, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:19:56', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(47, 'B-002/BAST/PL.714/01/2026', 13, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:20:48', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(48, 'B-003/BAST/PL.714/01/2026', 93, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:21:38', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(49, 'B-004/BAST/PL.714/01/2026', 44, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:22:47', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(50, 'B-005/BAST/PL.714/01/2026', 86, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:23:36', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(51, 'B-006/BAST/PL.714/01/2026', 70, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:24:13', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(52, 'B-007/BAST/PL.714/01/2026', 56, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:24:43', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(53, 'B-008/BAST/PL.714/01/2026', 43, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:26:38', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(54, 'B-009/BAST/PL.714/01/2026', 47, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:27:07', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(55, 'B-010/BAST/PL.714/01/2026', 103, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:28:58', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(56, 'B-011/BAST/PL.714/01/2026', 206, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:29:47', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(57, 'B-012/BAST/PL.714/01/2026', 177, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:30:19', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(58, 'B-013/BAST/PL.714/01/2026', 193, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 05:30:56', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(59, 'B-014/BAST/PL.714/01/2026', 178, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:18:14', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(60, 'B-015/BAST/PL.714/01/2026', 145, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:19:05', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(61, 'B-016/BAST/PL.714/01/2026', 153, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:19:36', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(62, 'B-017/BAST/PL.714/01/2026', 167, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:20:10', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(63, 'B-018/BAST/PL.714/01/2026', 212, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:21:25', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(64, 'B-019/BAST/PL.714/01/2026', 232, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:21:57', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(65, 'B-020/BAST/PL.714/01/2026', 254, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:22:26', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(66, 'B-021/BAST/PL.714/01/2026', 252, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:23:08', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(67, 'B-022/BAST/PL.714/01/2026', 266, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:28:30', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(68, 'B-023/BAST/PL.714/01/2026', 300, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:29:04', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(69, 'B-024/BAST/PL.714/01/2026', 303, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:29:39', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(70, 'B-025/BAST/PL.714/01/2026', 311, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:30:14', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(71, 'B-026/BAST/PL.714/01/2026', 313, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:30:44', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(72, 'B-027/BAST/PL.714/01/2026', 330, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:31:13', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(73, 'B-028/BAST/PL.714/01/2026', 315, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:31:44', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(74, 'B-029/BAST/PL.714/01/2026', 390, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:33:22', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(75, 'B-030/BAST/PL.714/01/2026', 388, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:33:48', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(76, 'B-031/BAST/PL.714/01/2026', 372, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:34:12', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(77, 'B-032/BAST/PL.714/01/2026', 376, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:34:46', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(78, 'B-033/BAST/PL.714/01/2026', 358, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:36:31', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(79, 'B-034/BAST/PL.714/01/2026', 344, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:37:32', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(80, 'B-035/BAST/PL.714/01/2026', 426, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:38:15', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(81, 'B-036/BAST/PL.714/01/2026', 427, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:38:48', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(82, 'B-037/BAST/PL.714/01/2026', 443, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:39:13', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(83, 'B-038/BAST/PL.714/01/2026', 486, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:39:44', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(84, 'B-039/BAST/PL.714/01/2026', 436, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:40:13', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(85, 'B-040/BAST/PL.714/01/2026', 476, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:40:41', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(86, 'B-041/BAST/PL.714/01/2026', 469, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:41:23', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(87, 'B-042/BAST/PL.714/01/2026', 507, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:43:14', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(88, 'B-043/BAST/PL.714/01/2026', 508, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:43:41', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(89, 'B-044/BAST/PL.714/01/2026', 539, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:44:15', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(90, 'B-045/BAST/PL.714/01/2026', 534, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:44:43', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(91, 'B-046/BAST/PL.714/01/2026', 575, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:45:11', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(92, 'B-047/BAST/PL.714/01/2026', 566, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:45:39', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(93, 'B-048/BAST/PL.714/01/2026', 629, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:46:09', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(94, 'B-049/BAST/PL.714/01/2026', 633, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:46:36', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(95, 'B-050/BAST/PL.714/01/2026', 651, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:47:03', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(96, 'B-051/BAST/PL.714/01/2026', 688, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:47:41', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(97, 'B-052/BAST/PL.714/01/2026', 689, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:48:10', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(98, 'B-053/BAST/PL.714/01/2026', 723, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:48:38', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(99, 'B-054/BAST/PL.714/01/2026', 733, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:49:06', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(100, 'B-055/BAST/PL.714/01/2026', 721, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 06:49:33', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(101, 'B-056/BAST/PL.714/01/2026', 51, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 07:30:25', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(102, 'B-057/BAST/PL.714/01/2026', 144, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 07:31:30', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(103, 'B-058/BAST/PL.714/01/2026', 375, '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 07:31:52', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(104, 'B-059/BAST/PL.714/01/2026', 66, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 04:57:23', 'JANUARI 2026', 1, 4, 'pending', 'pending', NULL, NULL),
+(105, 'B-060/BAST/PL.714/01/2026', 166, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 04:58:12', 'JANUARI 2026', 1, 4, 'pending', 'pending', NULL, NULL),
+(106, 'B-061/BAST/PL.714/01/2026', 570, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 04:58:53', 'JANUARI 2026', 1, 4, 'pending', 'pending', NULL, NULL),
+(107, 'B-062/BAST/PL.714/01/2026', 390, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:00:59', 'JANUARI 2026', 1, 4, 'pending', 'pending', NULL, NULL),
+(108, 'B-063/BAST/PL.714/01/2026', 376, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:01:57', 'JANUARI 2026', 1, 4, 'pending', 'pending', NULL, NULL),
+(109, 'B-064/BAST/PL.714/01/2026', 445, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:02:52', 'JANUARI 2026', 1, 4, 'pending', 'pending', NULL, NULL),
+(110, 'B-065/BAST/PL.714/01/2026', 22, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:07:34', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(111, 'B-066/BAST/PL.714/01/2026', 86, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:08:16', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(112, 'B-067/BAST/PL.714/01/2026', 101, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:08:59', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(113, 'B-068/BAST/PL.714/01/2026', 218, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:09:39', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(114, 'B-069/BAST/PL.714/01/2026', 299, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:10:58', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(115, 'B-070/BAST/PL.714/01/2026', 339, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:12:15', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(116, 'B-071/BAST/PL.714/01/2026', 394, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:12:45', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(117, 'B-072/BAST/PL.714/01/2026', 434, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:13:39', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(118, 'B-073/BAST/PL.714/01/2026', 466, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:14:16', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(119, 'B-074/BAST/PL.714/01/2026', 633, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:14:49', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(120, 'B-075/BAST/PL.714/01/2026', 733, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:15:25', 'JANUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(122, 'B-077/BAST/PL.714/01/2026', 22, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:27:40', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(123, 'B-078/BAST/PL.714/01/2026', 20, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:28:07', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(124, 'B-079/BAST/PL.714/01/2026', 20, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:28:39', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(125, 'B-076/BAST/PL.714/01/2026', 20, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:29:53', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(126, 'B-080/BAST/PL.714/01/2026', 20, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:32:37', 'JANUARI 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(127, 'B-081/BAST/PL.714/01/2026', 20, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:33:35', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(128, 'B-082/BAST/PL.714/01/2026', 24, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:35:18', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(129, 'B-083/BAST/PL.714/01/2026', 15, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:35:39', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(130, 'B-084/BAST/PL.714/01/2026', 38, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:35:59', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(131, 'B-085/BAST/PL.714/01/2026', 69, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:36:31', 'JANUARI 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(132, 'B-086/BAST/PL.714/01/2026', 69, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:36:56', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(133, 'B-087/BAST/PL.714/01/2026', 34, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:37:28', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(134, 'B-088/BAST/PL.714/01/2026', 95, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:37:48', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(135, 'B-089/BAST/PL.714/01/2026', 66, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:38:09', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(136, 'B-090/BAST/PL.714/01/2026', 66, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:39:31', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(137, 'B-091/BAST/PL.714/01/2026', 95, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:39:52', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(138, 'B-092/BAST/PL.714/01/2026', 95, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:40:17', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(139, 'B-093/BAST/PL.714/01/2026', 120, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:41:09', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(140, 'B-094/BAST/PL.714/01/2026', 116, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:42:19', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(141, 'B-095/BAST/PL.714/01/2026', 116, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:42:39', 'JANUARI 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(142, 'B-096/BAST/PL.714/01/2026', 116, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:43:37', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(143, 'B-097/BAST/PL.714/01/2026', 165, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 03:44:30', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(144, 'B-098/BAST/PL.714/01/2026', 176, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 04:42:19', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(145, 'B-099/BAST/PL.714/01/2026', 144, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 04:44:35', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(146, 'B-100/BAST/PL.714/01/2026', 178, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 04:46:02', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(147, 'B-101/BAST/PL.714/01/2026', 206, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 04:47:13', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(148, 'B-102/BAST/PL.714/01/2026', 167, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 04:49:06', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(149, 'B-103/BAST/PL.714/01/2026', 196, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 04:50:36', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(150, 'B-104/BAST/PL.714/01/2026', 122, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 04:51:38', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(151, 'B-105/BAST/PL.714/01/2026', 179, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 04:52:38', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(152, 'B-106/BAST/PL.714/01/2026', 218, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:01:48', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(153, 'B-107/BAST/PL.714/01/2026', 218, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:03:29', 'JANUARI 2026', 1, 15, 'pending', 'pending', NULL, NULL),
+(154, 'B-108/BAST/PL.714/01/2026', 218, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:04:55', 'JANUARI 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(155, 'B-109/BAST/PL.714/01/2026', 218, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:08:00', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(156, 'B-110/BAST/PL.714/01/2026', 218, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:09:21', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(157, 'B-111/BAST/PL.714/01/2026', 235, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:11:54', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(158, 'B-112/BAST/PL.714/01/2026', 237, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:12:51', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(159, 'B-113/BAST/PL.714/01/2026', 231, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:13:54', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(160, 'B-114/BAST/PL.714/01/2026', 225, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:14:52', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(161, 'B-115/BAST/PL.714/01/2026', 258, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:22:30', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(162, 'B-116/BAST/PL.714/01/2026', 257, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:24:07', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(163, 'B-117/BAST/PL.714/01/2026', 257, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:24:53', 'JANUARI 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(164, 'B-118/BAST/PL.714/01/2026', 262, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:26:00', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(165, 'B-119/BAST/PL.714/01/2026', 256, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:26:57', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(166, 'B-120/BAST/PL.714/01/2026', 264, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:27:47', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(167, 'B-121/BAST/PL.714/01/2026', 299, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:32:25', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(168, 'B-122/BAST/PL.714/01/2026', 311, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:33:38', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(169, 'B-123/BAST/PL.714/01/2026', 297, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:34:47', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(170, 'B-124/BAST/PL.714/01/2026', 297, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:35:22', 'JANUARI 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(171, 'B-125/BAST/PL.714/01/2026', 310, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:36:03', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(172, 'B-126/BAST/PL.714/01/2026', 331, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:41:08', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(173, 'B-127/BAST/PL.714/01/2026', 331, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:42:04', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(174, 'B-128/BAST/PL.714/01/2026', 323, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:43:06', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(175, 'B-129/BAST/PL.714/01/2026', 390, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:51:28', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(176, 'B-130/BAST/PL.714/01/2026', 390, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:52:05', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(177, 'B-131/BAST/PL.714/01/2026', 376, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:53:21', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(178, 'B-132/BAST/PL.714/01/2026', 376, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:54:01', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(179, 'B-133/BAST/PL.714/01/2026', 363, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:55:20', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(180, 'B-134/BAST/PL.714/01/2026', 350, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:56:26', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(181, 'B-135/BAST/PL.714/01/2026', 350, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:57:06', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(182, 'B-136/BAST/PL.714/01/2026', 345, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:58:04', 'JANUARI 2026', 1, 14, 'pending', 'pending', NULL, NULL),
+(183, 'B-137/BAST/PL.714/01/2026', 345, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:58:40', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(184, 'B-138/BAST/PL.714/01/2026', 345, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 05:59:11', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(185, 'B-139/BAST/PL.714/01/2026', 375, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:00:18', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(186, 'B-140/BAST/PL.714/01/2026', 375, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:00:46', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(187, 'B-141/BAST/PL.714/01/2026', 358, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:01:40', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(188, 'B-142/BAST/PL.714/01/2026', 343, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:03:16', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(189, 'B-143/BAST/PL.714/01/2026', 429, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:09:28', 'JANUARI 2026', 1, 15, 'pending', 'pending', NULL, NULL),
+(190, 'B-144/BAST/PL.714/01/2026', 407, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:10:16', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(191, 'B-145/BAST/PL.714/01/2026', 407, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:10:45', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(192, 'B-146/BAST/PL.714/01/2026', 402, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:11:35', 'JANUARI 2026', 1, 14, 'pending', 'pending', NULL, NULL),
+(193, 'B-147/BAST/PL.714/01/2026', 402, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:12:04', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(194, 'B-148/BAST/PL.714/01/2026', 445, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:20:15', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(195, 'B-149/BAST/PL.714/01/2026', 434, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:21:07', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(196, 'B-150/BAST/PL.714/01/2026', 441, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:21:59', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(197, 'B-151/BAST/PL.714/01/2026', 486, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:22:55', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(198, 'B-152/BAST/PL.714/01/2026', 463, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:23:51', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(199, 'B-153/BAST/PL.714/01/2026', 463, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:24:49', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(200, 'B-154/BAST/PL.714/01/2026', 461, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:25:46', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(201, 'B-155/BAST/PL.714/01/2026', 467, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:26:52', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(202, 'B-156/BAST/PL.714/01/2026', 508, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:35:40', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(203, 'B-157/BAST/PL.714/01/2026', 521, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:36:40', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(204, 'B-158/BAST/PL.714/01/2026', 521, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 06:37:33', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(205, 'B-159/BAST/PL.714/01/2026', 543, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:37:32', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(206, 'B-160/BAST/PL.714/01/2026', 543, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:38:15', 'JANUARI 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(207, 'B-161/BAST/PL.714/01/2026', 533, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:39:38', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(208, 'B-162/BAST/PL.714/01/2026', 541, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:40:40', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(209, 'B-163/BAST/PL.714/01/2026', 570, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:45:34', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(210, 'B-164/BAST/PL.714/01/2026', 570, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:46:26', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(211, 'B-165/BAST/PL.714/01/2026', 570, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:47:02', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(212, 'B-166/BAST/PL.714/01/2026', 562, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:48:42', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(213, 'B-167/BAST/PL.714/01/2026', 618, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:53:29', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(214, 'B-168/BAST/PL.714/01/2026', 622, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:54:57', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(215, 'B-169/BAST/PL.714/01/2026', 610, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:56:20', 'JANUARI 2026', 1, 14, 'pending', 'pending', NULL, NULL),
+(216, 'B-170/BAST/PL.714/01/2026', 620, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:57:27', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(217, 'B-171/BAST/PL.714/01/2026', 620, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 07:58:07', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(218, 'B-172/BAST/PL.714/01/2026', 656, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:01:36', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(219, 'B-173/BAST/PL.714/01/2026', 656, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:02:16', 'JANUARI 2026', 1, 15, 'pending', 'pending', NULL, NULL),
+(220, 'B-174/BAST/PL.714/01/2026', 656, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:02:59', 'JANUARI 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(221, 'B-175/BAST/PL.714/01/2026', 656, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:04:33', 'JANUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(222, 'B-176/BAST/PL.714/01/2026', 656, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:06:12', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(223, 'B-177/BAST/PL.714/01/2026', 694, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:12:46', 'JANUARI 2026', 1, 15, 'pending', 'pending', NULL, NULL),
+(224, 'B-178/BAST/PL.714/01/2026', 694, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:13:13', 'JANUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(225, 'B-179/BAST/PL.714/01/2026', 684, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:14:15', 'JANUARI 2026', 1, 14, 'pending', 'pending', NULL, NULL),
+(226, 'B-180/BAST/PL.714/01/2026', 723, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:17:02', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(227, 'B-181/BAST/PL.714/01/2026', 723, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:18:08', 'JANUARI 2026', 1, 15, 'pending', 'pending', NULL, NULL),
+(228, 'B-182/BAST/PL.714/01/2026', 723, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:19:05', 'JANUARI 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(229, 'B-183/BAST/PL.714/01/2026', 733, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-06 08:27:40', 'JANUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(230, 'B-184/BAST/PL.714/01/2026', 317, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:53:44', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(231, 'B-185/BAST/PL.714/01/2026', 385, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:54:47', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(232, 'B-186/BAST/PL.714/01/2026', 389, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:55:19', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(233, 'B-187/BAST/PL.714/01/2026', 413, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:56:38', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(234, 'B-188/BAST/PL.714/01/2026', 408, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:57:14', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(235, 'B-189/BAST/PL.714/01/2026', 475, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:58:40', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(236, 'B-190/BAST/PL.714/01/2026', 439, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:59:15', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(237, 'B-191/BAST/PL.714/01/2026', 477, '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 06:00:25', 'JANUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(238, 'B-192/BAST/PL.714/01/2026', 218, '2026-02-02', 'Nailiatul Maghfirowati', '2026-02-12 08:18:22', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(239, 'B-193/BAST/PL.714/02/2026', 22, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-24 07:25:01', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(240, 'B-194/BAST/PL.714/02/2026', 86, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-24 07:29:11', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(241, 'B-195/BAST/PL.714/02/2026', 101, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 01:50:40', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(242, 'B-196/BAST/PL.714/02/2026', 299, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 01:51:31', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(243, 'B-197/BAST/PL.714/02/2026', 339, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 01:52:04', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(244, 'B-198/BAST/PL.714/02/2026', 394, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 01:52:26', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(245, 'B-199/BAST/PL.714/02/2026', 466, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 01:53:49', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(246, 'B-200/BAST/PL.714/02/2026', 434, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 01:54:41', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(247, 'B-201/BAST/PL.714/02/2026', 633, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 01:56:16', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(248, 'B-202/BAST/PL.714/02/2026', 733, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 01:59:30', 'FEBRUARI 2026', 1, 9, 'pending', 'pending', NULL, NULL),
+(249, 'B-203/BAST/PL.714/02/2026', 13, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:09:43', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(250, 'B-204/BAST/PL.714/02/2026', 30, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:10:08', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(251, 'B-205/BAST/PL.714/02/2026', 44, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:10:47', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(252, 'B-206/BAST/PL.714/02/2026', 43, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:11:13', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(253, 'B-207/BAST/PL.714/02/2026', 70, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:11:43', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(254, 'B-208/BAST/PL.714/02/2026', 47, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:12:18', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(255, 'B-209/BAST/PL.714/02/2026', 93, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:12:43', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(256, 'B-210/BAST/PL.714/02/2026', 56, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:13:03', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(257, 'B-211/BAST/PL.714/02/2026', 86, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:13:20', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(258, 'B-212/BAST/PL.714/02/2026', 51, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:13:43', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(259, 'B-213/BAST/PL.714/02/2026', 103, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:15:01', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(260, 'B-214/BAST/PL.714/02/2026', 153, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:15:33', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(261, 'B-215/BAST/PL.714/02/2026', 193, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:16:02', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(262, 'B-216/BAST/PL.714/02/2026', 206, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:22:40', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(263, 'B-217/BAST/PL.714/02/2026', 178, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:23:03', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(264, 'B-218/BAST/PL.714/02/2026', 167, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:23:24', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(265, 'B-219/BAST/PL.714/02/2026', 145, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:23:46', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(266, 'B-220/BAST/PL.714/02/2026', 177, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:24:12', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(267, 'B-221/BAST/PL.714/02/2026', 144, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:24:40', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(268, 'B-222/BAST/PL.714/02/2026', 212, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:25:35', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(269, 'B-223/BAST/PL.714/02/2026', 232, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:32:39', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(270, 'B-224/BAST/PL.714/02/2026', 254, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:36:24', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(271, 'B-225/BAST/PL.714/02/2026', 266, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:39:33', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(272, 'B-226/BAST/PL.714/02/2026', 252, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:40:40', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(273, 'B-227/BAST/PL.714/02/2026', 311, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:41:44', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(274, 'B-228/BAST/PL.714/02/2026', 300, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:42:27', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(275, 'B-229/BAST/PL.714/02/2026', 303, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:43:07', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(276, 'B-230/BAST/PL.714/02/2026', 313, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:43:38', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(277, 'B-231/BAST/PL.714/02/2026', 330, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:44:24', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(278, 'B-232/BAST/PL.714/02/2026', 315, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:45:21', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(279, 'B-233/BAST/PL.714/02/2026', 389, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:46:07', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(280, 'B-234/BAST/PL.714/02/2026', 376, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:46:42', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(281, 'B-235/BAST/PL.714/02/2026', 390, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:47:16', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(282, 'B-236/BAST/PL.714/02/2026', 358, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:48:04', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(283, 'B-237/BAST/PL.714/02/2026', 344, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:48:26', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(284, 'B-238/BAST/PL.714/02/2026', 372, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:48:58', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(285, 'B-239/BAST/PL.714/02/2026', 375, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:49:27', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(286, 'B-240/BAST/PL.714/02/2026', 426, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:50:15', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(287, 'B-241/BAST/PL.714/02/2026', 427, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:50:57', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(288, 'B-242/BAST/PL.714/02/2026', 486, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:51:55', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(289, 'B-243/BAST/PL.714/02/2026', 477, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:52:36', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(290, 'B-244/BAST/PL.714/02/2026', 443, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:53:09', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(291, 'B-245/BAST/PL.714/02/2026', 476, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:53:37', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(292, 'B-246/BAST/PL.714/02/2026', 469, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:54:28', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(293, 'B-247/BAST/PL.714/02/2026', 436, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:54:59', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(294, 'B-248/BAST/PL.714/02/2026', 508, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:55:38', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(295, 'B-249/BAST/PL.714/02/2026', 507, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:56:06', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(296, 'B-250/BAST/PL.714/02/2026', 539, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:56:39', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(297, 'B-251/BAST/PL.714/02/2026', 534, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:57:02', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(298, 'B-252/BAST/PL.714/02/2026', 566, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:57:51', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(299, 'B-253/BAST/PL.714/02/2026', 575, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:58:22', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(300, 'B-254/BAST/PL.714/02/2026', 629, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:59:01', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(301, 'B-255/BAST/PL.714/02/2026', 633, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 02:59:32', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(302, 'B-256/BAST/PL.714/02/2026', 651, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 03:00:15', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(303, 'B-257/BAST/PL.714/02/2026', 689, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 03:00:42', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(304, 'B-258/BAST/PL.714/02/2026', 688, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 03:01:10', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(305, 'B-259/BAST/PL.714/02/2026', 723, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 03:01:31', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(306, 'B-260/BAST/PL.714/02/2026', 733, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 03:02:38', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(307, 'B-261/BAST/PL.714/02/2026', 721, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-25 03:03:03', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(308, 'B-262/BAST/PL.714/02/2026', 20, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:14:42', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(310, 'B-264/BAST/PL.714/02/2026', 330, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:20:10', 'FEBRUARI 2026', 1, 15, 'pending', 'pending', NULL, NULL),
+(311, 'B-265/BAST/PL.714/02/2026', 323, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:22:05', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(312, 'B-266/BAST/PL.714/02/2026', 331, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:23:03', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(313, 'B-267/BAST/PL.714/02/2026', 299, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:25:11', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(314, 'B-268/BAST/PL.714/02/2026', 311, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:26:22', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(315, 'B-269/BAST/PL.714/02/2026', 297, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:27:21', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(316, 'B-270/BAST/PL.714/02/2026', 165, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:31:56', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(318, 'B-272/BAST/PL.714/02/2026', 363, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:38:22', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(319, 'B-273/BAST/PL.714/02/2026', 257, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:45:05', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(320, 'B-274/BAST/PL.714/02/2026', 258, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:45:51', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(321, 'B-275/BAST/PL.714/02/2026', 262, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 01:57:55', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(322, 'B-276/BAST/PL.714/02/2026', 543, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:00:53', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(323, 'B-277/BAST/PL.714/02/2026', 543, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:01:24', 'FEBRUARI 2026', 1, 15, 'pending', 'pending', NULL, NULL),
+(324, 'B-278/BAST/PL.714/02/2026', 562, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:31:31', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(325, 'B-279/BAST/PL.714/02/2026', 570, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:32:53', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(326, 'B-280/BAST/PL.714/02/2026', 620, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:35:54', 'FEBRUARI 2026', 1, 15, 'pending', 'pending', NULL, NULL),
+(327, 'B-281/BAST/PL.714/02/2026', 622, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:37:21', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(328, 'B-282/BAST/PL.714/02/2026', 618, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:39:16', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(329, 'B-283/BAST/PL.714/02/2026', 429, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:40:34', 'FEBRUARI 2026', 1, 15, 'pending', 'pending', NULL, NULL),
+(330, 'B-284/BAST/PL.714/02/2026', 521, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:43:02', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(331, 'B-285/BAST/PL.714/02/2026', 656, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:44:27', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(332, 'B-286/BAST/PL.714/02/2026', 656, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:44:57', 'FEBRUARI 2026', 1, 15, 'pending', 'pending', NULL, NULL),
+(333, 'B-287/BAST/PL.714/02/2026', 38, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:55:46', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(334, 'B-288/BAST/PL.714/02/2026', 69, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:57:04', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(335, 'B-289/BAST/PL.714/02/2026', 34, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:57:55', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(336, 'B-290/BAST/PL.714/02/2026', 95, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 02:59:12', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(337, 'B-291/BAST/PL.714/02/2026', 120, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 03:01:21', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(338, 'B-292/BAST/PL.714/02/2026', 116, '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-27 03:02:14', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(339, 'B-293/BAST/PL.714/02/2026', 388, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-02 01:29:38', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(340, 'B-294/BAST/PL.714/02/2026', 20, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-05 07:55:30', 'FEBRUARI 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(341, 'B-295/BAST/PL.714/02/2026', 22, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-05 07:56:17', 'FEBRUARI 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(342, 'B-296/BAST/PL.714/02/2026', 350, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-09 05:43:53', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(343, 'B-297/BAST/PL.714/02/2026', 541, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-10 07:09:08', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(344, 'B-298/BAST/PL.714/02/2026', 317, '2026-03-11', 'Nailiatul Maghfirowati', '2026-03-12 01:13:15', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(345, 'B-299/BAST/PL.714/02/2026', 385, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-12 01:15:47', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(346, 'B-300/BAST/PL.714/02/2026', 385, '2026-03-11', 'Nailiatul Maghfirowati', '2026-03-12 01:18:18', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(347, 'B-301/BAST/PL.714/03/2026', 413, '2026-03-11', 'Nailiatul Maghfirowati', '2026-03-12 01:27:03', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(348, 'B-302/BAST/PL.714/03/2026', 408, '2026-03-11', 'Nailiatul Maghfirowati', '2026-03-12 01:28:02', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(349, 'B-303/BAST/PL.714/03/2026', 475, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-12 01:30:21', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(350, 'B-304/BAST/PL.714/03/2026', 475, '2026-03-11', 'Nailiatul Maghfirowati', '2026-03-12 01:32:17', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(351, 'B-305/BAST/PL.714/03/2026', 439, '2026-03-11', 'Nailiatul Maghfirowati', '2026-03-12 01:33:41', 'FEBRUARI 2026', 1, 11, 'pending', 'pending', NULL, NULL),
+(381, 'B-306/BAST/PL.714/02/2026', 24, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-25 05:23:57', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(382, 'B-307/BAST/PL.714/02/2026', 38, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-25 05:25:16', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(383, 'B-308/BAST/PL.714/02/2026', 38, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-25 05:26:06', 'FEBRUARI 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(384, 'B-309/BAST/PL.714/02/2026', 69, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-25 05:26:48', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(385, 'B-310/BAST/PL.714/02/2026', 69, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-25 05:27:05', 'FEBRUARI 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(386, 'B-311/BAST/PL.714/02/2026', 95, '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-25 05:27:34', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(388, 'B-0271/BAST/PL.714/02/2026', 179, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 02:47:46', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(389, 'B-312/BAST/PL.714/02/2026', 179, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 02:49:53', 'FEBRUARI 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(390, 'B-313/BAST/PL.714/02/2026', 375, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 03:09:20', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(391, 'B-314/BAST/PL.714/02/2026', 375, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 03:10:17', 'FEBRUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL);
+INSERT INTO `bast` (`id`, `nomor_bast`, `id_petugas_bast`, `tgl_bast`, `create_by`, `create_at`, `bulan_bast`, `id_ppk_bast`, `rincian_output_bast`, `status_ttd_mitra`, `status_ttd_pegawai`, `waktu_ttd_selesai`, `file_pdf_bast`) VALUES
+(392, 'B-0263/BAST/PL.714/02/2026', 22, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 03:20:23', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(393, 'B-315/BAST/PL.714/02/2026', 390, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 04:17:06', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(394, 'B-316/BAST/PL.714/02/2026', 390, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 04:17:43', 'FEBRUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(395, 'B-317/BAST/PL.714/02/2026', 264, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 04:21:09', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(396, 'B-318/BAST/PL.714/02/2026', 257, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 04:27:51', 'FEBRUARI 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(397, 'B-319/BAST/PL.714/02/2026', 256, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 04:30:52', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(398, 'B-320/BAST/PL.714/02/2026', 345, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 04:37:44', 'FEBRUARI 2026', 1, 14, 'pending', 'pending', NULL, NULL),
+(399, 'B-321/BAST/PL.714/02/2026', 345, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 04:38:21', 'FEBRUARI 2026', 1, 6, 'pending', 'pending', NULL, NULL),
+(400, 'B-322/BAST/PL.714/02/2026', 345, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 05:14:49', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(401, 'B-323/BAST/PL.714/02/2026', 235, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 05:19:54', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(402, 'B-324/BAST/PL.714/02/2026', 235, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 05:20:35', 'FEBRUARI 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(403, 'B-325/BAST/PL.714/02/2026', 237, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 05:25:19', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(404, 'B-0326/BAST/PL.714/02/2026', 231, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 05:27:41', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(405, 'B-0327/BAST/PL.714/02/2026', 218, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 05:30:01', 'FEBRUARI 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(406, 'B-0328/BAST/PL.714/02/2026', 218, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 05:30:28', 'FEBRUARI 2026', 1, 15, 'pending', 'pending', NULL, NULL),
+(407, 'B-0329/BAST/PL.714/02/2026', 218, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 05:31:21', 'FEBRUARI 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(408, 'B-0330/BAST/PL.714/02/2026', 218, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 05:31:51', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(409, 'B-0331/BAST/PL.714/02/2026', 402, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 06:03:26', 'FEBRUARI 2026', 1, 14, 'pending', 'pending', NULL, NULL),
+(410, 'B-0332/BAST/PL.714/02/2026', 402, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 06:03:47', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(411, 'B-0333/BAST/PL.714/02/2026', 407, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 06:32:21', 'FEBRUARI 2026', 1, 6, 'pending', 'pending', NULL, NULL),
+(412, 'B-0334/BAST/PL.714/02/2026', 407, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 06:33:36', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(413, 'B-0335/BAST/PL.714/02/2026', 562, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 07:11:31', 'FEBRUARI 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(414, 'B-0336/BAST/PL.714/02/2026', 533, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 07:19:42', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(415, 'B-0337/BAST/PL.714/02/2026', 376, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 07:21:22', 'FEBRUARI 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(416, 'B-0338/BAST/PL.714/02/2026', 376, '2026-02-28', 'Nailiatul Maghfirowati', '2026-04-01 07:22:50', 'FEBRUARI 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(417, 'B-0339/BAST/PL.714/03/2026', 41, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:48:40', 'JANUARI 2026', 1, 6, 'pending', 'pending', NULL, NULL),
+(418, 'B-0340/BAST/PL.714/03/2026', 24, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:49:31', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(419, 'B-0341/BAST/PL.714/03/2026', 20, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:50:11', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(420, 'B-0342/BAST/PL.714/03/2026', 20, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:50:44', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(421, 'B-0343/BAST/PL.714/03/2026', 22, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:52:27', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(422, 'B-0344/BAST/PL.714/03/2026', 22, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:52:43', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(423, 'B-0345/BAST/PL.714/03/2026', 15, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:56:03', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(424, 'B-0346/BAST/PL.714/03/2026', 59, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:01:22', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(425, 'B-0347/BAST/PL.714/03/2026', 66, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:03:02', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(426, 'B-0348/BAST/PL.714/03/2026', 66, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:03:40', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(427, 'B-0349/BAST/PL.714/03/2026', 95, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:05:03', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(428, 'B-0350/BAST/PL.714/03/2026', 95, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:05:26', 'MARET 2026', 1, 6, 'pending', 'pending', NULL, NULL),
+(429, 'B-0351/BAST/PL.714/03/2026', 95, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:05:57', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(430, 'B-0352/BAST/PL.714/03/2026', 41, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:09:24', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(431, 'B-0353/BAST/PL.714/03/2026', 41, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:09:42', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(432, 'B-0354/BAST/PL.714/03/2026', 86, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:11:52', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(433, 'B-0355/BAST/PL.714/03/2026', 34, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:13:21', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(434, 'B-0356/BAST/PL.714/03/2026', 69, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:14:40', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(435, 'B-0357/BAST/PL.714/03/2026', 69, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:14:56', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(436, 'B-0358/BAST/PL.714/03/2026', 38, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:17:04', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(437, 'B-0359/BAST/PL.714/03/2026', 38, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:17:22', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(438, 'B-0360/BAST/PL.714/03/2026', 115, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:20:20', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(439, 'B-0361/BAST/PL.714/03/2026', 120, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:21:43', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(440, 'B-0362/BAST/PL.714/03/2026', 120, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:21:59', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(441, 'B-0363/BAST/PL.714/03/2026', 116, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:23:33', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(442, 'B-0364/BAST/PL.714/03/2026', 116, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:23:48', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(443, 'B-0365/BAST/PL.714/03/2026', 116, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:24:05', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(444, 'B-0366/BAST/PL.714/03/2026', 206, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:26:58', 'MARET 2026', 1, 14, 'pending', 'pending', NULL, NULL),
+(445, 'B-0367/BAST/PL.714/03/2026', 206, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:29:05', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(446, 'B-0368/BAST/PL.714/03/2026', 165, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:30:52', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(447, 'B-0369/BAST/PL.714/03/2026', 165, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:31:18', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(448, 'B-0370/BAST/PL.714/03/2026', 179, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:32:54', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(449, 'B-0371/BAST/PL.714/03/2026', 179, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:33:21', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(450, 'B-0372/BAST/PL.714/03/2026', 122, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:34:58', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(451, 'B-0373/BAST/PL.714/03/2026', 196, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:36:08', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(452, 'B-0374/BAST/PL.714/03/2026', 167, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:37:45', 'MARET 2026', 1, 6, 'pending', 'pending', NULL, NULL),
+(453, 'B-0375/BAST/PL.714/03/2026', 167, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:38:16', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(454, 'B-0376/BAST/PL.714/03/2026', 144, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:40:25', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(455, 'B-0377/BAST/PL.714/03/2026', 176, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:41:50', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(456, 'B-0378/BAST/PL.714/03/2026', 178, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:43:20', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(457, 'B-0379/BAST/PL.714/03/2026', 235, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:45:17', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(458, 'B-0380/BAST/PL.714/03/2026', 235, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:45:52', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(459, 'B-0381/BAST/PL.714/03/2026', 237, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:47:22', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(460, 'B-0382/BAST/PL.714/03/2026', 237, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:47:57', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(461, 'B-0383/BAST/PL.714/03/2026', 231, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:49:16', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(462, 'B-0384/BAST/PL.714/03/2026', 218, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:51:23', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(463, 'B-0385/BAST/PL.714/03/2026', 218, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:51:49', 'MARET 2026', 1, 15, 'pending', 'pending', NULL, NULL),
+(464, 'B-0386/BAST/PL.714/03/2026', 218, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:52:28', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(465, 'B-0387/BAST/PL.714/03/2026', 218, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:52:59', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(466, 'B-0388/BAST/PL.714/03/2026', 218, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:53:29', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(467, 'B-0389/BAST/PL.714/03/2026', 256, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:55:30', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(468, 'B-0390/BAST/PL.714/03/2026', 264, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:57:01', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(469, 'B-0391/BAST/PL.714/03/2026', 258, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:58:23', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(470, 'B-0392/BAST/PL.714/03/2026', 258, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 02:58:55', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(471, 'B-0393/BAST/PL.714/03/2026', 262, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:00:06', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(472, 'B-0394/BAST/PL.714/03/2026', 274, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:01:26', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(473, 'B-0395/BAST/PL.714/03/2026', 257, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:02:48', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(474, 'B-0396/BAST/PL.714/03/2026', 257, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:03:27', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(475, 'B-0397/BAST/PL.714/03/2026', 257, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:04:00', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(476, 'B-0398/BAST/PL.714/03/2026', 310, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:06:00', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(477, 'B-0399/BAST/PL.714/03/2026', 299, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:07:11', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(478, 'B-0400/BAST/PL.714/03/2026', 299, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:07:48', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(479, 'B-0401/BAST/PL.714/03/2026', 311, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:09:24', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(480, 'B-0402/BAST/PL.714/03/2026', 311, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:10:00', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(481, 'B-0403/BAST/PL.714/03/2026', 297, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:11:20', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(482, 'B-0404/BAST/PL.714/03/2026', 297, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:11:49', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(483, 'B-0405/BAST/PL.714/03/2026', 300, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:12:57', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(484, 'B-0406/BAST/PL.714/03/2026', 331, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:16:05', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(485, 'B-0407/BAST/PL.714/03/2026', 331, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:16:38', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(486, 'B-0408/BAST/PL.714/03/2026', 331, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:17:27', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(487, 'B-0409/BAST/PL.714/03/2026', 323, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:19:20', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(488, 'B-0410/BAST/PL.714/03/2026', 323, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:19:52', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(489, 'B-0411/BAST/PL.714/03/2026', 363, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:25:27', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(490, 'B-0412/BAST/PL.714/03/2026', 363, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:26:22', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(491, 'B-0413/BAST/PL.714/03/2026', 385, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:27:56', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(492, 'B-0414/BAST/PL.714/03/2026', 388, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:30:06', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(493, 'B-0415/BAST/PL.714/03/2026', 345, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:31:30', 'MARET 2026', 1, 14, 'pending', 'pending', NULL, NULL),
+(494, 'B-0416/BAST/PL.714/03/2026', 345, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:32:34', 'MARET 2026', 1, 6, 'pending', 'pending', NULL, NULL),
+(495, 'B-0417/BAST/PL.714/03/2026', 345, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:33:09', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(496, 'B-0418/BAST/PL.714/03/2026', 390, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:34:40', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(497, 'B-0419/BAST/PL.714/03/2026', 390, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:35:16', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(498, 'B-0420/BAST/PL.714/03/2026', 376, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:36:51', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(499, 'B-0421/BAST/PL.714/03/2026', 376, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:37:31', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(500, 'B-0422/BAST/PL.714/03/2026', 350, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:40:57', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(501, 'B-0423/BAST/PL.714/03/2026', 350, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:41:32', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(502, 'B-0425/BAST/PL.714/03/2026', 375, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:43:31', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(503, 'B-0424/BAST/PL.714/03/2026', 375, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:44:06', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(504, 'B-0426/BAST/PL.714/03/2026', 364, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:45:18', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(505, 'B-0427/BAST/PL.714/03/2026', 343, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:46:43', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(506, 'B-0428/BAST/PL.714/03/2026', 372, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:47:52', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(507, 'B-0429/BAST/PL.714/03/2026', 358, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:49:10', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(508, 'B-0430/BAST/PL.714/03/2026', 402, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:53:06', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(509, 'B-0431/BAST/PL.714/03/2026', 429, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:54:30', 'MARET 2026', 1, 15, 'pending', 'pending', NULL, NULL),
+(510, 'B-0432/BAST/PL.714/03/2026', 407, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:55:49', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(511, 'B-0433/BAST/PL.714/03/2026', 407, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:56:18', 'MARET 2026', 1, 6, 'pending', 'pending', NULL, NULL),
+(512, 'B-0434/BAST/PL.714/03/2026', 407, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:57:02', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(513, 'B-0435/BAST/PL.714/03/2026', 445, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 03:59:36', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(514, 'B-0436/BAST/PL.714/03/2026', 441, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:01:20', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(515, 'B-0437/BAST/PL.714/03/2026', 434, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:02:36', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(516, 'B-0438/BAST/PL.714/03/2026', 486, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:03:58', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(517, 'B-0439/BAST/PL.714/03/2026', 475, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:05:08', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(518, 'B-0440/BAST/PL.714/03/2026', 461, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:06:28', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(519, 'B-0441/BAST/PL.714/03/2026', 461, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:06:56', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(520, 'B-0442/BAST/PL.714/03/2026', 463, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:08:17', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(522, 'B-0443/BAST/PL.714/03/2026', 463, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:10:37', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(523, 'B-0444/BAST/PL.714/03/2026', 467, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:11:51', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(530, 'B-0445/BAST/PL.714/03/2026', 521, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:22:00', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(531, 'B-0446/BAST/PL.714/03/2026', 521, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:22:43', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(532, 'B-0447/BAST/PL.714/03/2026', 521, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:23:18', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(533, 'B-0448/BAST/PL.714/03/2026', 533, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:24:25', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(534, 'B-0449/BAST/PL.714/03/2026', 543, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:25:25', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(535, 'B-0450/BAST/PL.714/03/2026', 543, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:25:54', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(536, 'B-0451/BAST/PL.714/03/2026', 525, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:26:52', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(537, 'B-0452/BAST/PL.714/03/2026', 541, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:28:21', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(538, 'B-0453/BAST/PL.714/03/2026', 541, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:28:45', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(539, 'B-0454/BAST/PL.714/03/2026', 570, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:36:41', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(540, 'B-0455/BAST/PL.714/03/2026', 570, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:37:08', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(541, 'B-0456/BAST/PL.714/03/2026', 562, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:38:40', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(542, 'B-0457/BAST/PL.714/03/2026', 562, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:39:08', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(543, 'B-0458/BAST/PL.714/03/2026', 618, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:41:11', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(544, 'B-0459/BAST/PL.714/03/2026', 618, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:41:53', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(545, 'B-0460/BAST/PL.714/03/2026', 622, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:43:19', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(546, 'B-0461/BAST/PL.714/03/2026', 620, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:44:52', 'MARET 2026', 1, 6, 'pending', 'pending', NULL, NULL),
+(547, 'B-0462/BAST/PL.714/03/2026', 620, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:45:21', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(548, 'B-0463/BAST/PL.714/03/2026', 620, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:45:48', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(549, 'B-0464/BAST/PL.714/03/2026', 656, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:47:34', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(550, 'B-0465/BAST/PL.714/03/2026', 656, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:48:13', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(551, 'B-0466/BAST/PL.714/03/2026', 656, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:48:55', 'MARET 2026', 1, 7, 'pending', 'pending', NULL, NULL),
+(552, 'B-0467/BAST/PL.714/03/2026', 656, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:49:30', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(553, 'B-0468/BAST/PL.714/03/2026	', 694, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:54:05', 'MARET 2026', 1, 8, 'pending', 'pending', NULL, NULL),
+(554, 'B-0469/BAST/PL.714/03/2026', 723, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:56:12', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL),
+(555, 'B-0470/BAST/PL.714/03/2026', 723, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:56:32', 'MARET 2026', 1, 18, 'pending', 'pending', NULL, NULL),
+(556, 'B-0471/BAST/PL.714/03/2026', 733, '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 04:58:33', 'MARET 2026', 1, 19, 'pending', 'pending', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -527,55 +528,55 @@ INSERT INTO `bast` (`id`, `nomor_bast`, `id_petugas_bast`, `tgl_bast`, `create_b
 -- (See below for the actual view)
 --
 CREATE TABLE `cek_honor_petugas_view` (
-`id` int
-,`id_matrik_honor` int
-,`id_petugas` int
-,`jabatan` varchar(255)
-,`volume_spk` int
-,`volume_bast` int
-,`satuan` varchar(255)
-,`harga_satuan` int
-,`total` int
-,`total_honor` bigint
-,`cek_double` int
-,`status_spk` int
-,`id_spk` int
-,`status_bast` int
-,`id_bast` int
-,`rincian_output_detail` int
-,`kak` int
-,`sk` int
-,`spk_ttd` int
+`alamat` varchar(255)
 ,`bast_ttd` int
-,`selesai_fp` int
+,`bulan` varchar(255)
+,`cek_double` int
+,`cek_double_matrik` varchar(255)
+,`create_at` date
+,`create_by` int
+,`email` varchar(255)
+,`harga_satuan` int
+,`harga_satuan_honor` int
+,`id` int
+,`id_bast` int
+,`id_bulan_pelaksanaan` int
+,`id_matrik` int
+,`id_matrik_honor` int
+,`id_nama_survei` int
+,`id_petugas` int
+,`id_rincian_output` int
+,`id_spk` int
+,`jabatan` varchar(255)
+,`jabatan_petugas` varchar(255)
+,`jangka_waktu` varchar(255)
+,`kak` int
+,`kecamatan` varchar(255)
+,`kode_bulan` varchar(255)
+,`nama_petugas` varchar(255)
+,`nama_satuan` varchar(255)
+,`nik` varchar(255)
+,`no_surat_bast` int
+,`no_surat_spk` int
+,`pekerjaan` varchar(255)
 ,`pengajuan_spm` int
+,`rincian_output_detail` int
+,`satuan` varchar(255)
+,`selesai_fp` int
+,`sk` int
+,`sobat_id` varchar(255)
+,`spk_ttd` int
+,`status_bast` int
+,`status_petugas` varchar(255)
+,`status_spk` int
+,`tahun` varchar(255)
 ,`terbit_sp2d` int
 ,`tgl_sp2d` varchar(255)
-,`nik` varchar(255)
-,`nama_petugas` varchar(255)
-,`alamat` varchar(255)
-,`kecamatan` varchar(255)
-,`pekerjaan` varchar(255)
-,`email` varchar(255)
-,`sobat_id` varchar(255)
-,`jabatan_petugas` varchar(255)
-,`status_petugas` varchar(255)
-,`id_matrik` int
-,`id_rincian_output` int
-,`id_nama_survei` int
+,`total` int
+,`total_honor` bigint
 ,`uraian_kegiatan` varchar(255)
-,`id_bulan_pelaksanaan` int
-,`tahun` varchar(255)
-,`jangka_waktu` varchar(255)
-,`cek_double_matrik` varchar(255)
-,`no_surat_spk` int
-,`no_surat_bast` int
-,`create_by` int
-,`create_at` date
-,`harga_satuan_honor` int
-,`bulan` varchar(255)
-,`kode_bulan` varchar(255)
-,`nama_satuan` varchar(255)
+,`volume_bast` int
+,`volume_spk` int
 );
 
 -- --------------------------------------------------------
@@ -585,26 +586,26 @@ CREATE TABLE `cek_honor_petugas_view` (
 -- (See below for the actual view)
 --
 CREATE TABLE `cek_sbml_view` (
-`id` int
-,`id_matrik_honor` int
-,`id_petugas` int
-,`jabatan` varchar(255)
-,`volume_spk` int
-,`volume_bast` int
-,`satuan` varchar(255)
+`bulan` varchar(255)
 ,`harga_satuan` int
-,`total` int
-,`id_rincian_output` int
-,`id_nama_survei` int
-,`uraian_kegiatan` varchar(255)
+,`id` int
 ,`id_bulan_pelaksanaan` int
-,`tahun` varchar(255)
+,`id_matrik_honor` int
+,`id_nama_survei` int
+,`id_petugas` int
+,`id_rincian_output` int
+,`jabatan` varchar(255)
 ,`jangka_waktu` varchar(255)
-,`nik` varchar(255)
-,`nama_petugas` varchar(255)
-,`bulan` varchar(255)
 ,`kode_bulan` varchar(255)
+,`nama_petugas` varchar(255)
+,`nik` varchar(255)
+,`satuan` varchar(255)
 ,`satuan2` varchar(255)
+,`tahun` varchar(255)
+,`total` int
+,`uraian_kegiatan` varchar(255)
+,`volume_bast` int
+,`volume_spk` int
 );
 
 -- --------------------------------------------------------
@@ -614,39 +615,39 @@ CREATE TABLE `cek_sbml_view` (
 -- (See below for the actual view)
 --
 CREATE TABLE `copy_petugas_view` (
-`id_rincian_output` int
-,`id` int
-,`id_petugas` int
-,`status_bast` int
-,`status_spk` int
-,`volume_spk` int
-,`volume_bast` int
+`alamat` varchar(255)
+,`bulan` varchar(255)
+,`bulan_tahun` varchar(511)
+,`email` varchar(255)
 ,`harga_satuan` int
+,`harga_satuan_honor` int
+,`id` int
+,`id_jabatan` int
+,`id_nama_survei` int
+,`id_petugas` int
+,`id_rincian_output` int
+,`id_satuan` int
+,`jabatan` varchar(255)
+,`jangka_waktu` varchar(255)
+,`kecamatan` varchar(255)
+,`keterangan_jabatan` varchar(255)
+,`kode_bulan` varchar(255)
+,`nama_petugas` varchar(255)
+,`nama_survei` varchar(255)
+,`nik` varchar(255)
+,`pekerjaan` varchar(255)
+,`rincian_output` varchar(255)
+,`satuan` varchar(255)
+,`sobat_id` varchar(255)
+,`status_bast` int
+,`status_petugas` varchar(255)
+,`status_rincian_output` varchar(255)
+,`status_spk` int
+,`tahun` varchar(255)
 ,`total` int
 ,`uraian_kegiatan` varchar(255)
-,`tahun` varchar(255)
-,`jangka_waktu` varchar(255)
-,`harga_satuan_honor` int
-,`nik` varchar(255)
-,`nama_petugas` varchar(255)
-,`alamat` varchar(255)
-,`kecamatan` varchar(255)
-,`pekerjaan` varchar(255)
-,`email` varchar(255)
-,`sobat_id` varchar(255)
-,`status_petugas` varchar(255)
-,`id_jabatan` int
-,`jabatan` varchar(255)
-,`keterangan_jabatan` varchar(255)
-,`id_satuan` int
-,`satuan` varchar(255)
-,`rincian_output` varchar(255)
-,`status_rincian_output` varchar(255)
-,`id_nama_survei` int
-,`nama_survei` varchar(255)
-,`bulan` varchar(255)
-,`kode_bulan` varchar(255)
-,`bulan_tahun` varchar(511)
+,`volume_bast` int
+,`volume_spk` int
 );
 
 -- --------------------------------------------------------
@@ -1714,22 +1715,22 @@ INSERT INTO `jadwal_translok` (`id`, `id_user`, `id_nama_survei`, `tgl_translok`
 -- (See below for the actual view)
 --
 CREATE TABLE `jadwal_translok_view` (
-`id` int
-,`id_user` int
-,`id_nama_survei` int
-,`tgl_translok` date
-,`bulan` int
-,`tahun` year
+`bulan` int
 ,`cek_double` varchar(255)
-,`nip` varchar(100)
-,`nama_user` varchar(255)
-,`foto` varchar(255)
-,`id_tim` int
-,`status` varchar(255)
-,`password` varchar(255)
 ,`email` varchar(255)
-,`role` varchar(255)
+,`foto` varchar(255)
+,`id` int
+,`id_nama_survei` int
+,`id_tim` int
+,`id_user` int
 ,`nama_survei` varchar(255)
+,`nama_user` varchar(255)
+,`nip` varchar(100)
+,`password` varchar(255)
+,`role` varchar(255)
+,`status` varchar(255)
+,`tahun` year
+,`tgl_translok` date
 );
 
 -- --------------------------------------------------------
@@ -3019,32 +3020,32 @@ INSERT INTO `matrik_translok` (`id`, `id_tim`, `id_nama_survei`, `uraian_pengaju
 -- (See below for the actual view)
 --
 CREATE TABLE `rekap_translok_view` (
-`id` int
-,`id_matrik_translok` int
-,`id_user` int
-,`volume` int
-,`satuan` varchar(255)
-,`harga_satuan` int
-,`total` int
-,`st` int
-,`visum` int
-,`s_non_pkd` int
-,`laporan` int
+`bulan` varchar(255)
 ,`dokumentasi` int
-,`selesai_fp` int
+,`harga_satuan` int
+,`id` int
+,`id_bulan_pengajuan` int
+,`id_matrik_translok` int
+,`id_nama_survei` int
+,`id_tim` int
+,`id_user` int
+,`keterangan` text
+,`kode_bulan` varchar(255)
+,`laporan` int
+,`nama_survei` varchar(255)
+,`nama_user` varchar(255)
+,`nip` varchar(100)
 ,`pengajuan_spm` int
+,`s_non_pkd` int
+,`satuan` varchar(255)
+,`selesai_fp` int
+,`st` int
+,`tahun` varchar(255)
 ,`terbit_sp2d` int
 ,`tgl_sp2d` varchar(255)
-,`keterangan` text
-,`id_tim` int
-,`id_nama_survei` int
-,`id_bulan_pengajuan` int
-,`tahun` varchar(255)
-,`nip` varchar(100)
-,`nama_user` varchar(255)
-,`nama_survei` varchar(255)
-,`bulan` varchar(255)
-,`kode_bulan` varchar(255)
+,`total` int
+,`visum` int
+,`volume` int
 );
 
 -- --------------------------------------------------------
@@ -3054,36 +3055,36 @@ CREATE TABLE `rekap_translok_view` (
 -- (See below for the actual view)
 --
 CREATE TABLE `sbml_detail_view` (
-`id_rincian_output` int
+`alamat` varchar(255)
+,`bulan` varchar(255)
+,`bulan_tahun` varchar(511)
+,`email` varchar(255)
+,`harga_satuan` int
+,`harga_satuan_honor` int
 ,`id` int
 ,`id_petugas` int
+,`id_rincian_output` int
+,`jabatan` varchar(255)
+,`jangka_waktu` varchar(255)
+,`kecamatan` varchar(255)
+,`keterangan_jabatan` varchar(255)
+,`kode_bulan` varchar(255)
+,`nama_petugas` varchar(255)
+,`nama_survei` varchar(255)
+,`nik` varchar(255)
+,`pekerjaan` varchar(255)
+,`rincian_output` varchar(255)
+,`satuan` varchar(255)
+,`sobat_id` varchar(255)
 ,`status_bast` int
+,`status_petugas` varchar(255)
+,`status_rincian_output` varchar(255)
 ,`status_spk` int
-,`volume_spk` int
-,`volume_bast` int
-,`harga_satuan` int
+,`tahun` varchar(255)
 ,`total` int
 ,`uraian_kegiatan` varchar(255)
-,`tahun` varchar(255)
-,`jangka_waktu` varchar(255)
-,`harga_satuan_honor` int
-,`nik` varchar(255)
-,`nama_petugas` varchar(255)
-,`alamat` varchar(255)
-,`kecamatan` varchar(255)
-,`pekerjaan` varchar(255)
-,`email` varchar(255)
-,`sobat_id` varchar(255)
-,`status_petugas` varchar(255)
-,`jabatan` varchar(255)
-,`keterangan_jabatan` varchar(255)
-,`satuan` varchar(255)
-,`rincian_output` varchar(255)
-,`status_rincian_output` varchar(255)
-,`nama_survei` varchar(255)
-,`bulan` varchar(255)
-,`kode_bulan` varchar(255)
-,`bulan_tahun` varchar(511)
+,`volume_bast` int
+,`volume_spk` int
 );
 
 -- --------------------------------------------------------
@@ -3093,17 +3094,17 @@ CREATE TABLE `sbml_detail_view` (
 -- (See below for the actual view)
 --
 CREATE TABLE `sbml_view` (
-`id` int
-,`id_petugas` int
-,`nik` varchar(255)
-,`nama_petugas` varchar(255)
-,`alamat` varchar(255)
-,`kecamatan` varchar(255)
-,`uraian_kegiatan` varchar(255)
-,`rincian_output` varchar(255)
-,`nama_survei` varchar(255)
+`alamat` varchar(255)
 ,`bulan_tahun` varchar(511)
+,`id` int
+,`id_petugas` int
+,`kecamatan` varchar(255)
+,`nama_petugas` varchar(255)
+,`nama_survei` varchar(255)
+,`nik` varchar(255)
+,`rincian_output` varchar(255)
 ,`total_honor` decimal(42,0)
+,`uraian_kegiatan` varchar(255)
 );
 
 -- --------------------------------------------------------
@@ -3125,349 +3126,348 @@ CREATE TABLE `spk` (
   `id_ppk` int NOT NULL,
   `honor_pelatihan` int NOT NULL,
   `status_mitra` enum('pending','disetujui') COLLATE utf8mb4_general_ci DEFAULT 'pending',
-  `status_pegawai` enum('pending','disetujui','ditolak') COLLATE utf8mb4_general_ci DEFAULT 'pending',
-  `file_mitra_pdf` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `waktu_ttd_mitra` datetime DEFAULT NULL
+  `file_pdf_mitra` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `status_pegawai` enum('pending','disetujui','ditolak') COLLATE utf8mb4_general_ci DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `spk`
 --
 
-INSERT INTO `spk` (`id`, `nomor_spk`, `id_petugas_spk`, `tgl_spk`, `tgl_selesai_spk`, `create_by`, `create_at`, `bulan_spk`, `tahun_spk`, `id_ppk`, `honor_pelatihan`, `status_mitra`, `status_pegawai`, `file_mitra_pdf`, `waktu_ttd_mitra`) VALUES
-(53, '3525.0058/SPKR/01/2026', 166, '2026-01-01', '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 07:38:35', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(54, '3525.0059/SPKR/01/2026', 570, '2026-01-01', '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 07:39:51', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(57, '3525.0062/SPKR/01/2026', 445, '2026-01-01', '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 07:45:29', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(58, '3525.0057/SPKR/01/2026', 390, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:36:13', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(59, '3525.0060/SPKR/01/2026', 66, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:37:58', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(60, '3525.0061/SPKR/01/2026', 376, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:38:36', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(61, '3525.0065/SPKR/01/2026', 22, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 06:52:18', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(62, '3525.0066/SPKR/01/2026', 86, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 06:54:12', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(63, '3525.0067/SPKR/01/2026', 101, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 06:54:42', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(64, '3525.0068/SPKR/01/2026', 218, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 06:55:16', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(65, '3525.0069/SPKR/01/2026', 299, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 06:55:57', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(66, '3525.0070/SPKR/01/2026', 339, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 06:56:36', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(67, '3525.0071/SPKR/01/2026', 394, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 06:57:31', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(68, '3525.0072/SPKR/01/2026', 466, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 06:58:32', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(69, '3525.0073/SPKR/01/2026', 434, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 06:59:32', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(70, '3525.0074/SPKR/01/2026', 633, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:00:04', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(71, '3525.0075/SPKR/01/2026', 733, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:00:35', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(72, 'B-0076/SPKR/01/2026', 20, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:32:27', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(73, 'B-0077/SPKR/01/2026', 69, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:33:08', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(74, 'B-0078/SPKR/01/2026', 38, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:34:02', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(75, 'B-0079/SPKR/01/2026', 120, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:34:39', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(76, 'B-0080/SPKR/01/2026', 116, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:35:40', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(77, 'B-0081/SPKR/01/2026', 165, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:36:15', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(78, 'B-0082/SPKR/01/2026', 179, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:51:34', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(79, 'B-0083/SPKR/01/2026', 235, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:52:12', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(80, 'B-0084/SPKR/01/2026', 237, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:52:41', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(81, 'B-0085/SPKR/01/2026', 258, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:55:28', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(82, 'B-0086/SPKR/01/2026', 257, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:55:53', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(83, 'B-0087/SPKR/01/2026', 311, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:56:42', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(84, 'B-0088/SPKR/01/2026', 297, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:58:46', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(86, 'B-0089/SPKR/01/2026', 331, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:00:27', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(87, 'B-0090/SPKR/01/2026', 323, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:01:07', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(88, 'B-0091/SPKR/01/2026', 363, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:04:12', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(89, 'B-0092/SPKR/01/2026', 521, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:04:44', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(90, 'B-0093/SPKR/01/2026', 543, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:05:33', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(91, 'B-0094/SPKR/01/2026', 562, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:06:03', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(92, 'B-0095/SPKR/01/2026', 618, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:06:27', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(93, 'B-0096/SPKR/01/2026', 656, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:07:06', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(94, 'B-0097/SPK/01/2026', 723, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:07:43', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(95, 'B-0098/SPKR/01/2026', 34, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:08:59', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(96, 'B-0099/SPKR/01/2026', 95, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:10:17', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(97, 'B-0100/SPKR/01/2026', 231, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:11:31', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(98, 'B-0101/SPKR/01/2026', 262, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:12:07', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(99, 'B-0102/SPKR/01/2026', 622, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:12:45', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(100, 'B-0103/SPKR/01/2026', 429, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:15:58', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(101, 'B-0104/SPKR/01/2026', 694, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:18:32', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(102, 'B-0105/SPKR/01/2026', 122, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:21:16', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(103, 'B-0106/SPKR/01/2026', 196, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:21:38', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(104, 'B-0107/SPKR/01/2026', 350, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:22:16', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(105, 'B-0108/SPKR/01/2026', 407, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:22:45', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(106, 'B-0109/SPKR/01/2026', 508, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:23:17', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(107, 'B-0110/SPKR/01/2026', 345, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:24:35', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(108, 'B-0111/SPKR/01/2026', 402, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:25:03', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(109, 'B-0112/SPKR/01/2026', 610, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:25:24', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(110, 'B-0113/SPKR/01/2026', 684, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:25:54', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(111, 'B-0114/SPKR/01/2026', 441, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:28:26', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(112, 'B-0115/SPKR/01/2026', 486, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:29:21', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(113, 'B-0116/SPKR/01/2026', 463, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:30:10', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(114, 'B-0117/SPKR/01/2026', 167, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:35:55', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(115, 'B-0118/SPKR/01/2026', 375, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:36:30', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(116, 'B-0119/SPKR/01/2026', 358, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:36:55', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(117, 'B-0120/SPKR/01/2026', 461, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:37:26', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(118, 'B-0121/SPKR/01/2026', 206, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:38:27', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(119, 'B-0122/SPKR/01/2026', 256, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:39:24', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(120, 'B-0123/SPKR/01/2026', 24, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:40:16', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(121, 'B-0124/SPKR/01/2026', 310, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:40:51', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(122, 'B-0125/SPKR/01/2026', 533, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:41:36', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(123, 'B-0126/SPKR/01/2026', 620, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:42:03', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(124, 'B-0127/SPKR/01/2026', 15, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:43:52', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(125, 'B-0128/SPKR/01/2026', 178, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:44:30', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(126, 'B-0129/SPKR/01/2026', 144, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:45:00', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(127, 'B-0130/SPKR/01/2026', 176, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:45:35', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(128, 'B-0131/SPKR/01/2026', 225, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:45:59', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(129, 'B-0132/SPKR/01/2026', 343, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:46:20', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(130, 'B-0133/SPKR/01/2026', 467, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:47:15', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(131, 'B-0134/SPKR/01/2026', 541, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:48:17', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(132, 'B-0002/SPK/01/2026', 300, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 11:28:01', 'JANUARI 2026', '', 1, 750000, 'pending', 'pending', NULL, NULL),
-(133, 'B-0003/SPK/01/2026', 313, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 11:29:14', 'JANUARI 2026', '', 1, 750000, 'pending', 'pending', NULL, NULL),
-(135, 'B-0004/SPK/01/2026', 212, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 12:45:27', 'JANUARI 2026', '', 1, 750000, 'pending', 'pending', NULL, NULL),
-(136, 'B-0005/SPK/01/2026', 93, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:01:43', 'JANUARI 2026', '', 1, 775000, 'pending', 'pending', NULL, NULL),
-(138, 'B-0006/SPK/01/2026', 56, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:03:27', 'JANUARI 2026', '', 1, 750000, 'pending', 'pending', NULL, NULL),
-(139, 'B-0008/SPK/01/2026', 426, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:04:51', 'JANUARI 2026', '', 1, 750000, 'pending', 'pending', NULL, NULL),
-(140, 'B-0010/SPK/01/2026', 388, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:06:11', 'JANUARI 2026', '', 1, 750000, 'pending', 'pending', NULL, NULL),
-(141, 'B-0011/SPK/01/2026', 344, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:07:00', 'JANUARI 2026', '', 1, 750000, 'pending', 'pending', NULL, NULL),
-(142, 'B-0012/SPK/01/2026', 103, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:07:42', 'JANUARI 2026', '', 1, 750000, 'pending', 'pending', NULL, NULL),
-(143, 'B-0013/SPK/01/2026', 443, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:08:23', 'JANUARI 2026', '', 1, 760000, 'pending', 'pending', NULL, NULL),
-(144, 'B-0016/SPK/01/2026', 177, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:09:22', 'JANUARI 2026', '', 1, 750000, 'pending', 'pending', NULL, NULL),
-(145, 'B-0018/SPK/01/2026', 534, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:11:09', 'JANUARI 2026', '', 1, 750000, 'pending', 'pending', NULL, NULL),
-(146, 'B-0019/SPK/01/2026', 30, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:13:25', 'JANUARI 2026', '', 1, 750000, 'pending', 'pending', NULL, NULL),
-(147, 'B-0020/SPK/01/2026', 303, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:15:36', 'JANUARI 2026', '', 1, 750000, 'pending', 'pending', NULL, NULL),
-(148, 'B-0021/SPK/01/2026', 254, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:16:16', 'JANUARI 2026', '', 1, 750000, 'pending', 'pending', NULL, NULL),
-(149, 'B-0022/SPK/01/2026', 266, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:17:19', 'JANUARI 2026', '', 1, 750000, 'pending', 'pending', NULL, NULL),
-(150, 'B-0023/SPK/01/2026', 252, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:18:08', 'JANUARI 2026', '', 1, 750000, 'pending', 'pending', NULL, NULL),
-(151, 'B-0025/SPK/01/2026', 507, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:18:58', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(152, 'B-0026/SPK/01/2026', 232, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:19:47', 'JANUARI 2026', '', 1, 750000, 'pending', 'pending', NULL, NULL),
-(153, 'B-0027/SPK/01/2026', 51, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:20:30', 'JANUARI 2026', '', 1, 750000, 'pending', 'pending', NULL, NULL),
-(154, 'B-0028/SPK/01/2026', 44, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:21:09', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(155, 'B-0029/SPK/01/2026', 43, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:21:48', 'JANUARI 2026', '', 1, 750000, 'pending', 'pending', NULL, NULL),
-(156, 'B-0030/SPK/01/2026', 70, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:22:27', 'JANUARI 2026', '', 1, 750000, 'pending', 'pending', NULL, NULL),
-(157, 'B-0031/SPK/01/2026', 47, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:23:03', 'JANUARI 2026', '', 1, 750000, 'pending', 'pending', NULL, NULL),
-(158, 'B-0032/SPK/01/2026', 315, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:00:21', 'JANUARI 2026', '', 1, 600000, 'pending', 'pending', NULL, NULL),
-(159, 'B-0033/SPK/01/2026', 330, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:00:49', 'JANUARI 2026', '', 1, 600000, 'pending', 'pending', NULL, NULL),
-(160, 'B-0034/SPK/01/2026', 566, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:01:19', 'JANUARI 2026', '', 1, 620000, 'pending', 'pending', NULL, NULL),
-(161, 'B-0035/SPK/01/2026', 575, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:01:46', 'JANUARI 2026', '', 1, 620000, 'pending', 'pending', NULL, NULL),
-(162, 'B-0036/SPK/01/2026', 427, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:02:11', 'JANUARI 2026', '', 1, 600000, 'pending', 'pending', NULL, NULL),
-(163, 'B-0040/SPK/01/2026', 372, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:03:15', 'JANUARI 2026', '', 1, 600000, 'pending', 'pending', NULL, NULL),
-(164, 'B-0041/SPK/01/2026', 476, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:03:53', 'JANUARI 2026', '', 1, 600000, 'pending', 'pending', NULL, NULL),
-(165, 'B-0042/SPK/01/2026', 469, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:04:20', 'JANUARI 2026', '', 1, 600000, 'pending', 'pending', NULL, NULL),
-(166, 'B-0043/SPK/01/2026', 436, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:04:50', 'JANUARI 2026', '', 1, 600000, 'pending', 'pending', NULL, NULL),
-(167, 'B-0044/SPK/01/2026', 153, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:05:17', 'JANUARI 2026', '', 1, 600000, 'pending', 'pending', NULL, NULL),
-(168, 'B-0046/SPK/01/2026', 193, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:05:54', 'JANUARI 2026', '', 1, 600000, 'pending', 'pending', NULL, NULL),
-(169, 'B-0049/SPK/01/2026', 145, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:08:29', 'JANUARI 2026', '', 1, 600000, 'pending', 'pending', NULL, NULL),
-(170, 'B-0050/SPK/01/2026', 629, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:09:00', 'JANUARI 2026', '', 1, 620000, 'pending', 'pending', NULL, NULL),
-(171, 'B-0051/SPK/01/2026', 688, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:09:28', 'JANUARI 2026', '', 1, 450000, 'pending', 'pending', NULL, NULL),
-(172, 'B-0052/SPK/01/2026', 539, '2026-01-15', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:09:56', 'JANUARI 2026', '', 1, 600000, 'pending', 'pending', NULL, NULL),
-(173, 'B-0053/SPK/01/2026', 721, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:10:23', 'JANUARI 2026', '', 1, 450000, 'pending', 'pending', NULL, NULL),
-(174, 'B-0054/SPK/01/2026', 651, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:13:04', 'JANUARI 2026', '', 1, 620000, 'pending', 'pending', NULL, NULL),
-(175, 'B-0055/SPK/01/2026', 13, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:13:29', 'JANUARI 2026', '', 1, 620000, 'pending', 'pending', NULL, NULL),
-(176, 'B-0063/SPK/01/2026', 689, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:15:56', 'JANUARI 2026', '', 1, 450000, 'pending', 'pending', NULL, NULL),
-(177, 'B-0135/SPKR/01/2026', 264, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:22:30', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(178, 'B-0136/SPKR/01/2026', 317, '2026-01-27', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:08:02', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(179, 'B-0137/SPKR/01/2026', 385, '2026-01-27', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:08:23', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(180, 'B-0138/SPKR/01/2026', 389, '2026-01-27', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:08:43', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(181, 'B-0139/SPKR/01/2026', 413, '2026-01-27', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:09:03', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(182, 'B-0140/SPKR/01/2026', 408, '2026-01-27', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:11:45', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(183, 'B-0141/SPKR/01/2026', 475, '2026-01-27', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:12:05', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(184, 'B-0142/SPKR/01/2026', 439, '2026-01-27', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:12:35', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(185, 'B-0143/SPKR/01/2026', 477, '2026-01-27', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:12:59', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(212, 'B-0144/SPKR/02/2026', 20, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:39:49', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(213, 'B-0145/SPKR/02/2026', 22, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:40:10', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(214, 'B-0146/SPKR/02/2026', 13, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:40:29', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(215, 'B-0147/SPKR/02/2026', 30, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:40:46', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(216, 'B-0148/SPKR/02/2026', 24, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:41:19', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(217, 'B-0149/SPKR/02/2026', 38, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:43:21', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(218, 'B-0150/SPKR/02/2026', 69, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:43:37', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(219, 'B-0151/SPKR/02/2026', 34, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:43:58', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(221, 'B-0153/SPKR/02/2026', 44, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:44:59', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(222, 'B-0154/SPKR/02/2026', 43, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:45:14', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(223, 'B-0155/SPKR/02/2026', 70, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:45:29', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(224, 'B-0156/SPKR/02/2026', 47, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:45:46', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(225, 'B-0157/SPKR/02/2026', 93, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:46:03', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(226, 'B-0158/SPKR/02/2026', 56, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:46:18', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(227, 'B-0159/SPKR/02/2026', 86, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:49:27', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(228, 'B-0160/SPKR/02/2026', 51, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:49:42', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(230, 'B-0162/SPKR/02/2026', 120, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:53:05', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(231, 'B-0163/SPKR/02/2026', 116, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:53:31', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(232, 'B-0164/SPKR/02/2026', 103, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:53:54', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(233, 'B-0165/SPKR/02/2026', 101, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:54:12', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(234, 'B-0166/SPKR/02/2026', 165, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:54:50', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(235, 'B-0167/SPKR/02/2026', 179, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:55:05', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(236, 'B-0168/SPKR/02/2026', 153, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:55:21', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(237, 'B-0169/SPKR/02/2026', 193, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:55:43', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(240, 'B-0172/SPKR/02/2026', 167, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:56:31', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(241, 'B-0173/SPKR/02/2026', 145, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:56:46', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(242, 'B-0174/SPKR/02/2026', 177, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:57:08', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(245, 'B-0177/SPKR/02/2026', 235, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:58:15', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(246, 'B-0178/SPKR/02/2026', 237, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:58:33', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(247, 'B-0179/SPKR/02/2026', 231, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:58:48', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(248, 'B-0180/SPKR/02/2026', 212, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:59:16', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(249, 'B-0181/SPKR/02/2026', 232, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:59:33', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(250, 'B-0182/SPKR/02/2026', 257, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:00:50', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(251, 'B-0183/SPKR/02/2026', 258, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:01:19', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(252, 'B-0184/SPKR/02/2026', 262, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:02:05', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(253, 'B-0185/SPKR/02/2026', 254, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:02:26', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(254, 'B-0186/SPKR/02/2026', 266, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:02:45', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(255, 'B-0187/SPKR/02/2026', 252, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:02:59', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(256, 'B-0188/SPKR/02/2026', 264, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:03:16', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(257, 'B-0189/SPKR/02/2026', 256, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:03:38', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(258, 'B-0190/SPKR/02/2026', 311, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:03:58', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(259, 'B-0191/SPKR/02/2026', 297, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:04:39', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(260, 'B-0192/SPKR/02/2026', 299, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:09:06', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(261, 'B-0193/SPKR/02/2026', 300, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:09:21', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(262, 'B-0194/SPKR/02/2026', 303, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:09:37', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(263, 'B-0195/SPKR/02/2026', 313, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:09:55', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(264, 'B-0196/SPKR/02/2026', 310, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:10:12', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(265, 'B-0197/SPKR/02/2026', 323, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:10:26', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(266, 'B-0198/SPKR/02/2026', 331, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:10:42', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(267, 'B-0199/SPKR/02/2026', 330, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:11:04', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(268, 'B-0200/SPKR/02/2026', 317, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:11:56', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(269, 'B-0201/SPKR/02/2026', 315, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:17:23', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(270, 'B-0202/SPKR/02/2026', 339, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:17:37', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(271, 'B-0203/SPKR/02/2026', 363, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:17:51', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(273, 'B-0205/SPKR/02/2026', 385, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:22:49', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(274, 'B-0206/SPKR/02/2026', 389, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:23:04', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(277, 'B-0209/SPKR/02/2026', 388, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:24:30', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(279, 'B-0211/SPKR/02/2026', 344, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:25:03', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(283, 'B-0215/SPKR/02/2026', 429, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:26:09', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(286, 'B-0218/SPKR/02/2026', 413, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:26:56', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(287, 'B-0219/SPKR/02/2026', 408, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:27:10', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(288, 'B-0220/SPKR/02/2026', 427, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:27:26', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(289, 'B-0221/SPKR/02/2026', 426, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:27:40', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(290, 'B-0222/SPKR/02/2026', 394, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:27:54', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(292, 'B-0224/SPKR/02/2026', 441, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:28:24', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(297, 'B-0229/SPKR/02/2026', 439, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:29:39', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(298, 'B-0230/SPKR/02/2026', 477, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:29:55', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(299, 'B-0231/SPKR/02/2026', 443, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:30:40', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(300, 'B-0232/SPKR/02/2026', 476, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:30:53', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(301, 'B-0233/SPKR/02/2026', 469, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:31:10', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(302, 'B-0234/SPKR/02/2026', 436, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:31:50', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(303, 'B-0235/SPKR/02/2026', 466, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:32:04', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(304, 'B-0236/SPKR/02/2026', 521, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:32:17', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(305, 'B-0237/SPKR/02/2026', 508, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:32:33', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(306, 'B-0238/SPKR/02/2026', 507, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:32:47', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(307, 'B-0239/SPKR/02/2026', 543, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:33:00', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(308, 'B-0240/SPKR/02/2026', 539, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:33:16', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(309, 'B-0241/SPKR/02/2026', 534, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:33:30', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(310, 'B-0242/SPKR/02/2026', 533, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:33:41', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(311, 'B-0243/SPKR/02/2026', 562, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:33:55', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(313, 'B-0245/SPKR/02/2026', 566, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:34:22', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(314, 'B-0246/SPKR/02/2026', 575, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:34:35', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(315, 'B-0247/SPKR/02/2026', 618, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:35:04', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(316, 'B-0248/SPKR/02/2026', 622, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:35:19', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(318, 'B-0250/SPKR/02/2026', 629, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:35:46', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(319, 'B-0251/SPKR/02/2026', 633, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:36:13', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(321, 'B-0253/SPKR/02/2026', 651, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:36:42', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(322, 'B-0254/SPKR/02/2026', 689, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:36:56', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(323, 'B-0255/SPKR/02/2026', 688, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:37:11', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(324, 'B-0256/SPKR/02/2026', 723, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:37:24', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(325, 'B-0257/SPKR/02/2026', 733, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:37:37', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(326, 'B-0258/SPKR/02/2026', 721, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:37:52', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(328, 'B-0170/SPKR/02/2026', 206, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:04:10', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(330, 'B-0217/SPKR/02/2026', 402, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:05:07', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(331, 'B-0249/SPKR/02/2026', 620, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:05:54', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(332, 'B-0223/SPKR/02/2026', 434, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:06:27', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(333, 'B-0176/SPKR/02/2026', 218, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:07:04', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(334, 'B-0225/SPKR/02/2026', 486, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:07:31', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(335, 'B-0204/SPKR/02/2026', 345, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:07:55', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(337, 'B-0227/SPKR/02/2026', 445, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:08:53', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(339, 'B-0244/SPKR/02/2026', 570, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:09:49', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(340, 'B-0252/SPKR/02/2026', 656, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:10:15', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(341, 'B-0228/SPKR/02/2026', 475, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:10:48', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(345, 'B-0262/SPKR/02/2026', 345, '2026-02-01', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-12 01:10:23', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(346, 'B-0263/SPKR/02/2026', 402, '2026-02-01', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-12 01:11:05', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(347, 'B-0264/SPKR/02/2026', 684, '2026-02-01', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-12 01:11:28', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(348, 'B-0265/SPKR/02/2026', 225, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 01:22:30', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(349, 'B-0259/SPKR/02/2026', 41, '2026-02-01', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:23:53', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(350, 'B-0152/SPKR/02/2026', 95, '2026-02-01', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:24:35', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(351, 'B-0161/SPKR/02/2026', 66, '2026-02-01', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:25:18', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(352, 'B-0175/SPKR/02/2026', 144, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:26:32', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(353, 'B-0171/SPKR/02/2026', 178, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:27:26', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(354, 'B-0207/SPKR/02/2026', 376, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:27:50', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(355, 'B-0208/SPKR/02/2026', 390, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:28:23', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(356, 'B-0210/SPKR/02/2026', 358, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:29:20', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(357, 'B-0213/SPKR/02/2026', 375, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:30:07', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(358, 'B-0212/SPKR/02/2026', 372, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:30:33', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(359, 'B-0216/SPKR/02/2026', 407, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:31:57', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(360, 'B-0260/SPKR/02/2026', 461, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:32:33', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(361, 'B-0214/SPKR/02/2026', 350, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:32:58', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(362, 'B-0226/SPKR/02/2026', 463, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:33:24', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(363, 'B-0261/SPKR/02/2026', 541, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:33:47', 'FEBRUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(365, 'B-0262/SPKR/03/2026', 24, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:31:14', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(367, 'B-0264/SPKR/03/2026', 22, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:32:51', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(371, 'B-0268/SPKR/03/2026', 38, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:35:27', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(372, 'B-0269/SPKR/03/2026', 69, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:36:16', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(373, 'B-0270/SPKR/03/2026', 34, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:36:35', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(375, 'B-0272/SPKR/03/2026', 86, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:37:08', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(376, 'B-0273/SPKR/03/2026', 116, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:37:27', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(378, 'B-0275/SPKR/03/2026', 206, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:38:09', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(379, 'B-0276/SPKR/03/2026', 165, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:38:28', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(380, 'B-0277/SPKR/03/2026', 179, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:38:45', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(381, 'B-0278/SPKR/03/2026', 122, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:39:01', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(383, 'B-0280/SPKR/03/2026', 196, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:39:37', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(385, 'B-0282/SPKR/03/2026', 235, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:41:49', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(386, 'B-0283/SPKR/03/2026', 237, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:42:04', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(387, 'B-0284/SPKR/03/2026', 231, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:42:21', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(388, 'B-0285/SPKR/03/2026', 256, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:42:38', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(389, 'B-0286/SPKR/03/2026', 264, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:42:56', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(391, 'B-0288/SPKR/03/2026', 258, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:46:10', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(392, 'B-0289/SPKR/03/2026', 262, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:46:24', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(393, 'B-0290/SPKR/03/2026', 274, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:47:43', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(394, 'B-0291/SPKR/03/2026', 310, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:48:19', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(395, 'B-0292/SPKR/03/2026', 299, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:48:33', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(396, 'B-0293/SPKR/03/2026', 311, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:48:48', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(397, 'B-0294/SPKR/03/2026', 297, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:49:03', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(398, 'B-0295/SPKR/03/2026', 300, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:49:20', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(399, 'B-0296/SPKR/03/2026', 331, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:49:37', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(400, 'B-0297/SPKR/03/2026', 323, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:49:52', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(406, 'B-0303/SPKR/03/2026', 385, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:53:12', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(407, 'B-0304/SPKR/03/2026', 363, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:53:40', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(408, 'B-0305/SPKR/03/2026', 388, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:54:00', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(410, 'B-0307/SPKR/03/2026', 402, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:54:43', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(411, 'B-0308/SPKR/03/2026', 429, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:55:00', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(412, 'B-0309/SPKR/03/2026', 445, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:55:15', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(415, 'B-0312/SPKR/03/2026', 441, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:56:04', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(416, 'B-0313/SPKR/03/2026', 434, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:56:20', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(417, 'B-0314/SPKR/03/2026', 486, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:56:42', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(418, 'B-0315/SPKR/03/2026', 475, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:56:59', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(419, 'B-0316/SPKR/03/2026', 521, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:57:15', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(420, 'B-0317/SPKR/03/2026', 533, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:57:30', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(422, 'B-0319/SPKR/03/2026', 543, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:58:06', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(423, 'B-0320/SPKR/03/2026', 525, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:58:24', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL);
-INSERT INTO `spk` (`id`, `nomor_spk`, `id_petugas_spk`, `tgl_spk`, `tgl_selesai_spk`, `create_by`, `create_at`, `bulan_spk`, `tahun_spk`, `id_ppk`, `honor_pelatihan`, `status_mitra`, `status_pegawai`, `file_mitra_pdf`, `waktu_ttd_mitra`) VALUES
-(424, 'B-0321/SPKR/03/2026', 570, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:58:39', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(425, 'B-0322/SPKR/03/2026', 562, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:58:54', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(427, 'B-0324/SPKR/03/2026', 618, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:59:28', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(428, 'B-0325/SPKR/03/2026', 622, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:59:51', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(430, 'B-0327/SPKR/03/2026', 694, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 09:00:20', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(431, 'B-0328/SPKR/03/2026', 723, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 09:00:35', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(432, 'B-0329/SPKR/03/2026', 733, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 09:00:49', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(434, 'B-0300/SPKR/03/2026', 345, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-01 01:54:24', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(435, 'B-0279/SPKR/03/2026', 167, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-01 01:55:37', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(437, 'B-0274/SPKR/03/2026', 120, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 01:55:02', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(438, 'B-0302/SPKR/03/2026', 390, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 08:26:20', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(439, 'B-0263/SPKR/03/2026', 20, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 08:29:45', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(440, 'B-0301/SPKR/03/2026', 376, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 08:30:20', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(441, 'B-0266/SPKR/03/2026', 41, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 08:30:46', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(442, 'B-0310/SPKR/03/2026', 461, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 08:31:20', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(443, 'B-0287/SPKR/03/2026', 257, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 08:31:49', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(444, 'B-0271/SPKR/03/2026', 95, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 08:32:28', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(445, 'B-0323/SPKR/03/2026', 620, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 08:34:00', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(446, 'B-0299/SPKR/03/2026', 350, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 08:34:41', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(447, 'B-0306/SPKR/03/2026', 407, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 08:35:10', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(448, 'B-0326/SPKR/03/2026', 656, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:02:51', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(449, 'B-0267/SPKR/03/2026', 66, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:03:29', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(450, 'B-0311/SPKR/03/2026', 463, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:04:03', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(451, 'B-0281/SPKR/03/2026', 218, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:04:33', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(452, 'B-0265/SPKR/03/2026', 15, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:05:04', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(453, 'B-0298/SPKR/03/2026', 375, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:05:31', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(454, 'B-0318/SPKR/03/2026', 541, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:06:05', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(455, 'B-0330/SPKR/03/2026', 144, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:08:09', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(456, 'B-0331/SPKR/03/2026', 467, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:09:28', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(457, 'B-0332/SPKR/03/2026', 364, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:10:03', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(458, 'B-0333/SPKR/03/2026', 59, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:10:25', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(459, 'B-0334/SPKR/03/2026', 115, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:10:47', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(460, 'B-0335/SPKR/03/2026', 176, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:11:11', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(462, 'B-0336/SPKR/03/2026', 178, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:41:15', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(463, 'B-0337/SPKR/03/2026', 343, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:41:43', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(464, 'B-0338/SPKR/03/2026', 372, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:42:04', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(465, 'B-0339/SPKR/03/2026', 358, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:42:20', 'MARET 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(466, 'B-0340/SPKR/01/2026', 41, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-04-06 01:43:18', 'JANUARI 2026', '', 1, 0, 'pending', 'pending', NULL, NULL),
-(467, 'SPK-2206', 11, '2026-04-15', '2026-05-15', 'system', '2026-04-15 14:53:33', '4', '2026', 1, 1000000, 'pending', 'pending', NULL, NULL),
-(468, 'SPK-2026-001', 11, '2026-04-15', '2026-05-15', 'system', '2026-04-15 15:03:00', '4', '2026', 1, 1000000, 'pending', 'pending', NULL, NULL),
-(469, 'SPK-2026-001', 11, '2026-04-15', '2026-05-15', 'system', '2026-04-15 15:05:33', '4', '2026', 1, 1000000, 'pending', 'pending', NULL, NULL);
+INSERT INTO `spk` (`id`, `nomor_spk`, `id_petugas_spk`, `tgl_spk`, `tgl_selesai_spk`, `create_by`, `create_at`, `bulan_spk`, `tahun_spk`, `id_ppk`, `honor_pelatihan`, `status_mitra`, `file_pdf_mitra`, `status_pegawai`) VALUES
+(53, '3525.0058/SPKR/01/2026', 166, '2026-01-01', '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 07:38:35', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(54, '3525.0059/SPKR/01/2026', 570, '2026-01-01', '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 07:39:51', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(57, '3525.0062/SPKR/01/2026', 445, '2026-01-01', '2026-01-31', 'Nailiatul Maghfirowati', '2026-01-30 07:45:29', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(58, '3525.0057/SPKR/01/2026', 390, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:36:13', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(59, '3525.0060/SPKR/01/2026', 66, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:37:58', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(60, '3525.0061/SPKR/01/2026', 376, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 05:38:36', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(61, '3525.0065/SPKR/01/2026', 22, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 06:52:18', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(62, '3525.0066/SPKR/01/2026', 86, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 06:54:12', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(63, '3525.0067/SPKR/01/2026', 101, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 06:54:42', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(64, '3525.0068/SPKR/01/2026', 218, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 06:55:16', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(65, '3525.0069/SPKR/01/2026', 299, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 06:55:57', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(66, '3525.0070/SPKR/01/2026', 339, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 06:56:36', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(67, '3525.0071/SPKR/01/2026', 394, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 06:57:31', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(68, '3525.0072/SPKR/01/2026', 466, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 06:58:32', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(69, '3525.0073/SPKR/01/2026', 434, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 06:59:32', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(70, '3525.0074/SPKR/01/2026', 633, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:00:04', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(71, '3525.0075/SPKR/01/2026', 733, '2026-01-23', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:00:35', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(72, 'B-0076/SPKR/01/2026', 20, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:32:27', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(73, 'B-0077/SPKR/01/2026', 69, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:33:08', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(74, 'B-0078/SPKR/01/2026', 38, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:34:02', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(75, 'B-0079/SPKR/01/2026', 120, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:34:39', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(76, 'B-0080/SPKR/01/2026', 116, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:35:40', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(77, 'B-0081/SPKR/01/2026', 165, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:36:15', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(78, 'B-0082/SPKR/01/2026', 179, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:51:34', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(79, 'B-0083/SPKR/01/2026', 235, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:52:12', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(80, 'B-0084/SPKR/01/2026', 237, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:52:41', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(81, 'B-0085/SPKR/01/2026', 258, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:55:28', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(82, 'B-0086/SPKR/01/2026', 257, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:55:53', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(83, 'B-0087/SPKR/01/2026', 311, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:56:42', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(84, 'B-0088/SPKR/01/2026', 297, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 07:58:46', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(86, 'B-0089/SPKR/01/2026', 331, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:00:27', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(87, 'B-0090/SPKR/01/2026', 323, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:01:07', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(88, 'B-0091/SPKR/01/2026', 363, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:04:12', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(89, 'B-0092/SPKR/01/2026', 521, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:04:44', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(90, 'B-0093/SPKR/01/2026', 543, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:05:33', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(91, 'B-0094/SPKR/01/2026', 562, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:06:03', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(92, 'B-0095/SPKR/01/2026', 618, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:06:27', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(93, 'B-0096/SPKR/01/2026', 656, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:07:06', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(94, 'B-0097/SPK/01/2026', 723, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:07:43', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(95, 'B-0098/SPKR/01/2026', 34, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:08:59', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(96, 'B-0099/SPKR/01/2026', 95, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:10:17', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(97, 'B-0100/SPKR/01/2026', 231, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:11:31', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(98, 'B-0101/SPKR/01/2026', 262, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:12:07', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(99, 'B-0102/SPKR/01/2026', 622, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:12:45', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(100, 'B-0103/SPKR/01/2026', 429, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:15:58', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(101, 'B-0104/SPKR/01/2026', 694, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:18:32', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(102, 'B-0105/SPKR/01/2026', 122, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:21:16', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(103, 'B-0106/SPKR/01/2026', 196, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:21:38', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(104, 'B-0107/SPKR/01/2026', 350, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:22:16', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(105, 'B-0108/SPKR/01/2026', 407, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:22:45', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(106, 'B-0109/SPKR/01/2026', 508, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:23:17', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(107, 'B-0110/SPKR/01/2026', 345, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:24:35', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(108, 'B-0111/SPKR/01/2026', 402, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:25:03', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(109, 'B-0112/SPKR/01/2026', 610, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:25:24', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(110, 'B-0113/SPKR/01/2026', 684, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:25:54', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(111, 'B-0114/SPKR/01/2026', 441, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:28:26', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(112, 'B-0115/SPKR/01/2026', 486, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:29:21', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(113, 'B-0116/SPKR/01/2026', 463, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:30:10', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(114, 'B-0117/SPKR/01/2026', 167, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:35:55', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(115, 'B-0118/SPKR/01/2026', 375, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:36:30', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(116, 'B-0119/SPKR/01/2026', 358, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:36:55', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(117, 'B-0120/SPKR/01/2026', 461, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:37:26', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(118, 'B-0121/SPKR/01/2026', 206, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:38:27', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(119, 'B-0122/SPKR/01/2026', 256, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:39:24', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(120, 'B-0123/SPKR/01/2026', 24, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:40:16', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(121, 'B-0124/SPKR/01/2026', 310, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:40:51', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(122, 'B-0125/SPKR/01/2026', 533, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:41:36', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(123, 'B-0126/SPKR/01/2026', 620, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:42:03', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(124, 'B-0127/SPKR/01/2026', 15, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:43:52', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(125, 'B-0128/SPKR/01/2026', 178, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:44:30', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(126, 'B-0129/SPKR/01/2026', 144, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:45:00', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(127, 'B-0130/SPKR/01/2026', 176, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:45:35', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(128, 'B-0131/SPKR/01/2026', 225, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:45:59', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(129, 'B-0132/SPKR/01/2026', 343, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:46:20', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(130, 'B-0133/SPKR/01/2026', 467, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:47:15', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(131, 'B-0134/SPKR/01/2026', 541, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-05 08:48:17', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(132, 'B-0002/SPK/01/2026', 300, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 11:28:01', 'JANUARI 2026', '', 1, 750000, 'pending', NULL, 'pending'),
+(133, 'B-0003/SPK/01/2026', 313, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 11:29:14', 'JANUARI 2026', '', 1, 750000, 'pending', NULL, 'pending'),
+(135, 'B-0004/SPK/01/2026', 212, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 12:45:27', 'JANUARI 2026', '', 1, 750000, 'pending', NULL, 'pending'),
+(136, 'B-0005/SPK/01/2026', 93, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:01:43', 'JANUARI 2026', '', 1, 775000, 'pending', NULL, 'pending'),
+(138, 'B-0006/SPK/01/2026', 56, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:03:27', 'JANUARI 2026', '', 1, 750000, 'pending', NULL, 'pending'),
+(139, 'B-0008/SPK/01/2026', 426, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:04:51', 'JANUARI 2026', '', 1, 750000, 'pending', NULL, 'pending'),
+(140, 'B-0010/SPK/01/2026', 388, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:06:11', 'JANUARI 2026', '', 1, 750000, 'pending', NULL, 'pending'),
+(141, 'B-0011/SPK/01/2026', 344, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:07:00', 'JANUARI 2026', '', 1, 750000, 'pending', NULL, 'pending'),
+(142, 'B-0012/SPK/01/2026', 103, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:07:42', 'JANUARI 2026', '', 1, 750000, 'pending', NULL, 'pending'),
+(143, 'B-0013/SPK/01/2026', 443, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:08:23', 'JANUARI 2026', '', 1, 760000, 'pending', NULL, 'pending'),
+(144, 'B-0016/SPK/01/2026', 177, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:09:22', 'JANUARI 2026', '', 1, 750000, 'pending', NULL, 'pending'),
+(145, 'B-0018/SPK/01/2026', 534, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:11:09', 'JANUARI 2026', '', 1, 750000, 'pending', NULL, 'pending'),
+(146, 'B-0019/SPK/01/2026', 30, '2026-01-08', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:13:25', 'JANUARI 2026', '', 1, 750000, 'pending', NULL, 'pending'),
+(147, 'B-0020/SPK/01/2026', 303, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:15:36', 'JANUARI 2026', '', 1, 750000, 'pending', NULL, 'pending'),
+(148, 'B-0021/SPK/01/2026', 254, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:16:16', 'JANUARI 2026', '', 1, 750000, 'pending', NULL, 'pending'),
+(149, 'B-0022/SPK/01/2026', 266, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:17:19', 'JANUARI 2026', '', 1, 750000, 'pending', NULL, 'pending'),
+(150, 'B-0023/SPK/01/2026', 252, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:18:08', 'JANUARI 2026', '', 1, 750000, 'pending', NULL, 'pending'),
+(151, 'B-0025/SPK/01/2026', 507, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:18:58', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(152, 'B-0026/SPK/01/2026', 232, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:19:47', 'JANUARI 2026', '', 1, 750000, 'pending', NULL, 'pending'),
+(153, 'B-0027/SPK/01/2026', 51, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:20:30', 'JANUARI 2026', '', 1, 750000, 'pending', NULL, 'pending'),
+(154, 'B-0028/SPK/01/2026', 44, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:21:09', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(155, 'B-0029/SPK/01/2026', 43, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:21:48', 'JANUARI 2026', '', 1, 750000, 'pending', NULL, 'pending'),
+(156, 'B-0030/SPK/01/2026', 70, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:22:27', 'JANUARI 2026', '', 1, 750000, 'pending', NULL, 'pending'),
+(157, 'B-0031/SPK/01/2026', 47, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-05 13:23:03', 'JANUARI 2026', '', 1, 750000, 'pending', NULL, 'pending'),
+(158, 'B-0032/SPK/01/2026', 315, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:00:21', 'JANUARI 2026', '', 1, 600000, 'pending', NULL, 'pending'),
+(159, 'B-0033/SPK/01/2026', 330, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:00:49', 'JANUARI 2026', '', 1, 600000, 'pending', NULL, 'pending'),
+(160, 'B-0034/SPK/01/2026', 566, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:01:19', 'JANUARI 2026', '', 1, 620000, 'pending', NULL, 'pending'),
+(161, 'B-0035/SPK/01/2026', 575, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:01:46', 'JANUARI 2026', '', 1, 620000, 'pending', NULL, 'pending'),
+(162, 'B-0036/SPK/01/2026', 427, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:02:11', 'JANUARI 2026', '', 1, 600000, 'pending', NULL, 'pending'),
+(163, 'B-0040/SPK/01/2026', 372, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:03:15', 'JANUARI 2026', '', 1, 600000, 'pending', NULL, 'pending'),
+(164, 'B-0041/SPK/01/2026', 476, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:03:53', 'JANUARI 2026', '', 1, 600000, 'pending', NULL, 'pending'),
+(165, 'B-0042/SPK/01/2026', 469, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:04:20', 'JANUARI 2026', '', 1, 600000, 'pending', NULL, 'pending'),
+(166, 'B-0043/SPK/01/2026', 436, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:04:50', 'JANUARI 2026', '', 1, 600000, 'pending', NULL, 'pending'),
+(167, 'B-0044/SPK/01/2026', 153, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:05:17', 'JANUARI 2026', '', 1, 600000, 'pending', NULL, 'pending'),
+(168, 'B-0046/SPK/01/2026', 193, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:05:54', 'JANUARI 2026', '', 1, 600000, 'pending', NULL, 'pending'),
+(169, 'B-0049/SPK/01/2026', 145, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:08:29', 'JANUARI 2026', '', 1, 600000, 'pending', NULL, 'pending'),
+(170, 'B-0050/SPK/01/2026', 629, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:09:00', 'JANUARI 2026', '', 1, 620000, 'pending', NULL, 'pending'),
+(171, 'B-0051/SPK/01/2026', 688, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:09:28', 'JANUARI 2026', '', 1, 450000, 'pending', NULL, 'pending'),
+(172, 'B-0052/SPK/01/2026', 539, '2026-01-15', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:09:56', 'JANUARI 2026', '', 1, 600000, 'pending', NULL, 'pending'),
+(173, 'B-0053/SPK/01/2026', 721, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:10:23', 'JANUARI 2026', '', 1, 450000, 'pending', NULL, 'pending'),
+(174, 'B-0054/SPK/01/2026', 651, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:13:04', 'JANUARI 2026', '', 1, 620000, 'pending', NULL, 'pending'),
+(175, 'B-0055/SPK/01/2026', 13, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:13:29', 'JANUARI 2026', '', 1, 620000, 'pending', NULL, 'pending'),
+(176, 'B-0063/SPK/01/2026', 689, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:15:56', 'JANUARI 2026', '', 1, 450000, 'pending', NULL, 'pending'),
+(177, 'B-0135/SPKR/01/2026', 264, '2026-01-14', '2026-02-27', 'Nailiatul Maghfirowati', '2026-02-06 01:22:30', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(178, 'B-0136/SPKR/01/2026', 317, '2026-01-27', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:08:02', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(179, 'B-0137/SPKR/01/2026', 385, '2026-01-27', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:08:23', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(180, 'B-0138/SPKR/01/2026', 389, '2026-01-27', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:08:43', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(181, 'B-0139/SPKR/01/2026', 413, '2026-01-27', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:09:03', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(182, 'B-0140/SPKR/01/2026', 408, '2026-01-27', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:11:45', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(183, 'B-0141/SPKR/01/2026', 475, '2026-01-27', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:12:05', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(184, 'B-0142/SPKR/01/2026', 439, '2026-01-27', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:12:35', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(185, 'B-0143/SPKR/01/2026', 477, '2026-01-27', '2026-01-31', 'Nailiatul Maghfirowati', '2026-02-10 05:12:59', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(212, 'B-0144/SPKR/02/2026', 20, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:39:49', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(213, 'B-0145/SPKR/02/2026', 22, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:40:10', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(214, 'B-0146/SPKR/02/2026', 13, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:40:29', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(215, 'B-0147/SPKR/02/2026', 30, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:40:46', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(216, 'B-0148/SPKR/02/2026', 24, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:41:19', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(217, 'B-0149/SPKR/02/2026', 38, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:43:21', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(218, 'B-0150/SPKR/02/2026', 69, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:43:37', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(219, 'B-0151/SPKR/02/2026', 34, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:43:58', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(221, 'B-0153/SPKR/02/2026', 44, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:44:59', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(222, 'B-0154/SPKR/02/2026', 43, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:45:14', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(223, 'B-0155/SPKR/02/2026', 70, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:45:29', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(224, 'B-0156/SPKR/02/2026', 47, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:45:46', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(225, 'B-0157/SPKR/02/2026', 93, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:46:03', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(226, 'B-0158/SPKR/02/2026', 56, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:46:18', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(227, 'B-0159/SPKR/02/2026', 86, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:49:27', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(228, 'B-0160/SPKR/02/2026', 51, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:49:42', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(230, 'B-0162/SPKR/02/2026', 120, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:53:05', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(231, 'B-0163/SPKR/02/2026', 116, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:53:31', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(232, 'B-0164/SPKR/02/2026', 103, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:53:54', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(233, 'B-0165/SPKR/02/2026', 101, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:54:12', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(234, 'B-0166/SPKR/02/2026', 165, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:54:50', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(235, 'B-0167/SPKR/02/2026', 179, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:55:05', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(236, 'B-0168/SPKR/02/2026', 153, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:55:21', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(237, 'B-0169/SPKR/02/2026', 193, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:55:43', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(240, 'B-0172/SPKR/02/2026', 167, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:56:31', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(241, 'B-0173/SPKR/02/2026', 145, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:56:46', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(242, 'B-0174/SPKR/02/2026', 177, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:57:08', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(245, 'B-0177/SPKR/02/2026', 235, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:58:15', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(246, 'B-0178/SPKR/02/2026', 237, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:58:33', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(247, 'B-0179/SPKR/02/2026', 231, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:58:48', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(248, 'B-0180/SPKR/02/2026', 212, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:59:16', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(249, 'B-0181/SPKR/02/2026', 232, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 05:59:33', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(250, 'B-0182/SPKR/02/2026', 257, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:00:50', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(251, 'B-0183/SPKR/02/2026', 258, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:01:19', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(252, 'B-0184/SPKR/02/2026', 262, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:02:05', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(253, 'B-0185/SPKR/02/2026', 254, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:02:26', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(254, 'B-0186/SPKR/02/2026', 266, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:02:45', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(255, 'B-0187/SPKR/02/2026', 252, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:02:59', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(256, 'B-0188/SPKR/02/2026', 264, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:03:16', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(257, 'B-0189/SPKR/02/2026', 256, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:03:38', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(258, 'B-0190/SPKR/02/2026', 311, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:03:58', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(259, 'B-0191/SPKR/02/2026', 297, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:04:39', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(260, 'B-0192/SPKR/02/2026', 299, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:09:06', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(261, 'B-0193/SPKR/02/2026', 300, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:09:21', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(262, 'B-0194/SPKR/02/2026', 303, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:09:37', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(263, 'B-0195/SPKR/02/2026', 313, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:09:55', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(264, 'B-0196/SPKR/02/2026', 310, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:10:12', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(265, 'B-0197/SPKR/02/2026', 323, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:10:26', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(266, 'B-0198/SPKR/02/2026', 331, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:10:42', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(267, 'B-0199/SPKR/02/2026', 330, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:11:04', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(268, 'B-0200/SPKR/02/2026', 317, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:11:56', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(269, 'B-0201/SPKR/02/2026', 315, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:17:23', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(270, 'B-0202/SPKR/02/2026', 339, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:17:37', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(271, 'B-0203/SPKR/02/2026', 363, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:17:51', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(273, 'B-0205/SPKR/02/2026', 385, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:22:49', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(274, 'B-0206/SPKR/02/2026', 389, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:23:04', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(277, 'B-0209/SPKR/02/2026', 388, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:24:30', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(279, 'B-0211/SPKR/02/2026', 344, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:25:03', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(283, 'B-0215/SPKR/02/2026', 429, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:26:09', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(286, 'B-0218/SPKR/02/2026', 413, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:26:56', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(287, 'B-0219/SPKR/02/2026', 408, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:27:10', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(288, 'B-0220/SPKR/02/2026', 427, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:27:26', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(289, 'B-0221/SPKR/02/2026', 426, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:27:40', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(290, 'B-0222/SPKR/02/2026', 394, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:27:54', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(292, 'B-0224/SPKR/02/2026', 441, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:28:24', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(297, 'B-0229/SPKR/02/2026', 439, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:29:39', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(298, 'B-0230/SPKR/02/2026', 477, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:29:55', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(299, 'B-0231/SPKR/02/2026', 443, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:30:40', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(300, 'B-0232/SPKR/02/2026', 476, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:30:53', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(301, 'B-0233/SPKR/02/2026', 469, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:31:10', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(302, 'B-0234/SPKR/02/2026', 436, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:31:50', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(303, 'B-0235/SPKR/02/2026', 466, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:32:04', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(304, 'B-0236/SPKR/02/2026', 521, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:32:17', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(305, 'B-0237/SPKR/02/2026', 508, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:32:33', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(306, 'B-0238/SPKR/02/2026', 507, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:32:47', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(307, 'B-0239/SPKR/02/2026', 543, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:33:00', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(308, 'B-0240/SPKR/02/2026', 539, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:33:16', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(309, 'B-0241/SPKR/02/2026', 534, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:33:30', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(310, 'B-0242/SPKR/02/2026', 533, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:33:41', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(311, 'B-0243/SPKR/02/2026', 562, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:33:55', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(313, 'B-0245/SPKR/02/2026', 566, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:34:22', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(314, 'B-0246/SPKR/02/2026', 575, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:34:35', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(315, 'B-0247/SPKR/02/2026', 618, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:35:04', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(316, 'B-0248/SPKR/02/2026', 622, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:35:19', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(318, 'B-0250/SPKR/02/2026', 629, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:35:46', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(319, 'B-0251/SPKR/02/2026', 633, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:36:13', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(321, 'B-0253/SPKR/02/2026', 651, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:36:42', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(322, 'B-0254/SPKR/02/2026', 689, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:36:56', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(323, 'B-0255/SPKR/02/2026', 688, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:37:11', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(324, 'B-0256/SPKR/02/2026', 723, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:37:24', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(325, 'B-0257/SPKR/02/2026', 733, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:37:37', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(326, 'B-0258/SPKR/02/2026', 721, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-18 06:37:52', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(328, 'B-0170/SPKR/02/2026', 206, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:04:10', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(330, 'B-0217/SPKR/02/2026', 402, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:05:07', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(331, 'B-0249/SPKR/02/2026', 620, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:05:54', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(332, 'B-0223/SPKR/02/2026', 434, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:06:27', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(333, 'B-0176/SPKR/02/2026', 218, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:07:04', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(334, 'B-0225/SPKR/02/2026', 486, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:07:31', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(335, 'B-0204/SPKR/02/2026', 345, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:07:55', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(337, 'B-0227/SPKR/02/2026', 445, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:08:53', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(339, 'B-0244/SPKR/02/2026', 570, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:09:49', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(340, 'B-0252/SPKR/02/2026', 656, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:10:15', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(341, 'B-0228/SPKR/02/2026', 475, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-02-19 05:10:48', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(345, 'B-0262/SPKR/02/2026', 345, '2026-02-01', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-12 01:10:23', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(346, 'B-0263/SPKR/02/2026', 402, '2026-02-01', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-12 01:11:05', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(347, 'B-0264/SPKR/02/2026', 684, '2026-02-01', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-12 01:11:28', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(348, 'B-0265/SPKR/02/2026', 225, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 01:22:30', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(349, 'B-0259/SPKR/02/2026', 41, '2026-02-01', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:23:53', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(350, 'B-0152/SPKR/02/2026', 95, '2026-02-01', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:24:35', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(351, 'B-0161/SPKR/02/2026', 66, '2026-02-01', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:25:18', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(352, 'B-0175/SPKR/02/2026', 144, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:26:32', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(353, 'B-0171/SPKR/02/2026', 178, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:27:26', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(354, 'B-0207/SPKR/02/2026', 376, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:27:50', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(355, 'B-0208/SPKR/02/2026', 390, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:28:23', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(356, 'B-0210/SPKR/02/2026', 358, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:29:20', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(357, 'B-0213/SPKR/02/2026', 375, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:30:07', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(358, 'B-0212/SPKR/02/2026', 372, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:30:33', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(359, 'B-0216/SPKR/02/2026', 407, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:31:57', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(360, 'B-0260/SPKR/02/2026', 461, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:32:33', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(361, 'B-0214/SPKR/02/2026', 350, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:32:58', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(362, 'B-0226/SPKR/02/2026', 463, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:33:24', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(363, 'B-0261/SPKR/02/2026', 541, '2026-02-02', '2026-02-28', 'Nailiatul Maghfirowati', '2026-03-13 04:33:47', 'FEBRUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(365, 'B-0262/SPKR/03/2026', 24, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:31:14', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(367, 'B-0264/SPKR/03/2026', 22, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:32:51', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(371, 'B-0268/SPKR/03/2026', 38, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:35:27', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(372, 'B-0269/SPKR/03/2026', 69, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:36:16', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(373, 'B-0270/SPKR/03/2026', 34, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:36:35', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(375, 'B-0272/SPKR/03/2026', 86, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:37:08', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(376, 'B-0273/SPKR/03/2026', 116, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:37:27', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(378, 'B-0275/SPKR/03/2026', 206, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:38:09', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(379, 'B-0276/SPKR/03/2026', 165, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:38:28', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(380, 'B-0277/SPKR/03/2026', 179, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:38:45', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(381, 'B-0278/SPKR/03/2026', 122, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:39:01', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(383, 'B-0280/SPKR/03/2026', 196, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:39:37', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(385, 'B-0282/SPKR/03/2026', 235, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:41:49', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(386, 'B-0283/SPKR/03/2026', 237, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:42:04', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(387, 'B-0284/SPKR/03/2026', 231, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:42:21', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(388, 'B-0285/SPKR/03/2026', 256, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:42:38', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(389, 'B-0286/SPKR/03/2026', 264, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:42:56', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(391, 'B-0288/SPKR/03/2026', 258, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:46:10', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(392, 'B-0289/SPKR/03/2026', 262, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:46:24', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(393, 'B-0290/SPKR/03/2026', 274, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:47:43', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(394, 'B-0291/SPKR/03/2026', 310, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:48:19', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(395, 'B-0292/SPKR/03/2026', 299, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:48:33', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(396, 'B-0293/SPKR/03/2026', 311, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:48:48', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(397, 'B-0294/SPKR/03/2026', 297, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:49:03', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(398, 'B-0295/SPKR/03/2026', 300, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:49:20', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(399, 'B-0296/SPKR/03/2026', 331, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:49:37', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(400, 'B-0297/SPKR/03/2026', 323, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:49:52', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(406, 'B-0303/SPKR/03/2026', 385, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:53:12', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(407, 'B-0304/SPKR/03/2026', 363, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:53:40', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(408, 'B-0305/SPKR/03/2026', 388, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:54:00', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(410, 'B-0307/SPKR/03/2026', 402, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:54:43', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(411, 'B-0308/SPKR/03/2026', 429, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:55:00', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(412, 'B-0309/SPKR/03/2026', 445, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:55:15', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(415, 'B-0312/SPKR/03/2026', 441, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:56:04', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(416, 'B-0313/SPKR/03/2026', 434, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:56:20', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(417, 'B-0314/SPKR/03/2026', 486, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:56:42', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(418, 'B-0315/SPKR/03/2026', 475, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:56:59', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(419, 'B-0316/SPKR/03/2026', 521, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:57:15', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(420, 'B-0317/SPKR/03/2026', 533, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:57:30', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(422, 'B-0319/SPKR/03/2026', 543, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:58:06', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(423, 'B-0320/SPKR/03/2026', 525, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:58:24', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(424, 'B-0321/SPKR/03/2026', 570, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:58:39', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(425, 'B-0322/SPKR/03/2026', 562, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:58:54', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(427, 'B-0324/SPKR/03/2026', 618, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:59:28', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(428, 'B-0325/SPKR/03/2026', 622, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 08:59:51', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(430, 'B-0327/SPKR/03/2026', 694, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 09:00:20', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(431, 'B-0328/SPKR/03/2026', 723, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 09:00:35', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(432, 'B-0329/SPKR/03/2026', 733, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-03-26 09:00:49', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(434, 'B-0300/SPKR/03/2026', 345, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-01 01:54:24', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(435, 'B-0279/SPKR/03/2026', 167, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-01 01:55:37', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(437, 'B-0274/SPKR/03/2026', 120, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 01:55:02', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(438, 'B-0302/SPKR/03/2026', 390, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 08:26:20', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending');
+INSERT INTO `spk` (`id`, `nomor_spk`, `id_petugas_spk`, `tgl_spk`, `tgl_selesai_spk`, `create_by`, `create_at`, `bulan_spk`, `tahun_spk`, `id_ppk`, `honor_pelatihan`, `status_mitra`, `file_pdf_mitra`, `status_pegawai`) VALUES
+(439, 'B-0263/SPKR/03/2026', 20, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 08:29:45', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(440, 'B-0301/SPKR/03/2026', 376, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 08:30:20', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(441, 'B-0266/SPKR/03/2026', 41, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 08:30:46', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(442, 'B-0310/SPKR/03/2026', 461, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 08:31:20', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(443, 'B-0287/SPKR/03/2026', 257, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 08:31:49', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(444, 'B-0271/SPKR/03/2026', 95, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 08:32:28', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(445, 'B-0323/SPKR/03/2026', 620, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 08:34:00', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(446, 'B-0299/SPKR/03/2026', 350, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 08:34:41', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(447, 'B-0306/SPKR/03/2026', 407, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 08:35:10', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(448, 'B-0326/SPKR/03/2026', 656, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:02:51', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(449, 'B-0267/SPKR/03/2026', 66, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:03:29', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(450, 'B-0311/SPKR/03/2026', 463, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:04:03', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(451, 'B-0281/SPKR/03/2026', 218, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:04:33', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(452, 'B-0265/SPKR/03/2026', 15, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:05:04', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(453, 'B-0298/SPKR/03/2026', 375, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:05:31', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(454, 'B-0318/SPKR/03/2026', 541, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:06:05', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(455, 'B-0330/SPKR/03/2026', 144, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:08:09', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(456, 'B-0331/SPKR/03/2026', 467, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:09:28', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(457, 'B-0332/SPKR/03/2026', 364, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:10:03', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(458, 'B-0333/SPKR/03/2026', 59, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:10:25', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(459, 'B-0334/SPKR/03/2026', 115, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:10:47', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(460, 'B-0335/SPKR/03/2026', 176, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-02 09:11:11', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(462, 'B-0336/SPKR/03/2026', 178, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:41:15', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(463, 'B-0337/SPKR/03/2026', 343, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:41:43', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(464, 'B-0338/SPKR/03/2026', 372, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:42:04', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(465, 'B-0339/SPKR/03/2026', 358, '2026-03-02', '2026-03-31', 'Nailiatul Maghfirowati', '2026-04-06 01:42:20', 'MARET 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(466, 'B-0340/SPKR/01/2026', 41, '2026-01-02', '2026-01-31', 'Nailiatul Maghfirowati', '2026-04-06 01:43:18', 'JANUARI 2026', '', 1, 0, 'pending', NULL, 'pending'),
+(467, 'SPK-2206', 11, '2026-04-15', '2026-05-15', 'system', '2026-04-15 14:53:33', '4', '2026', 1, 1000000, 'disetujui', 'uploads/files/spk_mitra_467_1776830151.pdf', 'pending'),
+(468, 'SPK-2026-001', 11, '2026-04-15', '2026-05-15', 'system', '2026-04-15 15:03:00', '4', '2026', 1, 1000000, 'disetujui', 'uploads/files/spk_mitra_468_1776757548.pdf', 'disetujui'),
+(469, 'SPK-2026-001', 11, '2026-04-15', '2026-05-15', 'system', '2026-04-15 15:05:33', '4', '2026', 1, 1000000, 'disetujui', 'uploads/files/spk_mitra_469_1776830067.pdf', 'ditolak');
 
 -- --------------------------------------------------------
 
@@ -3476,36 +3476,36 @@ INSERT INTO `spk` (`id`, `nomor_spk`, `id_petugas_spk`, `tgl_spk`, `tgl_selesai_
 -- (See below for the actual view)
 --
 CREATE TABLE `spk_view` (
-`id_rincian_output` int
+`alamat` varchar(255)
+,`bulan` varchar(255)
+,`bulan_tahun` varchar(511)
+,`email` varchar(255)
+,`harga_satuan` int
+,`harga_satuan_honor` int
 ,`id` int
 ,`id_petugas` int
+,`id_rincian_output` int
+,`jabatan` varchar(255)
+,`jangka_waktu` varchar(255)
+,`kecamatan` varchar(255)
+,`keterangan_jabatan` varchar(255)
+,`kode_bulan` varchar(255)
+,`nama_petugas` varchar(255)
+,`nama_survei` varchar(255)
+,`nik` varchar(255)
+,`pekerjaan` varchar(255)
+,`rincian_output` varchar(255)
+,`satuan` varchar(255)
+,`sobat_id` varchar(255)
 ,`status_bast` int
+,`status_petugas` varchar(255)
+,`status_rincian_output` varchar(255)
 ,`status_spk` int
-,`volume_spk` int
-,`volume_bast` int
-,`harga_satuan` int
+,`tahun` varchar(255)
 ,`total` int
 ,`uraian_kegiatan` varchar(255)
-,`tahun` varchar(255)
-,`jangka_waktu` varchar(255)
-,`harga_satuan_honor` int
-,`nik` varchar(255)
-,`nama_petugas` varchar(255)
-,`alamat` varchar(255)
-,`kecamatan` varchar(255)
-,`pekerjaan` varchar(255)
-,`email` varchar(255)
-,`sobat_id` varchar(255)
-,`status_petugas` varchar(255)
-,`jabatan` varchar(255)
-,`keterangan_jabatan` varchar(255)
-,`satuan` varchar(255)
-,`rincian_output` varchar(255)
-,`status_rincian_output` varchar(255)
-,`nama_survei` varchar(255)
-,`bulan` varchar(255)
-,`kode_bulan` varchar(255)
-,`bulan_tahun` varchar(511)
+,`volume_bast` int
+,`volume_spk` int
 );
 
 -- --------------------------------------------------------
@@ -3570,7 +3570,8 @@ INSERT INTO `user` (`id`, `nip`, `nama_user`, `foto`, `id_tim`, `status`, `passw
 (38, '199707232019122002', 'Yulian Dwi Intan Anggraeni, S.Tr.Stat.', 'https://simasnor.3525.web.id/uploads/files/amt7qe4z95_xscv.png', 3, 'Aktif', '$2y$10$RqZ51LIs2fjxP1N.y8ponu80fEFZqoTLJ/.R5e.ojGNfcRfZEOQ0u', 'yulian.dia@bps.go.id', 'Anggota Tim', NULL, NULL, '2026-03-04 00:00:00', NULL),
 (39, '199712312019012001', 'Hanif Wulandari Romadhonia Ibrahim, S.Tr.Stat.', 'https://simasnor.3525.web.id/uploads/files/8y5elunw40bik6g.png', 7, 'Aktif', '$2y$10$p/vnt.PEazvn9kQTL2u6ROXrxtmRa3CVPQmPvzayjJpqcxs9fbsTO', 'wulandarihanif@bps.go.id', 'Anggota Tim', NULL, NULL, '2026-03-04 00:00:00', NULL),
 (41, '198506012025212030', 'Nailiatul Maghfirowati', 'https://simasnor.3525.web.id/uploads/files/ez8t6qynvs_a3uo.png', 1, 'Aktif', '$2y$10$rCFcwK6ocDShegwiX1s.2eXY1Pa1xwv0E77ZgujdWw93xrpNRuYJ2', 'nailimaghfiro-pppk@bps.go.id', 'TU', NULL, NULL, '2026-03-04 00:00:00', NULL),
-(42, '3525061310790003', 'Suwanto', '', 1, 'Aktif', '$2y$10$Y8rX9iGVdMsigjoOAWLP/eidAt3IxOF90.FqTfzln1vcZxgGsPJJ2', 'suwantowa@gmail.com', 'Mitra', NULL, NULL, '2026-03-04 00:00:00', NULL);
+(42, '3525061310790003', 'Suwanto', '', 1, 'Aktif', '$2y$10$Y8rX9iGVdMsigjoOAWLP/eidAt3IxOF90.FqTfzln1vcZxgGsPJJ2', 'suwantowa@gmail.com', 'Mitra', NULL, NULL, '2026-03-04 00:00:00', NULL),
+(43, '3525065508820003\r\n', 'Mamik Handayani', '', 1, 'Aktif', '$2y$10$Y8rX9iGVdMsigjoOAWLP/eidAt3IxOF90.FqTfzln1vcZxgGsPJJ2', 'DemikhaDemikha@gmail.com', 'Mitra', NULL, NULL, '2026-03-04 00:00:00', NULL);
 
 --
 -- Indexes for dumped tables
@@ -3807,7 +3808,7 @@ ALTER TABLE `spk`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 -- --------------------------------------------------------
 

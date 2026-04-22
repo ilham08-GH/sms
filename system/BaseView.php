@@ -298,8 +298,63 @@ class BaseView
 			$report_body = $this->parse_report_html(); //get exportable content
 			$filename = $this->report_filename;
 			$dompdf = new Dompdf();
+			
+			// Tambahkan CSS dan HTML untuk footer di DOMPDF dengan cara yang benar
+			$footer_html = "
+			<style>
+				@page {
+					margin: 15mm 15mm 30mm 15mm;
+					font-family: Arial, Helvetica, sans-serif;
+					color: #000;
+					font-weight: normal;
+				}
+				
+				/* Setup proper footer styling */
+				#pdf-footer {
+					position: fixed;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					height: 25mm;
+					border-top: 1px solid #999;
+					padding-top: 10px;
+					padding-bottom: 10px;
+					text-align: center;
+					font-size: 9pt;
+					color: #333;
+					background-color: #fff;
+					margin: 0;
+				}
+				
+				/* Ensure body content is readable and not faded */
+				body {
+					color: #000 !important;
+					font-weight: normal;
+				}
+				
+				.report-content {
+					padding-bottom: 30mm;
+				}
+			</style>
+			";
+			
+			// Inject footer ke dalam report body
+			if (strpos($report_body, '</body>') !== false) {
+				$footer_element = '<div id=\"pdf-footer\">Dokumen ini telah ditandatangani secara elektronik melalui Sistem Manajemen Honor BPS Kabupaten Gresik (SIMASNOR)</div>';
+				$report_body = str_replace('</body>', $footer_element . '</body>', $report_body);
+			}
+			
+			// Wrap content dalam report-content div
+			if (strpos($report_body, '<body') !== false) {
+				$report_body = preg_replace('/<body[^>]*>/i', '$0<div class="report-content">', $report_body);
+				$report_body = str_replace('</div><div id="pdf-footer">', '</div><div id="pdf-footer">', $report_body);
+			}
+			
+			$report_body = $footer_html . $report_body;
 			$dompdf->loadHtml($report_body);
 			$dompdf->set_option('isRemoteEnabled', true); //allow to display external images
+			$dompdf->set_option('defaultFont', 'Arial');
+			
 			// (Optional) Setup the paper size and orientation
 			$dompdf->setPaper($this->report_paper_size, $this->report_orientation);
 			// Render the HTML as PDF

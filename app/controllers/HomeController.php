@@ -11,7 +11,16 @@ class HomeController extends SecureController{
      */
 	function index(){
 		
-		$this->render_view("home/index.php" , null , "main_layout.php");
+		$user_role = strtolower(USER_ROLE);
+    
+		// Jika Mitra mencoba masuk ke Home, paksa pindah ke halaman SPK
+		if ($user_role == 'mitra') {
+			$this->redirect("spk"); 
+			return;
+		}
+
+		// ... sisa kode view home asli Anda ...
+		$this->render_view("home/index.php");
 
 	}
 }

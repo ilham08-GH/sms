@@ -5,8 +5,21 @@
 	<title><?php echo $this->report_title; ?></title>
 	<style>
 		@page {
-			margin: 0px;
+			margin: 15mm 15mm 30mm 15mm;
 			font-family: Arial, Helvetica, sans-serif;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			color: #000;
+		}
+
+		html, body {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
 		}
 
 		body,
@@ -19,11 +32,18 @@
 			margin: 0px;
 			padding: 0px;
 			font-family: Arial, Helvetica, sans-serif;
+			color: #000;
+			font-weight: normal;
+			line-height: 1.4;
+		}
+
+		p {
+			color: #000;
 		}
 
 		small {
 			font-size: 12px;
-			color: #888;
+			color: #333;
 		}
 
 		.ajax-page-load-indicator {
@@ -32,11 +52,11 @@
 		}
 
 		#report-header {
-			position: relative;
 			border-top: 2px solid #0066cc;
 			border-bottom: 5px solid #0066cc;
 			background: #fafafa;
 			padding: 10px;
+			page-break-after: avoid;
 		}
 		
 		#report-header table{
@@ -45,7 +65,7 @@
 		
 		#report-header .sub-title {
 			font-size: small;
-			color: #888;
+			color: #333;
 		}
 
 		#report-header img {
@@ -59,21 +79,29 @@
 			margin-bottom: 20px;
 			padding: 10px 20px;
 			font-size: 24px;
+			color: #000;
+			font-weight: bold;
+			page-break-after: avoid;
 		}
+		
 		#report-body{
-			padding: 20px;
+			padding: 20px 0;
+			color: #000;
+		}
+
+		#report-body p,
+		#report-body span,
+		#report-body div,
+		#report-body td,
+		#report-body th {
+			color: #000 !important;
 		}
 
 		#report-footer {
 			padding: 10px;
 			background: #fafafa;
 			border-top: 2px solid #0066cc;
-			position: absolute;
-			bottom: 0;
-			left:0;
-			width: 98%;
-			overflow: hidden;
-			margin: 0 auto;
+			page-break-before: avoid;
 		}
 		
 		#report-footer table{
@@ -87,6 +115,7 @@
 			max-width: 100%;
 			margin-bottom: 1rem;
 			border-collapse: collapse;
+			color: #000;
 		}
 
 		.table th,
@@ -94,11 +123,16 @@
 			padding: 0.75rem;
 			vertical-align: top;
 			border-top: 1px solid #eceeef;
+			color: #000;
 		}
 
 		.table thead th {
 			vertical-align: bottom;
 			border-bottom: 2px solid #eceeef;
+			background-color: #eceeef;
+			color: #000;
+			font-weight: bold;
+			page-break-inside: avoid;
 		}
 
 		.table tbody+tbody {
@@ -129,11 +163,11 @@
 		}
 
 		.table-striped tbody tr:nth-of-type(odd) {
-			background-color: rgba(0, 0, 0, 0.05);
+			background-color: #f5f5f5;
 		}
 
 		.table-hover tbody tr:hover {
-			background-color: rgba(0, 0, 0, 0.075);
+			background-color: #f0f0f0;
 		}
 
 		.table-active,
@@ -155,6 +189,7 @@
 		.table-success>th,
 		.table-success>td {
 			background-color: #dff0d8;
+			color: #000;
 		}
 
 		.table-hover .table-success:hover {
@@ -170,6 +205,7 @@
 		.table-info>th,
 		.table-info>td {
 			background-color: #d9edf7;
+			color: #000;
 		}
 
 		.table-hover .table-info:hover {
@@ -185,6 +221,7 @@
 		.table-warning>th,
 		.table-warning>td {
 			background-color: #fcf8e3;
+			color: #000;
 		}
 
 		.table-hover .table-warning:hover {
@@ -200,6 +237,7 @@
 		.table-danger>th,
 		.table-danger>td {
 			background-color: #f2dede;
+			color: #000;
 		}
 
 		.table-hover .table-danger:hover {
@@ -250,14 +288,11 @@
 </head>
 
 <body>
-	
-	
 	<div id="report-body">
 		<?php
 		$this->render_body();
 		?>
 	</div>
-	
 
 
 	<?php 

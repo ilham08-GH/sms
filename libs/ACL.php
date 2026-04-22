@@ -98,6 +98,7 @@ class ACL
 			'mitra' => array(
 						'spk'  => array('list', 'view', 'approve_mitra', 'upload_pdf'),
 						'bast' => array('list', 'view'),
+						'cek_honor_petugas_view' => array('list', 'view'),
 						'user' => array('accountedit', 'accountview'),
 					),
 		);

@@ -227,6 +227,7 @@ $hasil_kecamatan = trim(preg_replace('/\[[^\]]*\]/', '', $kecamatan));
                                 margin-bottom: 8mm;
                                 margin-left: 8mm;
                                 margin-right: 8mm;
+                                
                             }
                             
                             body, table, td, p, div, span {
@@ -303,9 +304,62 @@ $hasil_kecamatan = trim(preg_replace('/\[[^\]]*\]/', '', $kecamatan));
                             .letter-list li {
                                 margin-bottom: 3px;
                             }
+                            #page-report-body {
+                                padding-bottom: 0;
+                            }
+                            @media screen {
+                                p, .pasal, .pasal-numbered {
+                                    page-break-inside: avoid;
+                                }
+                                
+                                /* Mencegah judul pasal (Pasal 5) muncul di akhir halaman tanpa kontennya */
+                                center b {
+                                    page-break-after: avoid;
+                                }
+                            }
 
 
                             </style>
+                            
+                            <script>
+                            function printDocument(url) {
+                                // Hapus iframe lama jika ada
+                                var oldFrame = document.getElementById('printFrame');
+                                if (oldFrame) {
+                                    document.body.removeChild(oldFrame);
+                                }
+                                
+                                // Buat iframe hidden baru
+                                var iframe = document.createElement('iframe');
+                                iframe.id = 'printFrame';
+                                iframe.style.display = 'none';
+                                iframe.style.position = 'absolute';
+                                iframe.style.width = '0';
+                                iframe.style.height = '0';
+                                iframe.style.border = 'none';
+                                document.body.appendChild(iframe);
+                                
+                                // Load halaman print ke iframe
+                                iframe.src = url;
+                                
+                                // Trigger print saat halaman selesai dimuat
+                                iframe.onload = function() {
+                                    try {
+                                        iframe.contentWindow.focus();
+                                        iframe.contentWindow.print();
+                                    } catch(e) {
+                                        console.log('Print error:', e);
+                                    }
+                                    
+                                    // Hapus iframe setelah print dialog ditutup (lebih lama)
+                                    setTimeout(function() {
+                                        if (document.getElementById('printFrame')) {
+                                            document.body.removeChild(iframe);
+                                        }
+                                    }, 2000);
+                                };
+                            }
+                            </script>
                             
                             <div class="header-title">
                                 PERJANJIAN KERJA <br>
@@ -528,8 +582,22 @@ $hasil_kecamatan = trim(preg_replace('/\[[^\]]*\]/', '', $kecamatan));
                                             
                                             <div style="min-height: 80px; position: relative;">
                                                 
-                                                <div style="position: absolute; left: 10px; top: 10px; border: 1px solid #000; padding: 5px; font-size: 7pt; width: 60px; text-align: center; line-height: 1.2;">
-                                                    Materai<br>10.000
+										<div style="position: absolute; left: 10px; top: 10px; border: 1px solid #000; padding: 5px; font-size: 7pt; width: 60px; height:75px; text-align: center; line-height: 1.2; display: flex; align-items: center; justify-content: center; background: #fff;">
+                                                    <?php 
+                                                    $file_mitra = isset($data['file_pdf_mitra']) ? $data['file_pdf_mitra'] : '';
+                                                    // DEBUG INFO
+                                                    echo "<!-- file_mitra: '$file_mitra' | file_exists: " . (file_exists($file_mitra) ? 'Ya' : 'Tidak') . " -->";
+                                                    if (!empty($file_mitra) && file_exists($file_mitra)) {
+                                                        $url_mitra = print_link($file_mitra);
+                                                        echo "<!-- URL: '$url_mitra' -->";
+                                                        echo '<object data="'.$url_mitra.'#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" style="width:100%;height:100%;border:none;pointer-events:none;">PDF</object>';
+                                                    } elseif (!empty($file_mitra)) {
+                                                        // Jika path ada tapi file tidak ditemukan
+                                                        echo '<span style="color:red;font-size:7pt;">File tidak ditemukan</span>';
+                                                    } else {
+                                                        echo 'Materai<br>10.000';
+                                                    }
+                                                    ?>
                                                 </div>
 
                                                 <?php 
@@ -553,14 +621,17 @@ $hasil_kecamatan = trim(preg_replace('/\[[^\]]*\]/', '', $kecamatan));
                                             
                                             <div style="min-height: 80px;">
                                                 <?php 
-                                                // Asumsi menggunakan status_pegawai untuk Pihak Pertama
+                                                // Mengambil status dan membersihkan spasi/huruf kapital
                                                 $status_p1 = isset($data['status_pegawai']) ? strtolower(trim($data['status_pegawai'])) : '';
+                                                
                                                 if($status_p1 == 'disetujui') { ?>
                                                     <div style="font-family: 'Arial', sans-serif; font-weight: bold; font-size: 22pt; margin-bottom: 0;">ttd</div>
                                                     <div style="font-size: 8pt; font-family: Arial, sans-serif;">(Disetujui secara elektronik)</div>
+                                                    
                                                 <?php } elseif($status_p1 == 'ditolak') { ?>
-                                                    <div style="font-family: 'Arial', sans-serif; font-weight: bold; font-size: 18pt; color: #d9534f; margin-bottom: 0;">Ditolak</div>
-                                                    <div style="font-size: 8pt; font-family: Arial, sans-serif; color: #d9534f;">(Ditolak oleh Admin/TU)</div>
+                                                    <div style="font-family: 'Arial', sans-serif; font-weight: bold; font-size: 22pt; margin-bottom: 0;">Ditolak</div>
+                                                    <div style="font-size: 8pt; font-family: Arial, sans-serif;">(Ditolak oleh Petugas)</div>
+                                                    
                                                 <?php } else { ?>
                                                     <div style="height: 50px;"></div>
                                                 <?php } ?>
@@ -582,13 +653,10 @@ $hasil_kecamatan = trim(preg_replace('/\[[^\]]*\]/', '', $kecamatan));
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <?php $export_print_link = $this->set_current_page_link(array('format' => 'print')); ?>
-                                    <a class="dropdown-item export-link-btn" data-format="print" href="<?php print_link($export_print_link); ?>" target="_blank">
+                                    <a class="dropdown-item export-link-btn" data-format="print" href="javascript:void(0);" onclick="printDocument('<?php print_link($export_print_link); ?>'); return false;">
                                         <img src="<?php print_link('assets/images/print.png') ?>" class="mr-2" /> PRINT
                                         </a>
                                         <?php $export_pdf_link = $this->set_current_page_link(array('format' => 'pdf')); ?>
-                                        <a class="dropdown-item export-link-btn" data-format="pdf" href="<?php print_link($export_pdf_link); ?>" target="_blank">
-                                            <img src="<?php print_link('assets/images/pdf.png') ?>" class="mr-2" /> PDF
-                                            </a>
                                             <?php $export_word_link = $this->set_current_page_link(array('format' => 'word')); ?>
                                             <a class="dropdown-item export-link-btn" data-format="word" href="<?php print_link($export_word_link); ?>" target="_blank">
                                                 <img src="<?php print_link('assets/images/doc.png') ?>" class="mr-2" /> WORD
